@@ -12,8 +12,8 @@ This repository contains PyTorch implementations of deep learning models for pre
 ├── src/
 │   ├── models/            # Neural network model implementations
 │   ├── data/              # Data processing and dataset classes
-│   └── utils/             # Utility functions and helper classes
-├── config/                # Configuration files
+│   └── utils/             # Utility functions and helper classes including the trainer class
+│   └── weighting/         # MTL loss and gradient weighting classes
 └── main.py               # Main training script
 ```
 
@@ -21,8 +21,8 @@ This repository contains PyTorch implementations of deep learning models for pre
 
 1. Create a virtual environment:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+conda create -n mtl4ppm python=3.9
+conda activate mtl4ppm
 ```
 
 2. Install dependencies:
@@ -36,12 +36,11 @@ The main script accepts various arguments to configure the training process:
 
 ```bash
 python main.py \
-    --data_path data/your_log.csv \
-    --task next_activity \  # Options: next_activity, next_time, remaining_time, multi
-    --model lstm \
-    --batch_size 32 \
-    --epochs 50 \
-    --learning_rate 0.001
+    --data_path data/P2P.csv \
+    --tasks next_activity next_time \  # Options: next_activity, next_time, remaining_time, multi
+    --model LSTM \
+    --epochs 10 \
+    --weighting UW \
 ```
 
 ## Input Data Format
