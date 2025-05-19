@@ -1,0 +1,186 @@
+import argparse
+import torch
+from src.data.dataset import ProcessLogDataset
+from src.utils.trainer import Trainer
+import os
+
+import src.weighting as weighting_method
+from src.models.models import get_model
+def parse_args():
+    parser = argparse.ArgumentParser(description='Train process prediction models')
+    
+    # Data arguments
+    parser.add_argument('--data_path', type=str, required=True,
+                      help='Path to the input CSV file')
+    parser.add_argument('--max_len', type=int, default=100,
+                      help='Maximum sequence length')
+    
+    # Model arguments
+    parser.add_argument('--model', type=str, default='LSTM',
+                      choices=['LSTM', 'CNN'],
+                      help='Model architecture to use')
+    parser.add_argument('--hidden_dim', type=int, default=128,
+                      help='Hidden dimension size')
+    parser.add_argument('--num_layers', type=int, default=2,
+                      help='Number of LSTM layers')
+    parser.add_argument('--num_filters', type=int, default=64,
+                      help='Number of filters in CNN layers')
+    parser.add_argument('--kernel_size', type=int, default=3,
+                      help='Size of CNN kernel')
+    parser.add_argument('--dropout', type=float, default=0.1,
+                      help='Dropout rate')
+    parser.add_argument('--weighting', type=str, default='EW',
+                      choices=['EW', 'UW', 'DWA', 'GLS', 'IMTL', 'RLW', 'CAGrad', 'GradNorm', 'GradDrop', 'PCGrad', 'Nash_MTL', 'UW_SO', 'Scalarization'],
+                      help='Weighting strategy to use')
+    
+    # Task arguments
+    parser.add_argument('--tasks', type=str, nargs='+', default=['next_activity'],
+                      choices=['next_activity', 'next_time', 'remaining_time', 'multi'],
+                      help='Prediction tasks. Use "multi" for all tasks or specify individual tasks')
+    
+    # Training arguments
+    parser.add_argument('--batch_size', type=int, default=32,
+                      help='Batch size')
+    parser.add_argument('--epochs', type=int, default=50,
+                      help='Number of epochs')
+    parser.add_argument('--learning_rate', type=float, default=0.001,
+                      help='Learning rate')
+    parser.add_argument('--val_split', type=float, default=0.2,
+                      help='Validation split ratio')
+    parser.add_argument('--save_dir', type=str, default='models',
+                      help='Directory to save models')
+    
+    # Hardware arguments
+    parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu',
+                      help='Device to use for training')
+    
+    # Weighting arguments
+    parser.add_argument("--rep_grad", action="store_true", default=False, help="computing gradient for representation or sharing parameters")
+
+    # UW-SO arguments
+    parser.add_argument("--use_softmax", action="store_true", default=False, help="use softmax to normalize the weights")
+    parser.add_argument("--T", type=float, default=1.0, help="temperature parameter for the softmax function")  
+
+    # Scalarization arguments
+    parser.add_argument("--scalar_weights", type=float, nargs='+', help="scalar weights for the tasks")
+    
+    return parser.parse_args()
+
+def prepare_kwargs(args):
+    kwargs = {}
+    if args.weighting == 'DWA':
+        kwargs['T'] = 2.0
+    elif args.weighting == 'CAGrad':
+        kwargs['calpha'] = 0.5
+        kwargs['rescale'] = 1
+    elif args.weighting == 'GradNorm':
+        kwargs['alpha'] = 1.5
+    elif args.weighting == 'GradDrop':
+        kwargs['leak'] = 0.0
+    elif args.weighting == 'Nash_MTL':
+        kwargs['update_weights_every'] = 1
+        kwargs['optim_niter'] = 20
+        kwargs['max_norm'] = 1.0
+    elif args.weighting == 'UW_SO':
+        kwargs['T'] = args.T
+        kwargs['use_softmax'] = args.use_softmax
+    elif args.weighting == 'Scalarization':
+        kwargs['scalar_weights'] = args.scalar_weights
+    return kwargs
+
+def main():
+    # Parse arguments
+    args = parse_args()
+    kwargs = prepare_kwargs(args)
+    
+    # Create save directory if it doesn't exist
+    os.makedirs(args.save_dir, exist_ok=True)
+    
+    # Load dataset
+    print(f'Loading data from {args.data_path}...')
+    
+    # If 'multi' is specified, use all tasks
+    tasks = ['next_activity', 'next_time', 'remaining_time'] if 'multi' in args.tasks else args.tasks
+    
+    # Create the full dataset first
+    full_dataset = ProcessLogDataset(
+        csv_path=args.data_path,
+        tasks=tasks  
+    )
+    
+    # Split into train and validation sets
+    train_size = int((1 - args.val_split) * len(full_dataset))
+    val_size = len(full_dataset) - train_size
+    train_dataset, val_dataset = torch.utils.data.random_split(
+        full_dataset, [train_size, val_size])
+    
+    print(f'Train size: {len(train_dataset)}')
+    print(f'Validation size: {len(val_dataset)}')
+    
+    # Create model
+    print('Initializing model...')
+    output_dims = {}
+    if len(tasks) > 1:  # Multi-task case
+        if 'next_activity' in tasks:
+            output_dims['next_activity'] = full_dataset.num_activities
+        if 'next_time' in tasks:
+            output_dims['next_time'] = 1
+        if 'remaining_time' in tasks:
+            output_dims['remaining_time'] = 1
+    else:  # Single task case
+        if tasks[0] != 'next_activity':
+            output_dims = {tasks[0]: 1}
+        else:
+            output_dims = {'next_activity': full_dataset.num_activities}
+
+    weighting = weighting_method.__dict__[args.weighting]
+
+    if args.model == 'LSTM':
+        model_parameters = {
+            "input_dim": full_dataset.feature_dim,
+            "hidden_dim": args.hidden_dim,
+            "num_layers": args.num_layers,
+            "dropout": args.dropout,
+            "num_activities": full_dataset.num_activities,
+        }
+    elif args.model == 'CNN':
+        model_parameters = {
+            "input_dim": full_dataset.feature_dim,
+            "hidden_dim": args.hidden_dim,
+            "num_filters": args.num_filters,
+            "kernel_size": args.kernel_size,
+            "dropout": args.dropout,
+            "num_activities": full_dataset.num_activities,
+            "max_len": args.max_len,
+        }
+    else:
+        raise ValueError(f"Model {args.model} not found")
+    
+    model = get_model(
+        model_name=args.model,
+        weighting=weighting,
+        output_dims=output_dims,
+        model_parameters=model_parameters,
+        device=args.device,
+        rep_grad=args.rep_grad,
+    )
+    
+    # Initialize trainer with the full dataset
+    trainer = Trainer(
+        model=model,
+        train_dataset=train_dataset,
+        val_dataset=val_dataset,
+        batch_size=args.batch_size,
+        learning_rate=args.learning_rate,
+        device=args.device,
+        weighting=args.weighting,
+        **kwargs
+    )
+    
+    # Train model
+    print('Starting training...')
+    save_path = os.path.join(args.save_dir, f'{args.model}_{"_".join(tasks)}_model.pt')
+    trainer.train(args.epochs, save_path)
+    
+if __name__ == '__main__':
+    main() 
