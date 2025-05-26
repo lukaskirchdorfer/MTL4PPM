@@ -164,35 +164,38 @@ def process_cnn(weighting_class):
             self.num_filters = model_parameters["num_filters"]
             self.kernel_size = model_parameters["kernel_size"]
             
-            # Print model parameters for debugging
-            # print(f"Model parameters:")
-            # print(f"Input dim: {model_parameters['input_dim']}")
-            # print(f"Max len: {model_parameters['max_len']}")
-            # print(f"Num filters: {self.num_filters}")
-            
-            # CNN layers
-            self.conv1 = nn.Conv1d(
-                in_channels=model_parameters["input_dim"],
-                out_channels=self.num_filters,
-                kernel_size=self.kernel_size,
-                padding='same'
+            self.encoder = nn.Sequential(
+                nn.Conv1d(
+                    in_channels=model_parameters["input_dim"],
+                    out_channels=self.num_filters,
+                    kernel_size=self.kernel_size,
+                    padding='same'
+                ),
+                nn.ReLU(),
+                nn.MaxPool1d(kernel_size=2, stride=2),
+                nn.Dropout(model_parameters["dropout"]),
+
+                nn.Conv1d(
+                    in_channels=self.num_filters,
+                    out_channels=self.num_filters * 2,
+                    kernel_size=self.kernel_size,
+                    padding='same'
+                ),
+                nn.ReLU(),
+                nn.MaxPool1d(kernel_size=2, stride=2),
+                nn.Dropout(model_parameters["dropout"]),
+
+                nn.Conv1d(
+                    in_channels=self.num_filters * 2,
+                    out_channels=self.num_filters * 4,
+                    kernel_size=self.kernel_size,
+                    padding='same'
+                ),
+                nn.ReLU(),
+                nn.MaxPool1d(kernel_size=2, stride=2),
+                nn.Dropout(model_parameters["dropout"]),
             )
-            self.conv2 = nn.Conv1d(
-                in_channels=self.num_filters,
-                out_channels=self.num_filters * 2,
-                kernel_size=self.kernel_size,
-                padding='same'
-            )
-            self.conv3 = nn.Conv1d(
-                in_channels=self.num_filters * 2,
-                out_channels=self.num_filters * 4,
-                kernel_size=self.kernel_size,
-                padding='same'
-            )
-            
-            self.pool = nn.MaxPool1d(kernel_size=2, stride=2)
-            self.dropout = nn.Dropout(model_parameters["dropout"])
-            self.relu = nn.ReLU()
+
             
             # We'll calculate the flatten size in the first forward pass
             self.flatten_size = None
@@ -220,17 +223,7 @@ def process_cnn(weighting_class):
             x = x.transpose(1, 2)
             
             # CNN forward pass
-            x = self.relu(self.conv1(x))
-            x = self.pool(x)
-            x = self.dropout(x)
-            
-            x = self.relu(self.conv2(x))
-            x = self.pool(x)
-            x = self.dropout(x)
-            
-            x = self.relu(self.conv3(x))
-            x = self.pool(x)
-            x = self.dropout(x)
+            x = self.encoder(x)
             
             # Flatten the output
             x = x.view(x.size(0), -1)
@@ -265,14 +258,12 @@ def process_cnn(weighting_class):
         def get_share_params(self):
             r"""Return the parameters of the encoder part of the model.
             """
-            return list(self.conv1.parameters()) + list(self.conv2.parameters()) + list(self.conv3.parameters())
+            return self.encoder.parameters()
         
         def zero_grad_share_params(self):
             r"""Set gradients of the shared parameters to zero.
             """
-            self.conv1.zero_grad()
-            self.conv2.zero_grad()
-            self.conv3.zero_grad()
+            self.encoder.zero_grad()
 
         def update_rep(self, s_rep):
             predictions = {}
