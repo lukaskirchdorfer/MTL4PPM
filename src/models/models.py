@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 
-def get_model(model_name, weighting, output_dims, model_parameters, device, rep_grad=False):
+def get_model(model_name, weighting, output_dims, model_parameters, device,
+              rep_grad=False):
     if model_name == "LSTM":
         model_class = process_lstm(weighting_class=weighting)
     elif model_name == "CNN":
@@ -20,7 +21,8 @@ def get_model(model_name, weighting, output_dims, model_parameters, device, rep_
 
 def process_lstm(weighting_class):
     class ProcessLSTM(weighting_class):
-        def __init__(self, output_dims=None, model_parameters=None, device=None, rep_grad=False):
+        def __init__(self, output_dims=None, model_parameters=None,
+                     device=None, rep_grad=False):
             """
             LSTM model for process prediction tasks
             
@@ -29,9 +31,10 @@ def process_lstm(weighting_class):
                 hidden_dim (int): Hidden layer dimension
                 num_layers (int): Number of LSTM layers
                 dropout (float): Dropout rate
-                num_activities (int): Number of unique activities (for next activity prediction)
+                num_activities (int): Number of unique activities 
+                                        (for next activity prediction)
                 output_dims (dict): Dictionary of output dimensions for each task
-                                e.g., {'next_time': 1, 'remaining_time': 1}
+                                    e.g., {'next_time': 1, 'remaining_time': 1}
             """
             # Initialize the weighting class first with the device
             super(ProcessLSTM, self).__init__()
@@ -45,8 +48,9 @@ def process_lstm(weighting_class):
 
             self.hidden_dim = model_parameters["hidden_dim"]
             self.num_layers = model_parameters["num_layers"]
-            self.lstm = nn.LSTM(model_parameters["input_dim"], self.hidden_dim, self.num_layers, 
-                            batch_first=True, dropout=model_parameters["dropout"])
+            self.lstm = nn.LSTM(
+                model_parameters["input_dim"], self.hidden_dim, self.num_layers,
+                batch_first=True, dropout=model_parameters["dropout"])
             
             # Task-specific output layers
             self.task_heads = nn.ModuleDict()
@@ -56,7 +60,8 @@ def process_lstm(weighting_class):
                 if task_name != 'next_activity':
                     self.task_heads[task_name] = nn.Linear(self.hidden_dim, dim)
                 else:
-                    self.task_heads[task_name] = nn.Linear(self.hidden_dim, model_parameters["num_activities"])
+                    self.task_heads[task_name] = nn.Linear(
+                        self.hidden_dim, model_parameters["num_activities"])
             self.task_name = list(output_dims.keys())
             
             
@@ -72,8 +77,12 @@ def process_lstm(weighting_class):
             batch_size = x.size(0)
             
             # Initialize hidden state
-            h0 = torch.zeros(self.num_layers, batch_size, self.hidden_dim, dtype=torch.float32).to(self.device)
-            c0 = torch.zeros(self.num_layers, batch_size, self.hidden_dim, dtype=torch.float32).to(self.device)
+            h0 = torch.zeros(
+                self.num_layers, batch_size, self.hidden_dim, 
+                dtype=torch.float32).to(self.device)
+            c0 = torch.zeros(
+                self.num_layers, batch_size, self.hidden_dim, 
+                dtype=torch.float32).to(self.device)
             
             # LSTM forward pass
             lstm_out, _ = self.lstm(x, (h0, c0))
@@ -132,9 +141,40 @@ def process_lstm(weighting_class):
         
     return ProcessLSTM
 
+def process_trans(weighting_class):
+    class ProcessTrans(weighting_class):
+        def __init__(self, output_dims=None, model_parameters=None,
+                     device=None, rep_grad=False):
+            """
+            Transformer model for process prediction tasks
+            
+            Args:
+                output_dims (dict): Dictionary of output dimensions for each task
+                model_parameters (dict): Includes input_dim, hidden_dim, num_heads,
+                                         num_layers, dropout, num_activities
+                device (torch.device): Device to run the model on
+                rep_grad (bool): Whether to store gradients for representation learning
+            """
+            super(ProcessTrans, self).__init__()
+            self.device = device
+            self.task_num = len(output_dims.keys())
+            self.init_param() # initialize the parameters for the weighting method
+            self.rep_grad = rep_grad
+            if self.rep_grad:
+                self.rep_tasks = {}
+                self.rep = {}
+                
+            self.input_dim = model_parameters["input_dim"]
+            self.hidden_dim = model_parameters["hidden_dim"]
+            self.num_layers = model_parameters["num_layers"]
+            self.num_heads = model_parameters["num_heads"]
+            self.dropout = model_parameters["dropout"]
+        
+
 def process_cnn(weighting_class):
     class ProcessCNN(weighting_class):
-        def __init__(self, output_dims=None, model_parameters=None, device=None, rep_grad=False):
+        def __init__(self, output_dims=None, model_parameters=None,
+                     device=None, rep_grad=False):
             """
             CNN model for process prediction tasks
             
@@ -144,7 +184,8 @@ def process_cnn(weighting_class):
                 num_filters (int): Number of filters in convolutional layers
                 kernel_size (int): Size of convolutional kernel
                 dropout (float): Dropout rate
-                num_activities (int): Number of unique activities (for next activity prediction)
+                num_activities (int): Number of unique activities
+                                    (for next activity prediction)
                 output_dims (dict): Dictionary of output dimensions for each task
                                 e.g., {'next_time': 1, 'remaining_time': 1}
             """
@@ -205,9 +246,11 @@ def process_cnn(weighting_class):
 
             for task_name, dim in output_dims.items():
                 if task_name != 'next_activity':
-                    self.task_heads[task_name] = None  # Will be initialized in first forward pass
+                    # Will be initialized in first forward pass
+                    self.task_heads[task_name] = None  
                 else:
-                    self.task_heads[task_name] = None  # Will be initialized in first forward pass
+                    # Will be initialized in first forward pass
+                    self.task_heads[task_name] = None  
             self.task_name = list(output_dims.keys())
             
         def forward(self, x):
@@ -233,9 +276,13 @@ def process_cnn(weighting_class):
                 self.flatten_size = x.size(1)
                 for task_name, dim in self.output_dims.items():
                     if task_name != 'next_activity':
-                        self.task_heads[task_name] = nn.Linear(self.flatten_size, dim).to(self.device)
+                        self.task_heads[task_name] = nn.Linear(
+                            self.flatten_size, dim).to(self.device)
                     else:
-                        self.task_heads[task_name] = nn.Linear(self.flatten_size, self.model_parameters["num_activities"]).to(self.device)
+                        self.task_heads[task_name] = nn.Linear(
+                            self.flatten_size, 
+                            self.model_parameters["num_activities"]
+                            ).to(self.device)
             
             # Update the representation and return the predictions if rep_grad is True
             if self.rep_grad:
