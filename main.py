@@ -52,6 +52,10 @@ def parse_args():
                       help='Number of epochs')
     parser.add_argument('--learning_rate', type=float, default=0.001,
                       help='Learning rate')
+    parser.add_argument('--patience', type=int, default=10,
+                      help='Patience (no. epochs) for early stopping')
+    parser.add_argument('--min_delta', type=float, default=0.0,
+                      help='Minimum improvement observed for early stopping')
     parser.add_argument('--val_split', type=float, default=0.2,
                       help='Validation split ratio')
     parser.add_argument('--save_dir', type=str, default='models',
@@ -196,6 +200,8 @@ def main():
         learning_rate=args.learning_rate,
         device=args.device,
         weighting=args.weighting,
+        patience=args.patience,
+        min_delta= args.min_delta,
         **kwargs
     )
     

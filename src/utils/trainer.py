@@ -8,7 +8,8 @@ import numpy as np
 
 class Trainer:
     def __init__(self, model, train_dataset, val_dataset=None,
-                 batch_size=32, learning_rate=0.001, device='cuda', **kwargs):
+                 batch_size=32, learning_rate=0.001, device='cuda',
+                 patience=10, min_delta=0.0, **kwargs):
         """
         Trainer class for process prediction models
         
@@ -25,6 +26,14 @@ class Trainer:
         self.device = device
         self.batch_size = batch_size
         self.kwargs = kwargs
+        
+        # Early Stopping parameters
+        self.patience = patience
+        self.min_delta = min_delta
+        self.best_val_loss = float('inf')
+        self.epochs_no_improve = 0
+        self.early_stop = False
+        self.best_epoch = 0 # To track the epoch of the best model
         
         # Store the original dataset for time denormalization
         self.original_dataset = train_dataset.dataset if hasattr(train_dataset, 'dataset') else train_dataset
@@ -257,7 +266,15 @@ class Trainer:
     
     def train(self, num_epochs, save_path=None):
         """Train the model for multiple epochs"""
-        best_loss = float('inf')
+        #TODO: the next line can be removed after checking early stopping.
+        #best_loss = float('inf')
+        
+        # Reset early stopping state for a new training run
+        self.best_val_loss = float('inf')
+        self.epochs_no_improve = 0
+        self.early_stop = False
+        self.best_epoch = 0
+        
         self.model.train_loss_buffer = np.zeros([self.model.task_num, num_epochs])
         
         # Print header
@@ -288,6 +305,35 @@ class Trainer:
                     metrics_str += f" | {val_task_losses[task]:.4f} | {list(val_metrics[task].values())[0]:.4f}"
             print(metrics_str)
             
+            # Check for early stopping only if a validation loader exists
+            if self.val_loader:
+                # Use val_loss for early stopping
+                current_val_loss = val_loss # This is the overall validation loss
+                # Check for improvement
+                if current_val_loss < self.best_val_loss - self.min_delta:
+                    self.best_val_loss = current_val_loss
+                    self.epochs_no_improve = 0
+                    # Store the epoch where improvement occurred
+                    self.best_epoch = epoch + 1 
+                    # Save the model only if it's the best so far
+                    if save_path:
+                        torch.save(self.model.state_dict(), save_path)
+                else:
+                    self.epochs_no_improve += 1
+                    print(f"No improvement for {self.epochs_no_improve} epochs.")
+                # Trigger early stopping
+                if self.epochs_no_improve >= self.patience:
+                    self.early_stop = True
+                    print(f"\nEarly stopping triggered after {epoch + 1} epochs "
+                          f"(no improvement for {self.patience} epochs).")
+                    print(f"Best validation loss: {self.best_val_loss:.4f} at epoch {self.best_epoch}")
+                    break # Exit the training loop
+            else:
+                if save_path and train_loss < self.best_val_loss:
+                    self.best_val_loss = train_loss
+                    torch.save(self.model.state_dict(), save_path)
+            #TODO: the following lines can be removed after checking early stopping.
+            """
             # Save best model
             if self.val_loader and save_path and val_loss < best_loss:
                 best_loss = val_loss
@@ -295,3 +341,4 @@ class Trainer:
                 # print(f'{"*"*len(header)}')
                 # print(f'New best model saved to: {save_path}')
                 # print(f'{"*"*len(header)}') 
+            """
