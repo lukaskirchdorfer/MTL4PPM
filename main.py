@@ -27,10 +27,17 @@ def parse_args():
                       help='Number of filters in CNN layers')
     parser.add_argument('--kernel_size', type=int, default=3,
                       help='Size of CNN kernel')
+    parser.add_argument('--num_heads', type=int, default=8,
+                      help='Number of heads in Transformer')
+    parser.add_argument('--pooling', type=str, default='mean',
+                      choices=['mean', 'max', 'min'],
+                      help='Pooling strategy for Transformer model')    
     parser.add_argument('--dropout', type=float, default=0.1,
                       help='Dropout rate')
     parser.add_argument('--weighting', type=str, default='EW',
-                      choices=['EW', 'UW', 'DWA', 'GLS', 'IMTL', 'RLW', 'CAGrad', 'GradNorm', 'GradDrop', 'PCGrad', 'Nash_MTL', 'UW_SO', 'Scalarization'],
+                      choices=['EW', 'UW', 'DWA', 'GLS', 'IMTL', 'RLW',
+                               'CAGrad', 'GradNorm', 'GradDrop', 'PCGrad',
+                               'Nash_MTL', 'UW_SO', 'Scalarization'],
                       help='Weighting strategy to use')
     
     # Task arguments
@@ -52,17 +59,21 @@ def parse_args():
     
     # Hardware arguments
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu',
-                      help='Device to use for training')
+                        help='Device to use for training')
     
     # Weighting arguments
-    parser.add_argument("--rep_grad", action="store_true", default=False, help="computing gradient for representation or sharing parameters")
+    parser.add_argument("--rep_grad", action="store_true", default=False, 
+                        help="computing gradient for representation or sharing parameters")
 
     # UW-SO arguments
-    parser.add_argument("--use_softmax", action="store_true", default=False, help="use softmax to normalize the weights")
-    parser.add_argument("--T", type=float, default=1.0, help="temperature parameter for the softmax function")  
+    parser.add_argument("--use_softmax", action="store_true", default=False, 
+                        help="use softmax to normalize the weights")
+    parser.add_argument("--T", type=float, default=1.0, 
+                        help="temperature parameter for the softmax function")  
 
     # Scalarization arguments
-    parser.add_argument("--scalar_weights", type=float, nargs='+', help="scalar weights for the tasks")
+    parser.add_argument("--scalar_weights", type=float, nargs='+', 
+                        help="scalar weights for the tasks")
     
     return parser.parse_args()
 
@@ -152,6 +163,19 @@ def main():
             "dropout": args.dropout,
             "num_activities": full_dataset.num_activities,
             "max_len": args.max_len,
+        }
+    elif args.model == 'Transformr':
+        model_parameters = {
+            "cat_feat_dim": full_dataset.cat_feat_dim,
+            "num_feat_dim": full_dataset.num_feat_dim,
+            "emb_dim": args.hidden_dim,
+            "num_layers": args.num_layers,
+            "num_heads": args.num_heads,
+            "dropout": args.dropout,
+            "num_activities": full_dataset.num_activities,
+            "num_resources": full_dataset.num_resources,
+            "max_len": full_dataset.max_len,  
+            "pooling": args.pooling,
         }
     else:
         raise ValueError(f"Model {args.model} not found")

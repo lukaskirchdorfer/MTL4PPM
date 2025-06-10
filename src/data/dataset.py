@@ -177,3 +177,15 @@ class ProcessLogDataset(Dataset):
     @property
     def feature_dim(self):
         return 4  # activity, resource, time since last, time since start 
+    
+    @property
+    def max_len(self):
+        return self.max_len
+    
+    @property
+    def cat_feat_dim(self):
+        return 2  # activity, resource 
+    
+    @property
+    def num_feat_dim(self):
+        return 2  # time since last, time since start 
