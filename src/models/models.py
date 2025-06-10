@@ -8,6 +8,8 @@ def get_model(model_name, weighting, output_dims, model_parameters, device,
         model_class = process_lstm(weighting_class=weighting)
     elif model_name == "CNN":
         model_class = process_cnn(weighting_class=weighting)
+    elif model_name == "Transformer":
+        model_class = process_trans(weighting_class=weighting)
     else:
         raise ValueError(f"Model {model_name} not found")
     
@@ -246,10 +248,8 @@ def process_trans(weighting_class):
             self.num_heads = model_parameters["num_heads"]
             self.num_layers = model_parameters["num_layers"]
             self.dropout = model_parameters["dropout"]
-            self.pooling = model_parameters["pooling"]   
-            #TODO: maybe remove the next two!
-            self.cat_feat_dim = model_parameters["cat_feat_dim"]           
-            self.max_len = model_parameters["max_len"]
+            self.pooling = model_parameters["pooling"] 
+            self.d_model = 2 * self.emb_dim + self.num_feat_dim 
             # create Transformer encoder
             self.encoder = Trans_Encoder(
                 num_activities=self.num_activities,

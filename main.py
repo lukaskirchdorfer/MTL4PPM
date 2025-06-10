@@ -166,15 +166,13 @@ def main():
         }
     elif args.model == 'Transformer':
         model_parameters = {
-            "cat_feat_dim": full_dataset.cat_feat_dim,
             "num_feat_dim": full_dataset.num_feat_dim,
             "emb_dim": args.hidden_dim,
             "num_layers": args.num_layers,
             "num_heads": args.num_heads,
             "dropout": args.dropout,
             "num_activities": full_dataset.num_activities,
-            "num_resources": full_dataset.num_resources,
-            "max_len": full_dataset.max_len,  
+            "num_resources": full_dataset.num_resources, 
             "pooling": args.pooling,
         }
     else:
