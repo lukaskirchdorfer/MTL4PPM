@@ -17,12 +17,12 @@ def parse_args():
     
     # Model arguments
     parser.add_argument('--model', type=str, default='LSTM',
-                      choices=['LSTM', 'CNN'],
+                      choices=['LSTM', 'CNN', 'Transformer'],
                       help='Model architecture to use')
     parser.add_argument('--hidden_dim', type=int, default=128,
                       help='Hidden dimension size')
     parser.add_argument('--num_layers', type=int, default=2,
-                      help='Number of LSTM layers')
+                      help='Number of LSTM/Transformer layers')
     parser.add_argument('--num_filters', type=int, default=64,
                       help='Number of filters in CNN layers')
     parser.add_argument('--kernel_size', type=int, default=3,
@@ -164,7 +164,7 @@ def main():
             "num_activities": full_dataset.num_activities,
             "max_len": args.max_len,
         }
-    elif args.model == 'Transformr':
+    elif args.model == 'Transformer':
         model_parameters = {
             "cat_feat_dim": full_dataset.cat_feat_dim,
             "num_feat_dim": full_dataset.num_feat_dim,
