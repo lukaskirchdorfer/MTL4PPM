@@ -20,13 +20,20 @@ class ProcessLogDataset(Dataset):
         # Load and preprocess data
         self.df = pd.read_csv(csv_path)
         self.df['timestamp'] = pd.to_datetime(self.df['timestamp'])
+        # add days and hours of the last event
+        self.df['day'] = pd.to_datetime(self.df['timestamp']).dt.day_name()
+        self.df['hour'] = (pd.to_datetime(self.df['timestamp']).dt.hour + 
+                           pd.to_datetime(self.df['timestamp']).dt.minute / 60)
+        self.df['hour'] = ((self.df['hour'] - self.df['hour'].min()) / 
+                           (self.df['hour'].max() - self.df['hour'].min()))
         
         # Encode categorical variables
         self.activity_encoder = LabelEncoder()
         self.resource_encoder = LabelEncoder()
-        
+        self.day_encoder = LabelEncoder()
         self.df['activity_encoded'] = self.activity_encoder.fit_transform(self.df['activity'])
         self.df['resource_encoded'] = self.resource_encoder.fit_transform(self.df['resource'])
+        self.df['day_encoded'] = self.day_encoder.fit_transform(self.df['day'])
         
         # Group by case_id
         self.cases = self.df.groupby('case_id')
@@ -50,15 +57,15 @@ class ProcessLogDataset(Dataset):
         
     def _calculate_time_features(self):
         """Calculate time-based features for each event"""
-        # Convert timestamp to seconds since start of case
+        # Calculate time since start of case (in seconds)
         self.df['time_since_start'] = self.df.groupby('case_id')['timestamp'].transform(
             lambda x: (x - x.iloc[0]).dt.total_seconds())
         
-        # Calculate time since last event
+        # Calculate time since last event (in seconds)
         self.df['time_since_last'] = self.df.groupby('case_id')['timestamp'].transform(
             lambda x: x.diff().dt.total_seconds()).fillna(0)
         
-        # Calculate remaining time
+        # Calculate remaining time (in seconds)
         self.df['remaining_time'] = self.df.groupby('case_id')['timestamp'].transform(
             lambda x: (x.iloc[-1] - x).dt.total_seconds())
         
@@ -66,7 +73,7 @@ class ProcessLogDataset(Dataset):
         if any(task in ['next_time', 'remaining_time'] for task in self.tasks):
             # Convert seconds to days for better interpretability
             for col in ['time_since_start', 'time_since_last', 'remaining_time']:
-                self.df[col] = self.df[col] / (24 * 3600)  # Convert to days
+                self.df[col] = self.df[col] / (24 * 3600)
                 
                 # Log-transform and normalize time features
                 self.df[col] = np.log1p(self.df[col])
@@ -114,6 +121,8 @@ class ProcessLogDataset(Dataset):
                 features = np.column_stack([
                     prefix['activity_encoded'].values,
                     prefix['resource_encoded'].values,
+                    prefix['day_encoded'].values,
+                    prefix['hour'].values,
                     prefix['time_since_last'].values,
                     prefix['time_since_start'].values
                 ])
@@ -175,9 +184,13 @@ class ProcessLogDataset(Dataset):
         return len(self.resource_encoder.classes_)
     
     @property
+    def num_days(self):
+        return len(self.day_encoder.classes_)
+    
+    @property
     def feature_dim(self):
-        return 4  # activity, resource, time since last, time since start 
+        return 6  # activity, resource, day, hour, time since last, time since start 
     
     @property
     def num_feat_dim(self):
-        return 2  # time since last, time since start 
+        return 3  # hour, time since last, time since start 

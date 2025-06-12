@@ -322,8 +322,8 @@ class Trainer:
                         torch.save(self.model.state_dict(), save_path)
                 else:
                     self.epochs_no_improve += 1
-                    print(f"No improvement for {self.epochs_no_improve} epochs.")
-                    self.logger.info(f"No improvement for {self.epochs_no_improve} epochs.")
+                    #print(f"No improvement for {self.epochs_no_improve} epochs.")
+                    #self.logger.info(f"No improvement for {self.epochs_no_improve} epochs.")
                 # Trigger early stopping
                 if self.epochs_no_improve >= self.patience:
                     self.early_stop = True

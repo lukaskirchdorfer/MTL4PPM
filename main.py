@@ -200,6 +200,7 @@ def main():
             "dropout": args.dropout,
             "num_activities": full_dataset.num_activities,
             "num_resources": full_dataset.num_resources, 
+            "num_days": full_dataset.num_days,
             "pooling": args.pooling,
         }
     else:

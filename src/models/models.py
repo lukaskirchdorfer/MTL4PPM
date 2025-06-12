@@ -164,11 +164,12 @@ class PositionalEncoding(nn.Module):
         return self.dropout(x)
     
 class Trans_Encoder(nn.Module):
-    def __init__(self, num_activities, num_resources, num_feat_dim, emb_dim, 
-                 num_heads, num_layers, dropout, pooling):
+    def __init__(self, num_activities, num_resources, num_days, num_feat_dim,
+                 emb_dim, num_heads, num_layers, dropout, pooling):
         super().__init__()
         self.num_activities = num_activities
         self.num_resources = num_resources
+        self.num_days = num_days
         self.num_feat_dim = num_feat_dim
         self.emb_dim = emb_dim
         self.num_heads = num_heads
@@ -178,9 +179,10 @@ class Trans_Encoder(nn.Module):
 
         # Feature processing layers
         self.embedding_cat1 = nn.Embedding(self.num_activities, self.emb_dim)
-        self.embedding_cat2 = nn.Embedding(self.num_resources, self.emb_dim)  
+        self.embedding_cat2 = nn.Embedding(self.num_resources, self.emb_dim) 
+        self.embedding_cat3 = nn.Embedding(self.num_days, self.emb_dim)
         # Calculate the total input dimension for the Transformer (d_model)
-        self.d_model = 2 * self.emb_dim + self.num_feat_dim        
+        self.d_model = 3 * self.emb_dim + self.num_feat_dim        
         # Positional encoding
         self.positional_encoding = PositionalEncoding(self.d_model, self.dropout)        
         # Transformer Encoder
@@ -194,15 +196,15 @@ class Trans_Encoder(nn.Module):
             encoder_layers, self.num_layers
         )
 
-    def forward(self, input_cat1, input_cat2, input_numerical):
+    def forward(self, input_cat1, input_cat2, input_cat3, input_numerical):
         # Embed categorical features
-        # (batch_size, seq_len, cat1_embed_dim)
         embedded_cat1 = self.embedding_cat1(input_cat1)
-        # (batch_size, seq_len, cat2_embed_dim)
-        embedded_cat2 = self.embedding_cat2(input_cat2)      
+        embedded_cat2 = self.embedding_cat2(input_cat2)
+        embedded_cat3 = self.embedding_cat3(input_cat3)
         # Concatenate all features
         combined_features = torch.cat(
-            (embedded_cat1, embedded_cat2, input_numerical), dim=-1)     
+            (embedded_cat1, embedded_cat2, embedded_cat3, input_numerical),
+            dim=-1)     
         # Add positional encoding
         combined_features = self.positional_encoding(combined_features)        
         # Pass through Transformer Encoder
@@ -243,17 +245,19 @@ def process_trans(weighting_class):
                 
             self.num_activities = model_parameters["num_activities"]
             self.num_resources = model_parameters["num_resources"]
+            self.num_days = model_parameters["num_days"]
             self.num_feat_dim = model_parameters["num_feat_dim"] 
             self.emb_dim = model_parameters["emb_dim"]
             self.num_heads = model_parameters["num_heads"]
             self.num_layers = model_parameters["num_layers"]
             self.dropout = model_parameters["dropout"]
             self.pooling = model_parameters["pooling"] 
-            self.d_model = 2 * self.emb_dim + self.num_feat_dim 
+            self.d_model = 3 * self.emb_dim + self.num_feat_dim 
             # create Transformer encoder
             self.encoder = Trans_Encoder(
                 num_activities=self.num_activities,
                 num_resources=self.num_resources,
+                num_days=self.num_days,
                 num_feat_dim=self.num_feat_dim,
                 emb_dim=self.emb_dim,
                 num_heads=self.num_heads,
@@ -283,13 +287,15 @@ def process_trans(weighting_class):
             Returns:
                 dict: Dictionary of predictions for each task
             """
-            # x: (batch_size, seq_len, 4) where 4 is the total number of features (2 cat, 2 num)
-            # Extract categorical features
-            input_cat1 = x[:, :, 0].long()  # Convert to long for nn.Embedding
-            input_cat2 = x[:, :, 1].long()  # Convert to long for nn.Embedding    
+            # x: (batch_size, seq_len, 6) where 6 is the total number of features (3 cat, 3 num)
+            # Extract categorical features (Convert to long for nn.Embedding)
+            input_cat1 = x[:, :, 0].long()
+            input_cat2 = x[:, :, 1].long()
+            input_cat3 = x[:, :, 2].long()
             # Extract numerical features
-            input_numerical = x[:, :, 2:]  # This will be (batch_size, seq_len, 2)
-            encoder_output = self.encoder(input_cat1, input_cat2, input_numerical)
+            input_numerical = x[:, :, 3:]  # This will be (batch_size, seq_len, 3)
+            encoder_output = self.encoder(
+                input_cat1, input_cat2, input_cat3, input_numerical)
             
             # Update the representation and return the predictions if rep_grad is True
             if self.rep_grad:
