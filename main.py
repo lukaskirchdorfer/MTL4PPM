@@ -3,9 +3,18 @@ import torch
 from src.data.dataset import ProcessLogDataset
 from src.utils.trainer import Trainer
 import os
+import logging
 
 import src.weighting as weighting_method
 from src.models.models import get_model
+
+
+# Configure logger
+logger = logging.getLogger('MTL_PPM_Logger') 
+logger.setLevel(logging.INFO) 
+# Create a formatter and set it for both handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Train process prediction models')
     
@@ -108,15 +117,26 @@ def main():
     args = parse_args()
     kwargs = prepare_kwargs(args)
     
-    # Create save directory if it doesn't exist
-    os.makedirs(args.save_dir, exist_ok=True)
-    
-    # Load dataset
-    print(f'Loading data from {args.data_path}...')
-    
     # If 'multi' is specified, use all tasks
     tasks = ['next_activity', 'next_time', 'remaining_time'] if 'multi' in args.tasks else args.tasks
     
+    # Create save directory if it doesn't exist
+    dataset_name = os.path.splitext(os.path.basename(args.data_path))[0]
+    args.save_dir = os.path.join(args.save_dir, dataset_name)    
+    os.makedirs(args.save_dir, exist_ok=True)
+    
+    # set the logger to report important results
+    logger_path = os.path.join(
+        args.save_dir, f'{args.model}_{"_".join(tasks)}_{args.weighting}.log')   
+    file_handler = logging.FileHandler(logger_path)
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    
+    # Load dataset
+    print(f'Loading data from {args.data_path}...')
+    logger.info(f'Loading data from {args.data_path}...') 
+
     # Create the full dataset first
     full_dataset = ProcessLogDataset(
         csv_path=args.data_path,
@@ -131,9 +151,12 @@ def main():
     
     print(f'Train size: {len(train_dataset)}')
     print(f'Validation size: {len(val_dataset)}')
+    logger.info(f'Train size: {len(train_dataset)}')
+    logger.info(f'Validation size: {len(val_dataset)}')
     
     # Create model
     print('Initializing model...')
+    logger.info('Initializing model...')
     output_dims = {}
     if len(tasks) > 1:  # Multi-task case
         if 'next_activity' in tasks:
@@ -202,11 +225,13 @@ def main():
         weighting=args.weighting,
         patience=args.patience,
         min_delta= args.min_delta,
+        logger=logger,
         **kwargs
     )
     
     # Train model
     print('Starting training...')
+    logger.info('Starting training...')
     save_path = os.path.join(args.save_dir, f'{args.model}_{"_".join(tasks)}_model.pt')
     trainer.train(args.epochs, save_path)
     
