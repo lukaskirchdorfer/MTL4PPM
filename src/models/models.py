@@ -180,9 +180,9 @@ class Trans_Encoder(nn.Module):
         # Feature processing layers
         self.embedding_cat1 = nn.Embedding(self.num_activities, self.emb_dim)
         self.embedding_cat2 = nn.Embedding(self.num_resources, self.emb_dim) 
-        self.embedding_cat3 = nn.Embedding(self.num_days, self.emb_dim)
+        self.embedding_cat3 = nn.Embedding(self.num_days, 3)
         # Calculate the total input dimension for the Transformer (d_model)
-        self.d_model = 3 * self.emb_dim + self.num_feat_dim        
+        self.d_model = 2 * self.emb_dim + self.num_feat_dim + 3       
         # Positional encoding
         self.positional_encoding = PositionalEncoding(self.d_model, self.dropout)        
         # Transformer Encoder
@@ -252,7 +252,7 @@ def process_trans(weighting_class):
             self.num_layers = model_parameters["num_layers"]
             self.dropout = model_parameters["dropout"]
             self.pooling = model_parameters["pooling"] 
-            self.d_model = 3 * self.emb_dim + self.num_feat_dim 
+            self.d_model = 2 * self.emb_dim + self.num_feat_dim + 3
             # create Transformer encoder
             self.encoder = Trans_Encoder(
                 num_activities=self.num_activities,
