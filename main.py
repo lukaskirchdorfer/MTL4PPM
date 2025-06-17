@@ -30,6 +30,8 @@ def parse_args():
                       help='Model architecture to use')
     parser.add_argument('--hidden_dim', type=int, default=128,
                       help='Hidden dimension size')
+    parser.add_argument('--emb_dim', type=int, default=61,
+                      help='Embedding size for Transformer model')
     parser.add_argument('--num_layers', type=int, default=2,
                       help='Number of LSTM/Transformer layers')
     parser.add_argument('--num_filters', type=int, default=64,
@@ -67,6 +69,8 @@ def parse_args():
                       help='Minimum improvement observed for early stopping')
     parser.add_argument('--val_split', type=float, default=0.2,
                       help='Validation split ratio')
+    parser.add_argument('--test_split', type=float, default=0.2,
+                      help='Test split ratio')
     parser.add_argument('--save_dir', type=str, default='models',
                       help='Directory to save models')
     
@@ -144,15 +148,18 @@ def main():
     )
     
     # Split into train and validation sets
-    train_size = int((1 - args.val_split) * len(full_dataset))
-    val_size = len(full_dataset) - train_size
-    train_dataset, val_dataset = torch.utils.data.random_split(
-        full_dataset, [train_size, val_size])
-    
+    train_val_size = int((1 - args.test_split) * len(full_dataset))
+    train_size = int((1 - args.val_split) * train_val_size)    
+    val_size = train_val_size - train_size
+    test_size = len(full_dataset) - train_val_size
+    train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(
+        full_dataset, [train_size, val_size, test_size]) 
     print(f'Train size: {len(train_dataset)}')
     print(f'Validation size: {len(val_dataset)}')
+    print(f'Test size: {len(test_dataset)}')
     logger.info(f'Train size: {len(train_dataset)}')
     logger.info(f'Validation size: {len(val_dataset)}')
+    logger.info(f'Test size: {len(test_dataset)}')
     
     # Create model
     print('Initializing model...')
@@ -194,7 +201,7 @@ def main():
     elif args.model == 'Transformer':
         model_parameters = {
             "num_feat_dim": full_dataset.num_feat_dim,
-            "emb_dim": args.hidden_dim,
+            "emb_dim": args.emb_dim,
             "num_layers": args.num_layers,
             "num_heads": args.num_heads,
             "dropout": args.dropout,
@@ -220,6 +227,7 @@ def main():
         model=model,
         train_dataset=train_dataset,
         val_dataset=val_dataset,
+        test_dataset=test_dataset,
         batch_size=args.batch_size,
         learning_rate=args.learning_rate,
         device=args.device,
@@ -233,8 +241,22 @@ def main():
     # Train model
     print('Starting training...')
     logger.info('Starting training...')
-    save_path = os.path.join(args.save_dir, f'{args.model}_{"_".join(tasks)}_model.pt')
+    save_path = os.path.join(
+        args.save_dir, f'{args.model}_{"_".join(tasks)}_model.pt')
     trainer.train(args.epochs, save_path)
+    
+    # Inference on test dataset 
+    task_names = '_'.join(tasks)
+    if len(tasks) > 1:
+        learn_title = '_MTL_'+task_names+'_task_'
+    else:
+        learn_title = '_STL_'+task_names+'_task_'                
+    inference_name_lst = [
+        f"{args.model}_{learn_title}_{task}_{args.weighting}_.csv" 
+        for task in tasks]
+    inference_path_lst = [os.path.join(args.save_dir, name) 
+                          for name in inference_name_lst]
+    trainer.inference(inference_path_lst)
     
 if __name__ == '__main__':
     main() 

@@ -107,7 +107,6 @@ class ProcessLogDataset(Dataset):
     def _create_examples(self):
         """Create training examples for each event in each case"""
         examples = []
-        
         for case_id in self.case_ids:
             case_data = self.cases.get_group(case_id)
             case_data = case_data.sort_values(by='timestamp')
@@ -144,12 +143,13 @@ class ProcessLogDataset(Dataset):
                 if 'remaining_time' in self.tasks:
                     targets['remaining_time'] = target_event['remaining_time']
                 
+                # collect examples
                 examples.append({
                     'features': features,
                     'targets': targets,
-                    'seq_len': len(prefix)
-                })
-        
+                    'seq_len': len(prefix),
+                    'case_id': case_id
+                })                
         return examples
     
     def __len__(self):
@@ -172,7 +172,8 @@ class ProcessLogDataset(Dataset):
         return {
             'features': features,
             'targets': targets,
-            'seq_len': example['seq_len']
+            'seq_len': example['seq_len'],
+            'case_id': example['case_id']
         }
     
     @property

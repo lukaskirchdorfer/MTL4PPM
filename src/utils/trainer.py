@@ -4,10 +4,13 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import numpy as np
+import pandas as pd
+from collections import defaultdict
 
 
 class Trainer:
-    def __init__(self, model, train_dataset, val_dataset=None,
+    def __init__(self, model,
+                 train_dataset, val_dataset=None, test_dataset=None,
                  batch_size=32, learning_rate=0.001, device='cuda',
                  patience=10, min_delta=0.0, logger=None, **kwargs):
         """
@@ -17,6 +20,7 @@ class Trainer:
             model (nn.Module): PyTorch model
             train_dataset (Dataset): Training dataset
             val_dataset (Dataset): Validation dataset
+            test_dataset (Dataset): Test dataset
             batch_size (int): Batch size
             learning_rate (float): Learning rate
             device (str): Device to use for training
@@ -43,7 +47,11 @@ class Trainer:
         self.train_loader = DataLoader(
             train_dataset, batch_size=batch_size, shuffle=True)
         self.val_loader = DataLoader(
-            val_dataset, batch_size=batch_size, shuffle=False) if val_dataset else None
+            val_dataset, batch_size=batch_size, shuffle=True
+            ) if val_dataset else None
+        self.test_loader = DataLoader(
+            test_dataset, batch_size=batch_size, shuffle=False
+            ) if test_dataset else None
             
         # Initialize optimizer
         self.optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -123,15 +131,18 @@ class Trainer:
         for task in ['next_time', 'remaining_time']:
             if task in outputs and task in targets:
                 pred_days = torch.tensor([
-                    self.original_dataset.denormalize_time(p.item(), 'time_since_last' if task == 'next_time' else 'remaining_time')
+                    self.original_dataset.denormalize_time(
+                        p.item(),
+                        'time_since_last' if task == 'next_time' else 'remaining_time')
                     for p in outputs[task]
                 ]).to(self.device)
                 
                 target_days = torch.tensor([
-                    self.original_dataset.denormalize_time(t.item(), 'time_since_last' if task == 'next_time' else 'remaining_time')
+                    self.original_dataset.denormalize_time(
+                        t.item(),
+                        'time_since_last' if task == 'next_time' else 'remaining_time')
                     for t in targets[task]
-                ]).to(self.device)
-                
+                ]).to(self.device)                
                 mae = torch.mean(torch.abs(pred_days - target_days))
                 metrics[task] = {'mae_days': mae.item()}
         
@@ -207,9 +218,12 @@ class Trainer:
                 if task != 'next_activity':
                     pred = outputs[task].view(-1)  # Flatten predictions
                     target = targets[task].view(-1)  # Flatten targets
-                    train_losses[i] = self.loss_fns[task](pred, target, task)  # Pass task for time-based losses
+                    # Pass task for time-based losses
+                    train_losses[i] = self.loss_fns[task](pred, target, task)  
                 else:
-                    train_losses[i] = self.loss_fns[task](outputs[task], targets[task])  # Don't pass task for CrossEntropyLoss
+                    # Don't pass task for CrossEntropyLoss
+                    train_losses[i] = self.loss_fns[task](
+                        outputs[task], targets[task])  
         return train_losses
     
     def validate(self):
@@ -227,7 +241,8 @@ class Trainer:
             for batch in tqdm(self.val_loader, desc='Validation'):
                 # Move batch to device
                 features = batch['features'].to(self.device)
-                targets = {k: v.to(self.device) for k, v in batch['targets'].items()}
+                targets = {
+                    k: v.to(self.device) for k, v in batch['targets'].items()}
                 
                 # Forward pass
                 outputs = self.model(features)
@@ -288,16 +303,13 @@ class Trainer:
         
         
         for epoch in range(num_epochs):
-            self.model.epoch = epoch
-            
+            self.model.epoch = epoch            
             # Train
             train_loss, train_task_losses, train_metrics = self.train_epoch()
-            self.model.train_loss_buffer[:, epoch] = self.loss_item
-            
+            self.model.train_loss_buffer[:, epoch] = self.loss_item            
             # Validate
             if self.val_loader:
-                val_loss, val_task_losses, val_metrics = self.validate()
-            
+                val_loss, val_task_losses, val_metrics = self.validate()            
             # Print metrics in table format
             metrics_str = f"{epoch + 1:3d}"
             for task in self.active_tasks:
@@ -338,3 +350,93 @@ class Trainer:
                 if save_path and train_loss < self.best_val_loss:
                     self.best_val_loss = train_loss
                     torch.save(self.model.state_dict(), save_path)
+    
+                    
+    def inference(self, inf_path=None):
+        if not self.test_loader:
+            return           
+        self.model.eval()
+        metrics_sum = {task: {metric: 0.0 for metric in self.metrics[task].keys()} 
+                      for task in self.active_tasks} 
+        results = defaultdict(lambda: {'case_id': [], 'prefix_length': [],
+                                       'ground_truth': [], 'prediction': []})
+        with torch.no_grad():
+            for batch in tqdm(self.test_loader, desc='Test'):
+                # Move batch to device
+                case_ids = batch['case_id'].to(self.device)
+                prefix_lengths = batch['seq_len'].to(self.device)
+                features = batch['features'].to(self.device)
+                targets = {
+                    k: v.to(self.device) for k, v in batch['targets'].items()}                
+                # Forward pass
+                outputs = self.model(features)
+                # Compute and accumulate metrics
+                batch_metrics = self._compute_metrics(outputs, targets)
+                for task, task_metrics in batch_metrics.items():
+                    for metric, value in task_metrics.items():
+                        metrics_sum[task][metric] += value
+                        
+                # Get the most probable class for the classification task         
+                if 'next_activity' in outputs and 'next_activity' in targets:
+                    outputs['next_activity'] = outputs['next_activity'].argmax(dim=-1)  
+                # Reverse normalization for regression tasks
+                for task in ['next_time', 'remaining_time']:
+                    if task in outputs and task in targets:
+                        pred_days = torch.tensor([
+                            self.original_dataset.denormalize_time(
+                                p.item(),
+                                'time_since_last' if task == 'next_time' else 'remaining_time')
+                            for p in outputs[task]
+                        ]).to(self.device)                        
+                        target_days = torch.tensor([
+                            self.original_dataset.denormalize_time(
+                                t.item(),
+                                'time_since_last' if task == 'next_time' else 'remaining_time')
+                            for t in targets[task]
+                        ]).to(self.device)  
+                        outputs[task] = pred_days
+                        targets[task] = target_days                    
+                for task in self.active_tasks:
+                    gt = targets[task].detach().cpu().numpy()
+                    pred = outputs[task].detach().cpu().numpy()
+                    # Handle shape for regression (squeeze 1D)
+                    if pred.ndim == 2 and pred.shape[1] == 1:
+                        pred = pred.squeeze(-1)
+                    if gt.ndim == 2 and gt.shape[1] == 1:
+                        gt = gt.squeeze(-1)
+                    # Append batch results
+                    results[task]['case_id'].extend(case_ids.tolist())
+                    results[task]['prefix_length'].extend(prefix_lengths.tolist())
+                    results[task]['ground_truth'].extend(gt.tolist())
+                    results[task]['prediction'].extend(pred.tolist())
+                    
+        # convert inference results to dataframes
+        task_counter = 0
+        for task in self.active_tasks:
+            current_df = pd.DataFrame({
+                'case_id': results[task]['case_id'],
+                'prefix_length': results[task]['prefix_length'],
+                'ground_truth': results[task]['ground_truth'],
+                'prediction': results[task]['prediction']})            
+            current_df.to_csv(inf_path[task_counter], index=False)
+            task_counter += 1        
+        
+        # Calculate average metrics
+        num_batches = len(self.test_loader)      
+        avg_metrics = {
+            task: {metric: value / num_batches 
+                  for metric, value in metrics_sum[task].items()}
+            for task in self.active_tasks
+        }  
+        metrics_str = ''
+        header = ''
+        for task in self.active_tasks:
+            if task == 'next_activity':
+                header += f" | {task.upper()}   Accuracy"
+            else:
+                header += f" | {task.upper()}   MAE(Days)"
+            metrics_str += f" | {list(avg_metrics[task].values())[0]:.4f}"
+        print(header)
+        print(metrics_str)
+        self.logger.info(header)
+        self.logger.info(metrics_str)
