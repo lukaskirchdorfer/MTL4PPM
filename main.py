@@ -120,6 +120,8 @@ def main():
     # Parse arguments
     args = parse_args()
     kwargs = prepare_kwargs(args)
+
+    print(f"Device: {args.device}")
     
     # If 'multi' is specified, use all tasks
     tasks = ['next_activity', 'next_time', 'remaining_time'] if 'multi' in args.tasks else args.tasks
