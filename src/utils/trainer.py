@@ -82,30 +82,11 @@ class Trainer:
     def _time_loss_fn(self, pred, target, task):
         """
         Custom loss function for time-based tasks that computes MAE in days
-        
-        Args:
-            pred (torch.Tensor): Model predictions (normalized)
-            target (torch.Tensor): Ground truth values (normalized)
-            task (str): Name of the task ('next_time' or 'remaining_time')
-            
-        Returns:
-            torch.Tensor: MAE loss in days
         """
-        # Determine which feature we're predicting based on the task
         feature_name = 'time_since_last' if task == 'next_time' else 'remaining_time'
-        
-        # Denormalize predictions and targets
-        pred_days = torch.tensor([
-            self.original_dataset.denormalize_time(p.item(), feature_name)
-            for p in pred
-        ]).to(self.device)
-        
-        target_days = torch.tensor([
-            self.original_dataset.denormalize_time(t.item(), feature_name)
-            for t in target
-        ]).to(self.device)
-        
-        # Compute MAE in days
+        # Use the tensor version for differentiability
+        pred_days = self.original_dataset.denormalize_time_tensor(pred, feature_name)
+        target_days = self.original_dataset.denormalize_time_tensor(target, feature_name)
         return torch.mean(torch.abs(pred_days - target_days))
     
     def _compute_metrics(self, outputs, targets):

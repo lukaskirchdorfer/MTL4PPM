@@ -103,6 +103,17 @@ class ProcessLogDataset(Dataset):
         denormalized = normalized_value * self.time_stds[feature_name] + self.time_means[feature_name]
         # Reverse log transformation
         return np.expm1(denormalized)
+
+    def denormalize_time_tensor(self, normalized_tensor, feature_name):
+        """
+        Vectorized version for PyTorch tensors (keeps computation graph).
+        """
+        if feature_name not in self.time_means:
+            raise ValueError(f"Unknown time feature: {feature_name}")
+        mean = torch.tensor(self.time_means[feature_name], device=normalized_tensor.device, dtype=normalized_tensor.dtype)
+        std = torch.tensor(self.time_stds[feature_name], device=normalized_tensor.device, dtype=normalized_tensor.dtype)
+        denormalized = normalized_tensor * std + mean
+        return torch.expm1(denormalized)
     
     def _create_examples(self):
         """Create training examples for each event in each case"""
