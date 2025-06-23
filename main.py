@@ -242,7 +242,8 @@ def main():
     print('Starting training...')
     logger.info('Starting training...')
     save_path = os.path.join(
-        args.save_dir, f'{args.model}_{"_".join(tasks)}_model.pt')
+        args.save_dir,
+        f'{args.model}_{"_".join(tasks)}_{args.weighting}_model.pt')
     trainer.train(args.epochs, save_path)
     
     # Inference on test dataset 

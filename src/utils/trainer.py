@@ -353,6 +353,8 @@ class Trainer:
     
                     
     def inference(self, inf_path=None):
+        print('Now: Inference on Test set.')
+        self.logger.info('Now: Inference on Test set.')
         if not self.test_loader:
             return           
         self.model.eval()
@@ -362,9 +364,9 @@ class Trainer:
                                        'ground_truth': [], 'prediction': []})
         with torch.no_grad():
             for batch in tqdm(self.test_loader, desc='Test'):
+                case_ids = batch['case_id']
+                prefix_lengths = batch['seq_len']
                 # Move batch to device
-                case_ids = batch['case_id'].to(self.device)
-                prefix_lengths = batch['seq_len'].to(self.device)
                 features = batch['features'].to(self.device)
                 targets = {
                     k: v.to(self.device) for k, v in batch['targets'].items()}                
@@ -405,8 +407,8 @@ class Trainer:
                     if gt.ndim == 2 and gt.shape[1] == 1:
                         gt = gt.squeeze(-1)
                     # Append batch results
-                    results[task]['case_id'].extend(case_ids.tolist())
-                    results[task]['prefix_length'].extend(prefix_lengths.tolist())
+                    results[task]['case_id'].extend(case_ids)
+                    results[task]['prefix_length'].extend(prefix_lengths)
                     results[task]['ground_truth'].extend(gt.tolist())
                     results[task]['prediction'].extend(pred.tolist())
                     
@@ -417,7 +419,9 @@ class Trainer:
                 'case_id': results[task]['case_id'],
                 'prefix_length': results[task]['prefix_length'],
                 'ground_truth': results[task]['ground_truth'],
-                'prediction': results[task]['prediction']})            
+                'prediction': results[task]['prediction']}) 
+            current_df['prefix_length'] = current_df[
+                'prefix_length'].apply(lambda x: x.item())
             current_df.to_csv(inf_path[task_counter], index=False)
             task_counter += 1        
         
