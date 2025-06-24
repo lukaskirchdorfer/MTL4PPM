@@ -48,18 +48,15 @@ def parse_log_files(log_dir):
                 values_line_clean = last_line.split(" - ")[-1]
                 values = [float(v.strip()) for v in values_line_clean.split('|') if v.strip()]
                 # Map values to tasks if available
-                #for task, value in zip(tasks, values):
-                    #col = task.upper()
-                    #if col in metrics:
-                        #metrics[col] = value
-                print(tasks, values)
                 for task_name, val in zip(tasks, values):
                     key = task_name.strip().upper()
                     metrics[key] = val
             except Exception as e:
                 print(f"Error reading {file}: {e}")
             results.append(metrics)
-    return pd.DataFrame(results)
+    df = pd.DataFrame(results)
+    df = df.sort_values(by='Model')
+    return df
 
 
 def main():
