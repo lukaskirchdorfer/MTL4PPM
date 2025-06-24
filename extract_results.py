@@ -6,7 +6,6 @@ Created on Tue Jun 24 14:20:58 2025
 
 import os
 import pandas as pd
-import re
 import argparse
 
 def parse_log_files(log_dir):
@@ -20,6 +19,8 @@ def parse_log_files(log_dir):
                 continue  # skip malformed filenames
             model = parts[0]
             mtl = parts[-1]
+            if mtl == 'MTL':
+                mtl = 'Nash_MTL'
             tasks = [parts[1:-1][i] + "_" + parts[1:-1][i+1] 
                      for i in range(0, len(parts[1:-1]) - 1, 2)]
             tasks = [x for x in tasks 
