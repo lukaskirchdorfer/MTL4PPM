@@ -6,7 +6,7 @@ import os
 import logging
 
 import src.weighting as weighting_method
-from src.models.models import get_model
+from src.models.models import get_model, init_weights
 
 
 # Configure logger
@@ -223,6 +223,8 @@ def main():
         device=args.device,
         rep_grad=args.rep_grad,
     )
+    
+    model.apply(init_weights)    
     
     # Initialize trainer with the full dataset
     trainer = Trainer(

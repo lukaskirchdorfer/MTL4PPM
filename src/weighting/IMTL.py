@@ -29,11 +29,14 @@ class IMTL(AbsWeighting):
         D = grads[0:1].repeat(self.task_num-1, 1) - grads[1:]
         U = grads_unit[0:1].repeat(self.task_num-1, 1) - grads_unit[1:]
         # TODO: Check whether the following 4 lines work or not!
-        A = torch.matmul(D, U.t())
-        epsilon = 1e-6
-        A += epsilon * torch.eye(A.size(0), device=A.device)
-        alpha = torch.matmul(torch.matmul(grads[0], U.t()), torch.inverse(A))
-        #alpha = torch.matmul(torch.matmul(grads[0], U.t()), torch.inverse(torch.matmul(D, U.t())))
+        try:
+            alpha = torch.matmul(
+                torch.matmul(grads[0], U.t()), 
+                torch.inverse(torch.matmul(D, U.t())))
+        except:
+            A = torch.matmul(D, U.t())
+            alpha = torch.matmul(
+                torch.matmul(grads[0], U.t()), torch.linalg.pinv(A))
         alpha = torch.cat((1-alpha.sum().unsqueeze(0), alpha), dim=0)
         
         if self.rep_grad:
