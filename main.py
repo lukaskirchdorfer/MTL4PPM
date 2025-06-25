@@ -224,8 +224,10 @@ def main():
         rep_grad=args.rep_grad,
     )
     
-    model.apply(init_weights)    
-    
+    model.apply(init_weights)  
+    if args.model == 'Transformer':
+        model = model.double()
+        
     # Initialize trainer with the full dataset
     trainer = Trainer(
         model=model,
