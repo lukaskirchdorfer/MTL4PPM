@@ -176,13 +176,12 @@ class Trans_Encoder(nn.Module):
         self.num_layers = num_layers
         self.dropout = dropout
         self.pooling = pooling
-
         # Feature processing layers
         self.embedding_cat1 = nn.Embedding(self.num_activities, self.emb_dim)
         self.embedding_cat2 = nn.Embedding(self.num_resources, self.emb_dim) 
         self.embedding_cat3 = nn.Embedding(self.num_days, 3)
         # Calculate the total input dimension for the Transformer (d_model)
-        self.d_model = 2 * self.emb_dim + self.num_feat_dim + 3       
+        self.d_model = 2 * self.emb_dim + self.num_feat_dim + 3   
         # Positional encoding
         self.positional_encoding = PositionalEncoding(self.d_model, self.dropout)        
         # Transformer Encoder
@@ -208,7 +207,7 @@ class Trans_Encoder(nn.Module):
         # Add positional encoding
         combined_features = self.positional_encoding(combined_features)        
         # Pass through Transformer Encoder
-        transformer_output = self.transformer_encoder(combined_features)        
+        transformer_output = self.transformer_encoder(combined_features)  
         # transformer_output: (batch_size, seq_len, d_model)
         if self.pooling == 'mean':
             pooled_output = transformer_output.mean(dim=1)
