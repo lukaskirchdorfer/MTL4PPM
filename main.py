@@ -198,7 +198,7 @@ def main():
             "kernel_size": args.kernel_size,
             "dropout": args.dropout,
             "num_activities": full_dataset.num_activities,
-            "max_len": args.max_len,
+            "max_len": full_dataset.max_len,
         }
     elif args.model == 'Transformer':
         model_parameters = {

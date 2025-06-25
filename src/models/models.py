@@ -412,20 +412,30 @@ def process_cnn(weighting_class):
                 nn.Dropout(model_parameters["dropout"]),
             )
 
+            # Calculate the correct flatten size by doing a forward pass with a dummy input
+            # Use the actual max_len from the dataset
+            seq_len = model_parameters.get("max_len")
+            dummy_input = torch.randn(1, seq_len, model_parameters["input_dim"])
+            with torch.no_grad():
+                # Reshape for CNN: (batch_size, input_dim, seq_len)
+                dummy_input = dummy_input.transpose(1, 2)
+                # CNN forward pass
+                dummy_output = self.encoder(dummy_input)
+                # Flatten the output
+                dummy_output = dummy_output.view(dummy_output.size(0), -1)
+                actual_flatten_size = dummy_output.size(1)
+            print(f"actual_flatten_size: {actual_flatten_size}")
             
-            # We'll calculate the flatten size in the first forward pass
-            self.flatten_size = None
-            
-            # Task-specific output layers
+            # Task-specific output layers - initialize properly like LSTM/Transformer
             self.task_heads = nn.ModuleDict()
+            print(f"output_dims: {output_dims}")
 
             for task_name, dim in output_dims.items():
                 if task_name != 'next_activity':
-                    # Will be initialized in first forward pass
-                    self.task_heads[task_name] = None  
+                    self.task_heads[task_name] = nn.Linear(actual_flatten_size, dim)
                 else:
-                    # Will be initialized in first forward pass
-                    self.task_heads[task_name] = None  
+                    self.task_heads[task_name] = nn.Linear(
+                        actual_flatten_size, model_parameters["num_activities"])
             self.task_name = list(output_dims.keys())
             
         def forward(self, x):
@@ -445,19 +455,6 @@ def process_cnn(weighting_class):
             
             # Flatten the output
             x = x.view(x.size(0), -1)
-            
-            # Initialize task heads if this is the first forward pass
-            if self.flatten_size is None:
-                self.flatten_size = x.size(1)
-                for task_name, dim in self.output_dims.items():
-                    if task_name != 'next_activity':
-                        self.task_heads[task_name] = nn.Linear(
-                            self.flatten_size, dim).to(self.device)
-                    else:
-                        self.task_heads[task_name] = nn.Linear(
-                            self.flatten_size, 
-                            self.model_parameters["num_activities"]
-                            ).to(self.device)
             
             # Update the representation and return the predictions if rep_grad is True
             if self.rep_grad:
@@ -515,3 +512,13 @@ def init_weights(m):
         nn.init.xavier_uniform_(m.weight)
         if m.bias is not None:
             nn.init.constant_(m.bias, 0)
+    elif isinstance(m, nn.Conv1d):
+        nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+        if m.bias is not None:
+            nn.init.constant_(m.bias, 0)
+    elif isinstance(m, nn.LSTM):
+        for name, param in m.named_parameters():
+            if 'weight' in name:
+                nn.init.xavier_uniform_(param)
+            elif 'bias' in name:
+                nn.init.constant_(param, 0)

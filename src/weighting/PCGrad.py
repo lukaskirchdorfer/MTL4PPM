@@ -30,15 +30,10 @@ class PCGrad(AbsWeighting):
             task_index = list(range(self.task_num))
             random.shuffle(task_index)
             for tn_j in task_index:
-                # skip projection if the gradient of a task is small
-                norm_gj_sq = grads[tn_j].norm().pow(2)
-                # threshold to avoid unstable scaling
-                if norm_gj_sq > 1e-6:  
-                    # this line is replaced
-                    g_ij = torch.dot(pc_grads[tn_i], grads[tn_j])
-                    if g_ij < 0:
-                        pc_grads[tn_i] -= g_ij * grads[tn_j] / (grads[tn_j].norm().pow(2)+1e-8)
-                        batch_weight[tn_j] -= (g_ij/(grads[tn_j].norm().pow(2)+1e-8)).item()
+                g_ij = torch.dot(pc_grads[tn_i], grads[tn_j])
+                if g_ij < 0:
+                    pc_grads[tn_i] -= g_ij * grads[tn_j] / (grads[tn_j].norm().pow(2)+1e-8)
+                    batch_weight[tn_j] -= (g_ij/(grads[tn_j].norm().pow(2)+1e-8)).item()
         new_grads = pc_grads.sum(0)
         self._reset_grad(new_grads)
         return batch_weight
