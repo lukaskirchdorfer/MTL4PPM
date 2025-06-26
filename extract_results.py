@@ -21,6 +21,10 @@ def parse_log_files(log_dir):
             mtl = parts[-1]
             if mtl == 'MTL':
                 mtl = 'Nash_MTL'
+            elif mtl == 'O':
+                mtl = 'UW_O'
+            elif mtl == 'SO':
+                mtl = 'UW_SO'
             tasks = [parts[1:-1][i] + "_" + parts[1:-1][i+1] 
                      for i in range(0, len(parts[1:-1]) - 1, 2)]
             tasks = [x for x in tasks 
