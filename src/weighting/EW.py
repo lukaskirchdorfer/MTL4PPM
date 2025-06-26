@@ -15,6 +15,7 @@ class EW(AbsWeighting):
         super(EW, self).__init__()
         
     def backward(self, losses, **kwargs):
+        grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
         loss = torch.mul(losses, torch.ones_like(losses).to(self.device)).sum()
         loss.backward()
-        return np.ones(len(losses))
+        return np.ones(len(losses)), grads

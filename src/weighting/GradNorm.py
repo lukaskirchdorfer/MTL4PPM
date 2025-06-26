@@ -42,8 +42,9 @@ class GradNorm(AbsWeighting):
                 self._backward_new_grads(loss_weight, per_grads=per_grads)
             else:
                 self._backward_new_grads(loss_weight, grads=grads)
-            return loss_weight.cpu().numpy()
+            return loss_weight.cpu().numpy(), grads
         else:
+            grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
             loss = torch.mul(losses, torch.ones_like(losses).to(self.device)).sum()
             loss.backward()
-            return np.ones(self.task_num)
+            return np.ones(self.task_num), grads

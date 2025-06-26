@@ -50,4 +50,4 @@ class GradDrop(AbsWeighting):
         else:
             for tn, task in enumerate(self.task_name):
                 self.rep[task].backward(transformed_grad[tn], retain_graph=True)
-        return None
+        return None, grads

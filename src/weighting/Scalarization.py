@@ -17,10 +17,11 @@ class Scalarization(AbsWeighting):
         super(Scalarization, self).__init__()
 
     def backward(self, losses, **kwargs):
+        grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
         scalar_weights = kwargs["scalar_weights"]
         if scalar_weights is None:
             raise ValueError("scalar_weights must be provided")
         weights = torch.tensor(scalar_weights).to(self.device)
         loss = torch.mul(losses, weights).sum()
         loss.backward()
-        return weights.detach().cpu().numpy()
+        return weights.detach().cpu().numpy(), grads

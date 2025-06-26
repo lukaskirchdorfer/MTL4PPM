@@ -16,7 +16,8 @@ class GLS(AbsWeighting):
         super(GLS, self).__init__()
         
     def backward(self, losses, **kwargs):
+        grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
         loss = torch.pow(losses.prod(), 1./self.task_num)
         loss.backward()
         batch_weight = losses / (self.task_num * losses.prod())
-        return batch_weight.detach().cpu().numpy()
+        return batch_weight.detach().cpu().numpy(), grads
