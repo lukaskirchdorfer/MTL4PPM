@@ -6,6 +6,7 @@ from tqdm import tqdm
 import numpy as np
 import pandas as pd
 from collections import defaultdict
+import json
 
 
 class Trainer:
@@ -135,6 +136,7 @@ class Trainer:
         self.model.train() # set model in training mode
         total_loss = 0
         task_losses = {task: 0 for task in self.active_tasks}
+        task_weights_dic = {task: [] for task in self.active_tasks}
         metrics_sum = {task: {metric: 0.0 for metric in self.metrics[task].keys()} 
                       for task in self.active_tasks}
         
@@ -168,10 +170,14 @@ class Trainer:
             # Backward pass
             if self.multi_task:
                 task_weights = self.model.backward(train_losses, **self.kwargs)
+                for idx, task in enumerate(self.active_tasks):
+                    task_weights_dic[task].append(task_weights[idx])
             else:
                 loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
+        
+        task_weights_dic = {k: sum(v)/len(v) for k, v in task_weights_dic.items()}
         
         # Calculate average losses and metrics
         num_batches = len(self.train_loader)
@@ -191,7 +197,7 @@ class Trainer:
         for i, task in enumerate(self.active_tasks):
             self.loss_item[i] = avg_task_losses[task]
         
-        return avg_loss, avg_task_losses, avg_metrics
+        return avg_loss, avg_task_losses, avg_metrics, task_weights_dic
     
     def _compute_loss(self, outputs, targets):
         """Compute losses for all active tasks"""
@@ -264,7 +270,7 @@ class Trainer:
         
         return avg_loss, avg_task_losses, avg_metrics
     
-    def train(self, num_epochs, save_path=None):
+    def train(self, num_epochs, save_path=None, weight_path=None):
         """Train the model for multiple epochs"""       
         # Reset early stopping state for a new training run
         self.best_val_loss = float('inf')
@@ -285,11 +291,16 @@ class Trainer:
         self.logger.info(f'\n{header}')
         self.logger.info('-' * len(header))
         
-        
+        all_task_weights = None
         for epoch in range(num_epochs):
             self.model.epoch = epoch            
             # Train
-            train_loss, train_task_losses, train_metrics = self.train_epoch()
+            train_loss, train_task_losses, train_metrics, task_weights_dic = self.train_epoch()
+            if all_task_weights is None:
+                all_task_weights = {k: [v] for k, v in task_weights_dic.items()}
+            else:
+                for k in task_weights_dic:
+                    all_task_weights[k].append(task_weights_dic[k])
             self.model.train_loss_buffer[:, epoch] = self.loss_item            
             # Validate
             if self.val_loader:
@@ -334,7 +345,9 @@ class Trainer:
                 if save_path and train_loss < self.best_val_loss:
                     self.best_val_loss = train_loss
                     torch.save(self.model.state_dict(), save_path)
-    
+
+        print(all_task_weights)
+        json.dump({k: [float(x) for x in v] for k, v in all_task_weights.items()}, open(weight_path, "w"))
                     
     def inference(self, inf_path=None):
         print('Now: Inference on Test set.')

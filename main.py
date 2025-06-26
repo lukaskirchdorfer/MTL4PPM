@@ -255,7 +255,11 @@ def main():
     save_path = os.path.join(
         args.save_dir,
         f'{args.model}_{"_".join(tasks)}_{mtl_name}_model.pt')
-    trainer.train(args.epochs, save_path)
+    weight_path = os.path.join(
+        args.save_dir,
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_task_weights.json')
+    trainer.train(args.epochs, save_path, weight_path)
+    
     
     # Inference on test dataset 
     task_names = '_'.join(tasks)
