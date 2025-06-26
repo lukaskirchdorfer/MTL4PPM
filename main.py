@@ -130,10 +130,15 @@ def main():
     dataset_name = os.path.splitext(os.path.basename(args.data_path))[0]
     args.save_dir = os.path.join(args.save_dir, dataset_name)    
     os.makedirs(args.save_dir, exist_ok=True)
+    # Name of the MTL approach for saving results and reports
+    if args.weighting == 'UW_SO' and not args.use_softmax:
+        mtl_name = 'UW_O'
+    else:
+        mtl_name = args.weighting      
     
     # set the logger to report important results
     logger_path = os.path.join(
-        args.save_dir, f'{args.model}_{"_".join(tasks)}_{args.weighting}.log')   
+        args.save_dir, f'{args.model}_{"_".join(tasks)}_{mtl_name}.log')   
     file_handler = logging.FileHandler(logger_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
@@ -249,7 +254,7 @@ def main():
     logger.info('Starting training...')
     save_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{args.weighting}_model.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_model.pt')
     trainer.train(args.epochs, save_path)
     
     # Inference on test dataset 
@@ -259,7 +264,7 @@ def main():
     else:
         learn_title = '_STL_'+task_names+'_task_'                
     inference_name_lst = [
-        f"{args.model}_{learn_title}_{task}_{args.weighting}_.csv" 
+        f"{args.model}_{learn_title}_{task}_{mtl_name}_.csv" 
         for task in tasks]
     inference_path_lst = [os.path.join(args.save_dir, name) 
                           for name in inference_name_lst]

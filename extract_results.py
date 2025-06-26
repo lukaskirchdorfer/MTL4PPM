@@ -55,9 +55,16 @@ def parse_log_files(log_dir):
             except Exception as e:
                 print(f"Error reading {file}: {e}")
             results.append(metrics)
-    df = pd.DataFrame(results)
-    df = df.sort_values(by='Model')
-    return df
+    df = pd.DataFrame(results) 
+    # sorting the dataframe
+    metric_cols = ['NEXT_ACTIVITY', 'NEXT_TIME', 'REMAINING_TIME']
+    # Create a binary signature string
+    # like '110' meaning: [NEXT_ACTIVITY, NEXT_TIME, REMAINING_TIME] are [notna, notna, na]
+    df['metric_signature'] = df[metric_cols].notna().astype(int).astype(str).agg(''.join, axis=1)
+    # Sort by Model and then by the metric signature
+    df_sorted = df.sort_values(by=['Model', 'metric_signature'], ascending=[True, False])    
+    df_sorted = df_sorted.drop(columns='metric_signature')
+    return df_sorted
 
 
 def main():

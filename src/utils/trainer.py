@@ -131,8 +131,8 @@ class Trainer:
     
     def train_epoch(self):
         """Train for one epoch"""        
-        self.model = self.model.to(self.device) # stability on GPU
-        self.model.train()
+        self.model = self.model.to(self.device) # move model to device
+        self.model.train() # set model in training mode
         total_loss = 0
         task_losses = {task: 0 for task in self.active_tasks}
         metrics_sum = {task: {metric: 0.0 for metric in self.metrics[task].keys()} 
@@ -143,10 +143,9 @@ class Trainer:
             
             # Move batch to device
             features = batch['features'].to(self.device)
-            # Match features to model's dtype
+            # Match features to model's dtype (for same numerical precision)
             model_dtype = next(self.model.parameters()).dtype
             features = features.to(dtype=model_dtype)
-            #features = features.double()  # numeric stability on GPU  
             targets = {k: v.to(self.device) for k, v in batch['targets'].items()}
             
             # Forward pass
