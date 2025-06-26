@@ -137,6 +137,7 @@ class Trainer:
         total_loss = 0
         task_losses = {task: 0 for task in self.active_tasks}
         task_weights_dic = {task: [] for task in self.active_tasks}
+        gradient_dic = {task: [] for task in self.active_tasks}
         metrics_sum = {task: {metric: 0.0 for metric in self.metrics[task].keys()} 
                       for task in self.active_tasks}
         
@@ -169,15 +170,18 @@ class Trainer:
 
             # Backward pass
             if self.multi_task:
-                task_weights = self.model.backward(train_losses, **self.kwargs)
+                task_weights, grads = self.model.backward(train_losses, **self.kwargs)
                 for idx, task in enumerate(self.active_tasks):
                     task_weights_dic[task].append(task_weights[idx])
+                    gradient_dic[task].append(grads[idx].detach().cpu())
             else:
                 loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
         
+        # aggregate weights and gradients over all batches:
         task_weights_dic = {k: sum(v)/len(v) for k, v in task_weights_dic.items()}
+        gradient_dic = {k: torch.mean(torch.stack(v), dim=0) for k, v in gradient_dic.items()}
         
         # Calculate average losses and metrics
         num_batches = len(self.train_loader)
@@ -197,7 +201,8 @@ class Trainer:
         for i, task in enumerate(self.active_tasks):
             self.loss_item[i] = avg_task_losses[task]
         
-        return avg_loss, avg_task_losses, avg_metrics, task_weights_dic
+        return (avg_loss, avg_task_losses, avg_metrics,
+                task_weights_dic, gradient_dic)
     
     def _compute_loss(self, outputs, targets):
         """Compute losses for all active tasks"""
@@ -270,7 +275,8 @@ class Trainer:
         
         return avg_loss, avg_task_losses, avg_metrics
     
-    def train(self, num_epochs, save_path=None, weight_path=None):
+    def train(self, num_epochs, save_path=None,
+              weight_path=None, gradient_path=None):
         """Train the model for multiple epochs"""       
         # Reset early stopping state for a new training run
         self.best_val_loss = float('inf')
@@ -292,15 +298,23 @@ class Trainer:
         self.logger.info('-' * len(header))
         
         all_task_weights = None
+        all_gradients = None
         for epoch in range(num_epochs):
             self.model.epoch = epoch            
             # Train
-            train_loss, train_task_losses, train_metrics, task_weights_dic = self.train_epoch()
+            (train_loss, train_task_losses, train_metrics,
+             task_weights_dic, gradient_dic) = self.train_epoch()
             if all_task_weights is None:
                 all_task_weights = {k: [v] for k, v in task_weights_dic.items()}
             else:
                 for k in task_weights_dic:
                     all_task_weights[k].append(task_weights_dic[k])
+            if all_gradients is None:
+                all_gradients = {k: [v] for k, v in gradient_dic.items()}
+            else:
+                for k in gradient_dic:
+                    all_gradients[k].append(gradient_dic[k])                    
+                    
             self.model.train_loss_buffer[:, epoch] = self.loss_item            
             # Validate
             if self.val_loader:
@@ -346,8 +360,10 @@ class Trainer:
                     self.best_val_loss = train_loss
                     torch.save(self.model.state_dict(), save_path)
 
-        print(all_task_weights)
-        json.dump({k: [float(x) for x in v] for k, v in all_task_weights.items()}, open(weight_path, "w"))
+        json.dump({k: [float(x) for x in v] 
+                   for k, v in all_task_weights.items()},
+                  open(weight_path, "w"))
+        torch.save(all_gradients, gradient_path)
                     
     def inference(self, inf_path=None):
         print('Now: Inference on Test set.')

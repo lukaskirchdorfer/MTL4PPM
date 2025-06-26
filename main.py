@@ -258,7 +258,10 @@ def main():
     weight_path = os.path.join(
         args.save_dir,
         f'{args.model}_{"_".join(tasks)}_{mtl_name}_task_weights.json')
-    trainer.train(args.epochs, save_path, weight_path)
+    gradient_path = os.path.join(
+        args.save_dir,
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_gradient.pt')
+    trainer.train(args.epochs, save_path, weight_path, gradient_path)
     
     
     # Inference on test dataset 

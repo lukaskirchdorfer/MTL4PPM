@@ -36,4 +36,4 @@ class PCGrad(AbsWeighting):
                     batch_weight[tn_j] -= (g_ij/(grads[tn_j].norm().pow(2)+1e-8)).item()
         new_grads = pc_grads.sum(0)
         self._reset_grad(new_grads)
-        return batch_weight
+        return batch_weight, grads
