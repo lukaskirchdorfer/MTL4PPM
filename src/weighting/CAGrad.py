@@ -59,4 +59,4 @@ class CAGrad(AbsWeighting):
         else:
             raise ValueError('No support rescale type {}'.format(rescale))
         self._reset_grad(new_grads)
-        return w_cpu
+        return w_cpu, grads

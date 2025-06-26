@@ -28,7 +28,6 @@ class IMTL(AbsWeighting):
 
         D = grads[0:1].repeat(self.task_num-1, 1) - grads[1:]
         U = grads_unit[0:1].repeat(self.task_num-1, 1) - grads_unit[1:]
-        # TODO: Check whether the following 4 lines work or not!
         try:
             alpha = torch.matmul(
                 torch.matmul(grads[0], U.t()), 
@@ -43,4 +42,4 @@ class IMTL(AbsWeighting):
             self._backward_new_grads(alpha, per_grads=per_grads)
         else:
             self._backward_new_grads(alpha, grads=grads)
-        return alpha.detach().cpu().numpy()
+        return alpha.detach().cpu().numpy(), grads

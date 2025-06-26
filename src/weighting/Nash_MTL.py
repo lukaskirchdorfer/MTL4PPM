@@ -129,4 +129,4 @@ class Nash_MTL(AbsWeighting):
         if self.max_norm > 0:
             torch.nn.utils.clip_grad_norm_(self.get_share_params(), self.max_norm)
         
-        return alpha.detach().cpu().numpy()
+        return alpha.detach().cpu().numpy(), grads
