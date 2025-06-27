@@ -171,6 +171,7 @@ class Trainer:
             # Backward pass
             if self.multi_task:
                 task_weights, grads = self.model.backward(train_losses, **self.kwargs)
+                #print(task_weights)
                 for idx, task in enumerate(self.active_tasks):
                     task_weights_dic[task].append(task_weights[idx])
                     gradient_dic[task].append(grads[idx].detach().cpu())
@@ -178,10 +179,15 @@ class Trainer:
                 loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
-        
+            
+        print(task_weights_dic)
         # aggregate weights and gradients over all batches:
-        task_weights_dic = {k: sum(v)/len(v) for k, v in task_weights_dic.items()}
-        gradient_dic = {k: torch.mean(torch.stack(v), dim=0) for k, v in gradient_dic.items()}
+        if self.multi_task:
+                task_weights_dic = {
+                    k: sum(v)/len(v) for k, v in task_weights_dic.items()}
+                gradient_dic = {
+                    k: torch.mean(torch.stack(v), dim=0) 
+                    for k, v in gradient_dic.items()}
         
         # Calculate average losses and metrics
         num_batches = len(self.train_loader)
@@ -304,16 +310,19 @@ class Trainer:
             # Train
             (train_loss, train_task_losses, train_metrics,
              task_weights_dic, gradient_dic) = self.train_epoch()
-            if all_task_weights is None:
-                all_task_weights = {k: [v] for k, v in task_weights_dic.items()}
-            else:
-                for k in task_weights_dic:
-                    all_task_weights[k].append(task_weights_dic[k])
-            if all_gradients is None:
-                all_gradients = {k: [v] for k, v in gradient_dic.items()}
-            else:
-                for k in gradient_dic:
-                    all_gradients[k].append(gradient_dic[k])                    
+            if self.multi_task:
+                if all_task_weights is None:
+                    all_task_weights = {
+                        k: [v] for k, v in task_weights_dic.items()}
+                else:
+                    for k in task_weights_dic:
+                        all_task_weights[k].append(task_weights_dic[k])
+                if all_gradients is None:
+                    all_gradients = {
+                        k: [v] for k, v in gradient_dic.items()}
+                else:
+                    for k in gradient_dic:
+                        all_gradients[k].append(gradient_dic[k])                    
                     
             self.model.train_loss_buffer[:, epoch] = self.loss_item            
             # Validate
@@ -359,11 +368,11 @@ class Trainer:
                 if save_path and train_loss < self.best_val_loss:
                     self.best_val_loss = train_loss
                     torch.save(self.model.state_dict(), save_path)
-
-        json.dump({k: [float(x) for x in v] 
-                   for k, v in all_task_weights.items()},
-                  open(weight_path, "w"))
-        torch.save(all_gradients, gradient_path)
+        if self.multi_task:
+            json.dump({k: [float(x) for x in v] 
+                       for k, v in all_task_weights.items()},
+                      open(weight_path, "w"))
+            torch.save(all_gradients, gradient_path)
                     
     def inference(self, inf_path=None):
         print('Now: Inference on Test set.')
