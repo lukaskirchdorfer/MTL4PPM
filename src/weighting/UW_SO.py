@@ -28,7 +28,8 @@ class UW_SO(AbsWeighting):
             batch_weight = 1 / (losses_detached + E)
         else:
             batch_weight = F.softmax((1 / (losses_detached + E)) / T, dim=-1)
-        grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
+        self._compute_grad_dim()
+        grads = self._compute_grad(losses, mode='autograd') # [task_num, grad_dim]
         loss = (batch_weight * losses).sum()
         loss.backward()
         return batch_weight.detach().cpu().numpy(), grads

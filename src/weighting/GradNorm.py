@@ -8,12 +8,14 @@ from src.weighting.abstract_weighting import AbsWeighting
 class GradNorm(AbsWeighting):
     r"""Gradient Normalization (GradNorm).
     
-    This method is proposed in `GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks (ICML 2018) <http://proceedings.mlr.press/v80/chen18a/chen18a.pdf>`_ \
+    This method is proposed in `GradNorm: Gradient Normalization for 
+    Adaptive Loss Balancing in Deep Multitask Networks (ICML 2018) 
+    <http://proceedings.mlr.press/v80/chen18a/chen18a.pdf>`_ \
     and implemented by us.
 
     Args:
-        alpha (float, default=1.5): The strength of the restoring force which pulls tasks back to a common training rate.
-
+        alpha (float, default=1.5): The strength of the restoring force 
+        which pulls tasks back to a common training rate.
     """
     def __init__(self):
         super(GradNorm, self).__init__()
@@ -44,7 +46,8 @@ class GradNorm(AbsWeighting):
                 self._backward_new_grads(loss_weight, grads=grads)
             return loss_weight.cpu().numpy(), grads
         else:
-            grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
+            self._compute_grad_dim()
+            grads = self._compute_grad(losses, mode='autograd') # [task_num, grad_dim]
             loss = torch.mul(losses, torch.ones_like(losses).to(self.device)).sum()
             loss.backward()
             return np.ones(self.task_num), grads

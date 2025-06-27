@@ -26,7 +26,8 @@ class DWA(AbsWeighting):
             batch_weight = self.task_num*F.softmax(w_i/T, dim=-1)
         else:
             batch_weight = torch.ones_like(losses).to(self.device)
-        grads = self._compute_grad(losses, mode='backward') # [task_num, grad_dim]
+        self._compute_grad_dim()
+        grads = self._compute_grad(losses, mode='autograd') # [task_num, grad_dim]
         loss = torch.mul(losses, batch_weight).sum()
         loss.backward()
         return batch_weight.detach().cpu().numpy(), grads

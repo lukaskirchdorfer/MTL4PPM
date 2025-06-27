@@ -180,7 +180,6 @@ class Trainer:
             self.optimizer.step()
             total_loss += loss.item()
             
-        print(task_weights_dic)
         # aggregate weights and gradients over all batches:
         if self.multi_task:
                 task_weights_dic = {
@@ -188,6 +187,7 @@ class Trainer:
                 gradient_dic = {
                     k: torch.mean(torch.stack(v), dim=0) 
                     for k, v in gradient_dic.items()}
+        print(task_weights_dic)
         
         # Calculate average losses and metrics
         num_batches = len(self.train_loader)
