@@ -1,11 +1,13 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
 from collections import defaultdict
+from itertools import combinations
 import json
 
 
@@ -191,11 +193,11 @@ class Trainer:
             
         # aggregate weights and gradients over all batches:
         if self.multi_task:
-                task_weights_dic = {
-                    k: sum(v)/len(v) for k, v in task_weights_dic.items()}
-                gradient_dic = {
-                    k: torch.mean(torch.stack(v), dim=0) 
-                    for k, v in gradient_dic.items()}
+            task_weights_dic = {
+                k: sum(v)/len(v) for k, v in task_weights_dic.items()}
+            gradient_dic = {
+                k: torch.mean(torch.stack(v), dim=0)
+                for k, v in gradient_dic.items()}
         
         # Calculate average losses and metrics
         num_batches = len(self.train_loader)
@@ -290,7 +292,8 @@ class Trainer:
         return avg_loss, avg_task_losses, avg_metrics
     
     def train(self, num_epochs, save_path=None,
-              weight_path=None, gradient_path=None):
+              weight_path=None, gradient_cosine_path=None,
+              gradient_magnitude_path=None):
         """Train the model for multiple epochs"""       
         # Reset early stopping state for a new training run
         self.best_val_loss = float('inf')
@@ -312,25 +315,34 @@ class Trainer:
         self.logger.info('-' * len(header))
         
         all_task_weights = None
-        all_gradients = None
+        gradient_cosine, gradient_magnitude = {}, {}
         for epoch in range(num_epochs):
             self.model.epoch = epoch            
             # Train
             (train_loss, train_task_losses, train_metrics,
              task_weights_dic, gradient_dic) = self.train_epoch()
-            if self.multi_task:
+            # keep track of task weights and gradients (cosine & magnitude similarity)
+            if self.multi_task:                
                 if all_task_weights is None:
                     all_task_weights = {
                         k: [v] for k, v in task_weights_dic.items()}
                 else:
                     for k in task_weights_dic:
-                        all_task_weights[k].append(task_weights_dic[k])
-                if all_gradients is None:
-                    all_gradients = {
-                        k: [v] for k, v in gradient_dic.items()}
-                else:
-                    for k in gradient_dic:
-                        all_gradients[k].append(gradient_dic[k])                    
+                        all_task_weights[k].append(task_weights_dic[k])                        
+                for task1, task2 in combinations(gradient_dic.keys(), 2):
+                    key = f"{task1}_vs_{task2}"
+                    grad1 = gradient_dic[task1].detach().clone()
+                    grad2 = gradient_dic[task2].detach().clone()
+                    cosine = F.cosine_similarity(grad1, grad2, dim=0).item()
+                    if key not in gradient_cosine:
+                        gradient_cosine[key] = []
+                    gradient_cosine[key].append(cosine)  
+                    abs_diff = abs(torch.norm(grad1, p=2) - torch.norm(grad2, p=2))
+                    max_norm = max(torch.norm(grad1, p=2), torch.norm(grad2, p=2), 1e-8)
+                    mag_sim = 1 - abs_diff/max_norm
+                    if key not in gradient_magnitude:
+                        gradient_magnitude[key] = []
+                    gradient_magnitude[key].append(mag_sim) 
                     
             self.model.train_loss_buffer[:, epoch] = self.loss_item            
             # Validate
@@ -380,7 +392,9 @@ class Trainer:
             json.dump({k: [float(x) for x in v] 
                        for k, v in all_task_weights.items()},
                       open(weight_path, "w"))
-            torch.save(all_gradients, gradient_path)
+            torch.save(gradient_cosine, gradient_cosine_path)
+            torch.save(gradient_magnitude, gradient_magnitude_path)
+            
                     
     def inference(self, inf_path=None):
         print('Now: Inference on Test set.')
