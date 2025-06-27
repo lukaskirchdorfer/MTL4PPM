@@ -4,6 +4,8 @@ from src.data.dataset import ProcessLogDataset
 from src.utils.trainer import Trainer
 import os
 import logging
+import random
+import numpy as np
 
 import src.weighting as weighting_method
 from src.models.models import get_model, init_weights
@@ -73,6 +75,9 @@ def parse_args():
                       help='Test split ratio')
     parser.add_argument('--save_dir', type=str, default='models',
                       help='Directory to save models')
+    # add a random seed
+    parser.add_argument('--seed', type=int, default=42,
+                      help='Random seed')
     
     # Hardware arguments
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu',
@@ -121,6 +126,16 @@ def main():
     args = parse_args()
     kwargs = prepare_kwargs(args)
 
+    # Set random seeds for reproducibility
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(args.seed)
+        torch.cuda.manual_seed_all(args.seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
     print(f"Device: {args.device}")
     
     # If 'multi' is specified, use all tasks
@@ -159,8 +174,13 @@ def main():
     train_size = int((1 - args.val_split) * train_val_size)    
     val_size = train_val_size - train_size
     test_size = len(full_dataset) - train_val_size
+    
+    # Create generator for reproducible splitting
+    generator = torch.Generator()
+    generator.manual_seed(args.seed)
+    
     train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(
-        full_dataset, [train_size, val_size, test_size]) 
+        full_dataset, [train_size, val_size, test_size], generator=generator)
     print(f'Train size: {len(train_dataset)}')
     print(f'Validation size: {len(val_dataset)}')
     print(f'Test size: {len(test_dataset)}')
@@ -246,6 +266,7 @@ def main():
         patience=args.patience,
         min_delta= args.min_delta,
         logger=logger,
+        seed=args.seed,
         **kwargs
     )
     

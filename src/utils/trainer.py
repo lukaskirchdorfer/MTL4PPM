@@ -13,7 +13,7 @@ class Trainer:
     def __init__(self, model,
                  train_dataset, val_dataset=None, test_dataset=None,
                  batch_size=32, learning_rate=0.001, device='cuda',
-                 patience=10, min_delta=0.0, logger=None, **kwargs):
+                 patience=10, min_delta=0.0, logger=None, seed=42, **kwargs):
         """
         Trainer class for process prediction models
         
@@ -25,6 +25,10 @@ class Trainer:
             batch_size (int): Batch size
             learning_rate (float): Learning rate
             device (str): Device to use for training
+            patience (int): Patience for early stopping
+            min_delta (float): Minimum improvement for early stopping
+            logger: Logger instance
+            seed (int): Random seed for reproducibility
             **kwargs: Additional arguments
         """
         self.model = model.to(device)
@@ -32,6 +36,7 @@ class Trainer:
         self.logger = logger
         self.batch_size = batch_size
         self.kwargs = kwargs
+        self.seed = seed
         
         # Early Stopping parameters
         self.patience = patience
@@ -44,11 +49,15 @@ class Trainer:
         # Store the original dataset for time denormalization
         self.original_dataset = train_dataset.dataset if hasattr(train_dataset, 'dataset') else train_dataset
         
+        # Create generator for reproducible shuffling
+        self.generator = torch.Generator(device=device)
+        self.generator.manual_seed(seed)
+        
         # Create data loaders
         self.train_loader = DataLoader(
-            train_dataset, batch_size=batch_size, shuffle=True)
+            train_dataset, batch_size=batch_size, shuffle=True, generator=self.generator)
         self.val_loader = DataLoader(
-            val_dataset, batch_size=batch_size, shuffle=True
+            val_dataset, batch_size=batch_size, shuffle=True, generator=self.generator
             ) if val_dataset else None
         self.test_loader = DataLoader(
             test_dataset, batch_size=batch_size, shuffle=False
