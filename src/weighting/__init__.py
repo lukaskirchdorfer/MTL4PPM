@@ -13,6 +13,7 @@ from src.weighting.CAGrad import CAGrad
 from src.weighting.Nash_MTL import Nash_MTL
 from src.weighting.RLW import RLW
 from src.weighting.UW_SO import UW_SO
+from src.weighting.UW_O import UW_O
 from src.weighting.Scalarization import Scalarization
 
 __all__ = [
@@ -31,5 +32,6 @@ __all__ = [
     "Nash_MTL",
     "RLW",
     "UW_SO",
+    "UW_O",
     "Scalarization",
 ]

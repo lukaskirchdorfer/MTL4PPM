@@ -67,6 +67,10 @@ class Trainer:
             
         # Initialize optimizer
         self.optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+        # for i, param_group in enumerate(self.optimizer.param_groups):
+        #     print(f"Param group {i}:")
+        #     for j, p in enumerate(param_group['params']):
+        #         print(f"  Param {j}: shape = {tuple(p.shape)}, requires_grad = {p.requires_grad}")
         
         # Store the active tasks (from model's task heads)
         self.active_tasks = list(self.model.task_heads.keys())
@@ -182,7 +186,6 @@ class Trainer:
             # Backward pass
             if self.multi_task:
                 task_weights, grads = self.model.backward(train_losses, **self.kwargs)
-                #print(task_weights)
                 for idx, task in enumerate(self.active_tasks):
                     task_weights_dic[task].append(task_weights[idx])
                     gradient_dic[task].append(grads[idx].detach().cpu())
@@ -190,6 +193,11 @@ class Trainer:
                 loss.backward()
             self.optimizer.step()
             total_loss += loss.item()
+
+        # param_norm = sum(p.norm().item() for p in self.model.get_share_params())
+        # print(f"Epoch {self.model.epoch}, Param norm shared: {param_norm}")
+        # param_norm = sum(p.norm().item() for p in self.model.task_heads.parameters())
+        # print(f"Epoch {self.model.epoch}, Param norm task-specific: {param_norm}")
             
         # aggregate weights and gradients over all batches:
         if self.multi_task:
