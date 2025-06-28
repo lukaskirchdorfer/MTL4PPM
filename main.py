@@ -9,7 +9,7 @@ import numpy as np
 
 import src.weighting as weighting_method
 from src.models.models import get_model, init_weights
-
+from src.utils.utils import set_random_seed
 
 # Configure logger
 logger = logging.getLogger('MTL_PPM_Logger') 
@@ -50,7 +50,7 @@ def parse_args():
     parser.add_argument('--weighting', type=str, default='EW',
                       choices=['EW', 'UW', 'DWA', 'GLS', 'IMTL', 'RLW',
                                'CAGrad', 'GradNorm', 'GradDrop', 'PCGrad',
-                               'Nash_MTL', 'UW_SO', 'Scalarization'],
+                               'Nash_MTL', 'UW_SO', 'UW_O', 'Scalarization'],
                       help='Weighting strategy to use')
     
     # Task arguments
@@ -97,6 +97,14 @@ def parse_args():
     parser.add_argument("--scalar_weights", type=float, nargs='+', 
                         help="scalar weights for the tasks")
     
+    # GradNorm arguments
+    parser.add_argument("--alpha", type=float, default=1.5, 
+                        help="alpha parameter for the GradNorm method")
+    
+    # CAGrad arguments
+    parser.add_argument("--calpha", type=float, default=0.5, 
+                        help="calpha parameter for the CAGrad method")
+    
     return parser.parse_args()
 
 def prepare_kwargs(args):
@@ -104,10 +112,10 @@ def prepare_kwargs(args):
     if args.weighting == 'DWA':
         kwargs['T'] = 2.0
     elif args.weighting == 'CAGrad':
-        kwargs['calpha'] = 0.5
+        kwargs['calpha'] = args.calpha
         kwargs['rescale'] = 1
     elif args.weighting == 'GradNorm':
-        kwargs['alpha'] = 1.5
+        kwargs['alpha'] = args.alpha
     elif args.weighting == 'GradDrop':
         kwargs['leak'] = 0.0
     elif args.weighting == 'Nash_MTL':
@@ -121,20 +129,63 @@ def prepare_kwargs(args):
         kwargs['scalar_weights'] = args.scalar_weights
     return kwargs
 
+def print_model_summary(model):
+    print('=' * 80)
+    print('DETAILED MODEL ARCHITECTURE')
+    print('=' * 80)
+    
+    # Print the full model
+    print(model)
+    
+    print('\n' + '=' * 80)
+    print('PARAMETER BREAKDOWN')
+    print('=' * 80)
+    
+    total_params = 0
+    trainable_params = 0
+    
+    print('\nENCODER PARAMETERS:')
+    print('-' * 40)
+    encoder_params = 0
+    for param in model.get_share_params():
+        print(f'Parameter: {param.shape} - {param.numel():,} parameters')
+        total_params += param.numel()
+        if param.requires_grad:
+            trainable_params += param.numel()
+            encoder_params += param.numel()
+    print(f'Total encoder parameters: {encoder_params:,}')
+    
+    print('\nTASK-SPECIFIC PARAMETERS:')
+    print('-' * 40)
+    task_params = 0
+    for task_name, task_head in model.task_heads.items():
+        print(f'\n{task_name.upper()} TASK HEAD:')
+        task_head_params = 0
+        for name, param in task_head.named_parameters():
+            print(f'  {name}: {param.shape} - {param.numel():,} parameters')
+            total_params += param.numel()
+            if param.requires_grad:
+                trainable_params += param.numel()
+                task_head_params += param.numel()
+        task_params += task_head_params
+        print(f'  Total {task_name} parameters: {task_head_params:,}')
+    
+    print('\n' + '=' * 80)
+    print('SUMMARY')
+    print('=' * 80)
+    print(f'Total parameters: {total_params:,}')
+    print(f'Trainable parameters: {trainable_params:,}')
+    if total_params > 0:
+        print(f'Encoder parameters: {encoder_params:,} ({encoder_params/total_params*100:.1f}%)')
+        print(f'Task-specific parameters: {task_params:,} ({task_params/total_params*100:.1f}%)')
+    print('=' * 80)
+
 def main():
     # Parse arguments
     args = parse_args()
     kwargs = prepare_kwargs(args)
 
-    # Set random seeds for reproducibility
-    random.seed(args.seed)
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed(args.seed)
-        torch.cuda.manual_seed_all(args.seed)
-        torch.backends.cudnn.deterministic = True
-        torch.backends.cudnn.benchmark = False
+    set_random_seed(args.seed)
 
     print(f"Device: {args.device}")
     
@@ -252,6 +303,8 @@ def main():
     model.apply(init_weights)  
     if args.model == 'Transformer':
         model = model.double()
+
+    # print_model_summary(model)
         
     # Initialize trainer with the full dataset
     trainer = Trainer(
@@ -275,16 +328,16 @@ def main():
     logger.info('Starting training...')
     save_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_model.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_model.pt')
     weight_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_task_weights.json')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_task_weights.json')
     gradient_cosine_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_gradient_cosine.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_cosine.pt')
     gradient_magnitude_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_gradient_magnitude.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_magnitude.pt')
     trainer.train(args.epochs, save_path, 
                   weight_path, gradient_cosine_path, gradient_magnitude_path)
     
@@ -296,11 +349,11 @@ def main():
     else:
         learn_title = '_STL_'+task_names+'_task_'                
     inference_name_lst = [
-        f"{args.model}_{learn_title}_{task}_{mtl_name}_.csv" 
+        f"{args.model}_{learn_title}_{task}_{mtl_name}_{args.learning_rate}_{args.seed}.csv" 
         for task in tasks]
     inference_path_lst = [os.path.join(args.save_dir, name) 
                           for name in inference_name_lst]
     trainer.inference(inference_path_lst)
-    
+
 if __name__ == '__main__':
     main() 

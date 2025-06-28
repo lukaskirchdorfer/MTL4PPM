@@ -31,9 +31,17 @@ class CAGrad(AbsWeighting):
         else:
             self._compute_grad_dim()
             grads = self._compute_grad(losses, mode='backward')
+            # print(f"shape of grads: {grads.shape}")
+            # print(f"grads: {grads}")
         
         GG = torch.matmul(grads, grads.t()).cpu() # [num_tasks, num_tasks]
         g0_norm = (GG.mean()+1e-8).sqrt() # norm of the average gradient
+        
+        # print(f"=== CAGrad Debug Info ===")
+        # print(f"calpha: {calpha}")
+        # print(f"GG matrix: {GG}")
+        # print(f"g0_norm: {g0_norm}")
+        # print(f"GG eigenvalues: {torch.linalg.eigvals(GG)}")
 
         x_start = np.ones(self.task_num) / self.task_num
         bnds = tuple((0,1) for x in x_start)
@@ -41,15 +49,33 @@ class CAGrad(AbsWeighting):
         A = GG.numpy()
         b = x_start.copy()
         c = (calpha*g0_norm+1e-8).item()
+        
+        # print(f"c value: {c}")
+        # print(f"x_start: {x_start}")
+        
         def objfn(x):
             return (x.reshape(1,-1).dot(A).dot(b.reshape(-1,1))+c*np.sqrt(x.reshape(1,-1).dot(A).dot(x.reshape(-1,1))+1e-8)).sum()
+        
         res = minimize(objfn, x_start, bounds=bnds, constraints=cons)
+        
+        # print(f"Optimization success: {res.success}")
+        # print(f"Optimization message: {res.message}")
+        # print(f"Final weights: {res.x}")
+        # print(f"Initial weights: {x_start}")
+        # print(f"Weights changed: {not np.allclose(res.x, x_start)}")
+        
         w_cpu = res.x
         ww = torch.Tensor(w_cpu).to(self.device)
         gw = (grads * ww.view(-1, 1)).sum(0)
         gw_norm = gw.norm()
         lmbda = c / (gw_norm+1e-8)
         g = grads.mean(0) + lmbda * gw
+        
+        # print(f"lambda: {lmbda}")
+        # print(f"gw_norm: {gw_norm}")
+        # print(f"Original grad mean: {grads.mean(0).norm()}")
+        # print(f"Final grad norm: {g.norm()}")
+        
         if rescale == 0:
             new_grads = g
         elif rescale == 1:
@@ -58,5 +84,9 @@ class CAGrad(AbsWeighting):
             new_grads = g / (1 + calpha)
         else:
             raise ValueError('No support rescale type {}'.format(rescale))
+        
+        # print(f"Rescaled grad norm: {new_grads.norm()}")
+        # print(f"=== End Debug Info ===")
+        
         self._reset_grad(new_grads)
         return w_cpu, grads

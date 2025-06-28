@@ -70,11 +70,19 @@ class AbsWeighting(nn.Module):
     def _reset_grad(self, new_grads):
         count = 0
         for param in self.get_share_params():
-            if param.grad is not None:
-                beg = 0 if count == 0 else sum(self.grad_index[:count])
-                end = sum(self.grad_index[:(count+1)])
-                param.grad.data = new_grads[beg:end].contiguous().view(param.data.size()).data.clone()
+            beg = 0 if count == 0 else sum(self.grad_index[:count])
+            end = sum(self.grad_index[:(count+1)])
+            grad_data = new_grads[beg:end].contiguous().view(param.data.size()).data.clone()
+            param.grad = grad_data  # Always set, even if param.grad was None
             count += 1
+        # for param in self.get_share_params():
+        #     # print(f"parameter: {param}")
+        #     if param.grad is not None:
+        #         print(f"Resetting grad")
+        #         beg = 0 if count == 0 else sum(self.grad_index[:count])
+        #         end = sum(self.grad_index[:(count+1)])
+        #         param.grad.data = new_grads[beg:end].contiguous().view(param.data.size()).data.clone()
+        #         count += 1
             
     def _get_grads(self, losses, mode='backward'):
         r"""This function is used to return the gradients of representations or shared parameters.
