@@ -12,8 +12,8 @@ TASKS=("next_activity next_time" "next_activity remaining_time" "next_time remai
 MODELS=("LSTM" "CNN" "Transformer")
 MTL_METHODS=("EW" "DWA" "GLS" "RLW" "UW" "UW_O" "UW_SO" "Scalarization" "IMTL" "Nash_MTL" "GradNorm" "GradDrop" "PCGrad" "CAGrad")
 EPOCHS=200
-LEARNING_RATES=(0.0001 0.001 0.01 0.1)
-SEEDS=(42 43 44)
+LEARNING_RATES=(0.0001 0.001 0.01)
+SEEDS=(42 123 2025)
 
 
 # Loop over all combinations

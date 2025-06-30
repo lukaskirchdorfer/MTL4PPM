@@ -11,8 +11,8 @@ DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge
 TASKS=("next_activity" "next_time" "remaining_time")
 MODELS=("LSTM" "CNN" "Transformer")
 EPOCHS=200
-LEARNING_RATES=(0.0001 0.001 0.01 0.1)
-SEEDS=(42 43 44)
+LEARNING_RATES=(0.0001 0.001 0.01)
+SEEDS=(42 123 2025)
 
 
 # Loop over all combinations

@@ -407,6 +407,9 @@ class Trainer:
                     print(f"Best validation loss: {self.best_val_loss:.4f} at epoch {self.best_epoch}")
                     self.logger.info(f"Best validation loss: {self.best_val_loss:.4f} at epoch {self.best_epoch}")
                     break # Exit the training loop
+                elif epoch == num_epochs - 1:
+                    print(f"Best validation loss: {self.best_val_loss:.4f} at epoch {self.best_epoch}")
+                    self.logger.info(f"Best validation loss: {self.best_val_loss:.4f} at epoch {self.best_epoch}")
             else:
                 if save_path and train_loss < self.best_val_loss:
                     self.best_val_loss = train_loss

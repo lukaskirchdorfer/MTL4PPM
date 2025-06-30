@@ -201,10 +201,20 @@ def main():
         mtl_name = 'UW_O'
     else:
         mtl_name = args.weighting      
+
+    mtl_hpo = "None"
+    if args.weighting == 'UW_SO':
+        mtl_hpo = f"{args.T}"
+    elif args.weighting == 'Scalarization':
+        mtl_hpo = f"{args.scalar_weights}"
+    elif args.weighting == 'GradNorm':
+        mtl_hpo = f"{args.alpha}"
+    elif args.weighting == 'CAGrad':
+        mtl_hpo = f"{args.calpha}"
     
     # set the logger to report important results
     logger_path = os.path.join(
-        args.save_dir, f'{args.model}_{"_".join(tasks)}_{mtl_name}.log')   
+        args.save_dir, f'{args.model}_{"_".join(tasks)}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}.log')   
     file_handler = logging.FileHandler(logger_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
@@ -328,16 +338,16 @@ def main():
     logger.info('Starting training...')
     save_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_model.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}_model.pt')
     weight_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_task_weights.json')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}_task_weights.json')
     gradient_cosine_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_cosine.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_cosine.pt')
     gradient_magnitude_path = os.path.join(
         args.save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_magnitude.pt')
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_magnitude.pt')
     trainer.train(args.epochs, save_path, 
                   weight_path, gradient_cosine_path, gradient_magnitude_path)
     
@@ -349,7 +359,7 @@ def main():
     else:
         learn_title = '_STL_'+task_names+'_task_'                
     inference_name_lst = [
-        f"{args.model}_{learn_title}_{task}_{mtl_name}_{args.learning_rate}_{args.seed}.csv" 
+        f"{args.model}_{learn_title}_{task}_{mtl_name}_{mtl_hpo}_{args.learning_rate}_{args.seed}.csv" 
         for task in tasks]
     inference_path_lst = [os.path.join(args.save_dir, name) 
                           for name in inference_name_lst]
