@@ -53,7 +53,7 @@ class Trainer:
         
         # Create generator for reproducible shuffling
         #self.generator = torch.Generator(device=device)
-        self.generator = torch.Generator()
+        self.generator = torch.Generator(device='cpu')
         self.generator.manual_seed(seed)
         
         # Create data loaders
