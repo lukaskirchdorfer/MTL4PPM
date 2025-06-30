@@ -52,7 +52,8 @@ class Trainer:
         self.original_dataset = train_dataset.dataset if hasattr(train_dataset, 'dataset') else train_dataset
         
         # Create generator for reproducible shuffling
-        self.generator = torch.Generator(device=device)
+        #self.generator = torch.Generator(device=device)
+        self.generator = torch.Generator()
         self.generator.manual_seed(seed)
         
         # Create data loaders
@@ -321,6 +322,7 @@ class Trainer:
         self.epochs_no_improve = 0
         self.early_stop = False
         self.best_epoch = 0
+        self.save_path = save_path
         
         self.model.train_loss_buffer = np.zeros([self.model.task_num, num_epochs])
         
@@ -420,8 +422,11 @@ class Trainer:
     def inference(self, inf_path=None):
         print('Now: Inference on Test set.')
         self.logger.info('Now: Inference on Test set.')
-        if not self.test_loader:
-            return           
+        if not self.test_loader or self.save_path is None:
+            return
+        self.model.load_state_dict(torch.load(self.save_path))
+        self.logger.info(f'Loaded best model weights from {self.save_path}')
+        self.model = self.model.to(self.device)        
         self.model.eval()
         metrics_sum = {task: {metric: 0.0 for metric in self.metrics[task].keys()} 
                       for task in self.active_tasks} 

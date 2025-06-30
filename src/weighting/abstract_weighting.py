@@ -73,7 +73,8 @@ class AbsWeighting(nn.Module):
             beg = 0 if count == 0 else sum(self.grad_index[:count])
             end = sum(self.grad_index[:(count+1)])
             grad_data = new_grads[beg:end].contiguous().view(param.data.size()).data.clone()
-            param.grad = grad_data  # Always set, even if param.grad was None
+            param.grad = grad_data.to(dtype=param.dtype)
+            #param.grad = grad_data  # Always set, even if param.grad was None
             count += 1
         # for param in self.get_share_params():
         #     # print(f"parameter: {param}")
