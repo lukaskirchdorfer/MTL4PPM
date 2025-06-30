@@ -7,7 +7,7 @@
 #SBATCH --chdir=/ceph/lkirchdo/MTL4PPM
 
 
-DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge_2012C.csv" "BPIC15_1.csv" "BPIC20_DomesticDeclarations.csv" "BPIC20_InternationalDeclarations.csv")
+DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge_2012C.csv" "BPIC15_1.csv" "BPIC20_DomesticDeclarations.csv" "BPIC20_InternationalDeclarations.csv" "BPI_Challenge_2013_incidents.csv")
 TASKS=("next_activity" "next_time" "remaining_time")
 MODELS=("LSTM" "CNN" "Transformer")
 EPOCHS=200

@@ -20,6 +20,8 @@ class ProcessLogDataset(Dataset):
         # Load and preprocess data
         self.df = pd.read_csv(csv_path)
         self.df['timestamp'] = pd.to_datetime(self.df['timestamp'])
+        # sort by timestamp
+        self.df = self.df.sort_values(by='timestamp')
         # add days and hours of the last event
         self.df['day'] = pd.to_datetime(self.df['timestamp']).dt.day_name()
         self.df['hour'] = (pd.to_datetime(self.df['timestamp']).dt.hour + 
@@ -160,7 +162,7 @@ class ProcessLogDataset(Dataset):
                     'targets': targets,
                     'seq_len': len(prefix),
                     'case_id': case_id
-                })                
+                })      
         return examples
     
     def __len__(self):
@@ -179,6 +181,7 @@ class ProcessLogDataset(Dataset):
                 targets[task] = torch.tensor(value, dtype=torch.long)
             else:
                 targets[task] = torch.tensor([value], dtype=torch.float32)
+        
         
         return {
             'features': features,

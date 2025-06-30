@@ -168,9 +168,18 @@ class Trainer:
             
             # Forward pass
             outputs = self.model(features)
+            for task, output in outputs.items():
+                if task == 'next_time' or task == 'remaining_time':
+                    output = torch.clamp(output, min=-10, max=10)
+                    outputs[task] = output
+            
+            # print(f"Features: {features}")
+            # print("Model outputs:", outputs)
+            # print("Targets:", targets)
             
             # Calculate losses
             train_losses = self._compute_loss(outputs, targets)
+            # print(f"Train losses: {train_losses}")
             loss = train_losses.sum()
             
             # Update task-specific losses
@@ -265,6 +274,10 @@ class Trainer:
                 
                 # Forward pass
                 outputs = self.model(features)
+                for task, output in outputs.items():
+                    if task == 'next_time' or task == 'remaining_time':
+                        output = torch.clamp(output, min=-10, max=10)
+                        outputs[task] = output
                 
                 # Calculate losses
                 val_losses = self._compute_loss(outputs, targets)
@@ -424,6 +437,10 @@ class Trainer:
                     k: v.to(self.device) for k, v in batch['targets'].items()}                
                 # Forward pass
                 outputs = self.model(features)
+                for task, output in outputs.items():
+                    if task == 'next_time' or task == 'remaining_time':
+                        output = torch.clamp(output, min=-10, max=10)
+                        outputs[task] = output
                 # Compute and accumulate metrics
                 batch_metrics = self._compute_metrics(outputs, targets)
                 for task, task_metrics in batch_metrics.items():

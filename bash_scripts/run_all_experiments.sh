@@ -7,7 +7,7 @@
 #SBATCH --chdir=/ceph/lkirchdo/MTL4PPM
 
 # Define lists of values for each argument
-DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge_2012C.csv" "BPIC15_1.csv" "BPIC20_DomesticDeclarations.csv" "BPIC20_InternationalDeclarations.csv")
+DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge_2012C.csv" "BPIC15_1.csv" "BPIC20_DomesticDeclarations.csv" "BPIC20_InternationalDeclarations.csv" "BPI_Challenge_2013_incidents.csv")
 TASKS=("next_activity next_time" "next_activity remaining_time" "next_time remaining_time" "multi")
 MODELS=("LSTM" "CNN" "Transformer")
 MTL_METHODS=("EW" "DWA" "GLS" "RLW" "UW" "UW_O" "UW_SO" "Scalarization" "IMTL" "Nash_MTL" "GradNorm" "GradDrop" "PCGrad" "CAGrad")
