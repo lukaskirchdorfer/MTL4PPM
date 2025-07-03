@@ -19,13 +19,13 @@ class ProcessLogDataset(Dataset):
         
         # Load and preprocess data
         self.df = pd.read_csv(csv_path)
-        self.df['timestamp'] = pd.to_datetime(self.df['timestamp'])
+        self.df['timestamp'] = pd.to_datetime(self.df['timestamp'], format='mixed')
         # sort by timestamp
         self.df = self.df.sort_values(by='timestamp')
         # add days and hours of the last event
-        self.df['day'] = pd.to_datetime(self.df['timestamp']).dt.day_name()
-        self.df['hour'] = (pd.to_datetime(self.df['timestamp']).dt.hour + 
-                           pd.to_datetime(self.df['timestamp']).dt.minute / 60)
+        self.df['day'] = pd.to_datetime(self.df['timestamp'], format='mixed').dt.day_name()
+        self.df['hour'] = (pd.to_datetime(self.df['timestamp'], format='mixed').dt.hour + 
+                           pd.to_datetime(self.df['timestamp'], format='mixed').dt.minute / 60)
         self.df['hour'] = ((self.df['hour'] - self.df['hour'].min()) / 
                            (self.df['hour'].max() - self.df['hour'].min()))
         
