@@ -297,6 +297,7 @@ def main():
             "num_resources": full_dataset.num_resources, 
             "num_days": full_dataset.num_days,
             "pooling": args.pooling,
+            "max_len": full_dataset.max_len,
         }
     else:
         raise ValueError(f"Model {args.model} not found")

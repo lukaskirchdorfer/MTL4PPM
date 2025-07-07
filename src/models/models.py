@@ -165,7 +165,7 @@ class PositionalEncoding(nn.Module):
     
 class Trans_Encoder(nn.Module):
     def __init__(self, num_activities, num_resources, num_days, num_feat_dim,
-                 emb_dim, num_heads, num_layers, dropout, pooling):
+                 emb_dim, num_heads, num_layers, dropout, pooling, max_len):
         super().__init__()
         self.num_activities = num_activities
         self.num_resources = num_resources
@@ -183,7 +183,7 @@ class Trans_Encoder(nn.Module):
         # Calculate the total input dimension for the Transformer (d_model)
         self.d_model = 2 * self.emb_dim + self.num_feat_dim + 3   
         # Positional encoding
-        self.positional_encoding = PositionalEncoding(self.d_model, self.dropout)        
+        self.positional_encoding = PositionalEncoding(self.d_model, self.dropout, max_len=max_len)        
         # Transformer Encoder
         encoder_layers = nn.TransformerEncoderLayer(
             d_model=self.d_model,
@@ -262,7 +262,8 @@ def process_trans(weighting_class):
                 num_heads=self.num_heads,
                 num_layers=self.num_layers,
                 dropout=self.dropout,
-                pooling=self.pooling
+                pooling=self.pooling,
+                max_len=model_parameters["max_len"]
             )
 
             # Task-specific output layers
