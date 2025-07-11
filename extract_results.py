@@ -49,9 +49,9 @@ def parse_log_files(log_dir):
             }
             try:
                 with open(full_path, 'r') as f:
-                    lines = f.readlines()[-4:]  # last four lines                    
-                if (len(lines) < 4 or 
-                    "Now: Inference on Test set." not in lines[-3]):
+                    lines = f.readlines()[-5:]  # last four lines                    
+                if (len(lines) < 5 or 
+                    "Now: Inference on Test set." not in lines[-4]):
                     results.append(metrics)
                     continue
                 # The third-to-last should be "Inference" log, skip
@@ -68,7 +68,7 @@ def parse_log_files(log_dir):
                     metrics[key] = val
 
                 # Extract best validation loss and epoch
-                best_val_loss_line = lines[-4]
+                best_val_loss_line = lines[-5]
                 best_val_loss = float(best_val_loss_line.split(" ")[-4])
                 best_epoch = int(best_val_loss_line.split(" ")[-1])
                 metrics['Best Validation Loss'] = best_val_loss
@@ -82,7 +82,7 @@ def parse_log_files(log_dir):
         df['Tasks'] = df['Tasks'].apply(lambda x: tuple(x) if isinstance(x, list) else x)
 
     best_results_df = get_best_result_per_model(df)
-
+    # best_results_df = pd.DataFrame()
     # sorting the dataframe
     metric_cols = ['NEXT_ACTIVITY', 'NEXT_TIME', 'REMAINING_TIME']
     # Create a binary signature string
@@ -102,6 +102,11 @@ def get_best_result_per_model(df):
         for task in df['Tasks'].unique():
             for mtl in df['MTL'].unique():
                 df_model_task_mtl = df[(df['Model'] == model) & (df['Tasks'] == task) & (df['MTL'] == mtl)]
+                
+                # Check if there are any results for this combination
+                if df_model_task_mtl.empty:
+                    continue  # Skip this combination if no data exists
+                
                 # groupby learning rate
                 df_model_task_mtl = df_model_task_mtl.groupby(['Learning Rate', 'MTL HPO'])
                 # for this learning rate, compute the mean and std over the seeds for the metrics NEXT_ACTIVITY, NEXT_TIME, REMAINING_TIME, Best Epoch
@@ -129,6 +134,7 @@ def get_best_result_per_model(df):
                     'REMAINING_TIME_std': df_model_task_mtl['REMAINING_TIME']['std'],
                     'Best Epoch_mean': df_model_task_mtl['Best Epoch']['mean'],
                 })
+    # print(f"Best results: {best_results}")
     return pd.DataFrame(best_results)
 
 def main():
@@ -138,11 +144,16 @@ def main():
     args = parser.parse_args()
     root_path = os.getcwd()
     log_dir = os.path.join(root_path, 'models', args.dataset)   
+    results_dir = os.path.join(root_path, 'results', args.dataset)
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
     df, best_results_df = parse_log_files(log_dir)
-    csv_path = os.path.join(log_dir, args.dataset+'_overall_results.csv')
+    csv_path = os.path.join(results_dir, args.dataset+'_overall_results.csv')
     df.to_csv(csv_path, index=False)
-    csv_path = os.path.join(log_dir, args.dataset+'_best_results.csv')
+    print(f"Overall results saved to {csv_path}")
+    csv_path = os.path.join(results_dir, args.dataset+'_best_results.csv')
     best_results_df.to_csv(csv_path, index=False)
+    print(f"Best results saved to {csv_path}")
     
 if __name__ == '__main__':
     main() 
