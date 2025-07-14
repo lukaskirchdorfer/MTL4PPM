@@ -1,0 +1,1871 @@
+Model,MTL,Tasks,Learning Rate,MTL HPO,Seed,Best Epoch,Best Validation Loss,NEXT_ACTIVITY,NEXT_TIME,REMAINING_TIME
+CNN,DWA,"('next_activity', 'next_time')",0.001,None,123,22.0,7.1957,0.8214,6.5265,
+CNN,IMTL,"('next_activity', 'next_time')",0.001,None,2025,5.0,7.1687,0.8183,6.546,
+CNN,UW,"('next_activity', 'next_time')",0.001,None,2025,11.0,7.3158,0.8296,6.8251,
+CNN,EW,"('next_activity', 'next_time')",0.001,None,123,18.0,7.2092,0.8143,6.593,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,42,76.0,6.1349,0.838,6.0124,
+CNN,DWA,"('next_activity', 'next_time')",0.01,None,2025,3.0,8.9148,0.632,7.6689,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",2025,20.0,7.6901,0.7649,6.8847,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",42,4.0,7.2861,0.7176,6.8386,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.1,42,2.0,8.5937,0.5915,7.6975,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",2025,5.0,10.1149,0.2325,7.987,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,123,36.0,6.6983,0.8245,6.1131,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",42,11.0,8.6193,0.5151,7.6528,
+CNN,PCGrad,"('next_activity', 'next_time')",0.0001,None,2025,70.0,6.6359,0.8269,6.1337,
+CNN,PCGrad,"('next_activity', 'next_time')",0.001,None,123,28.0,7.1193,0.8245,6.4273,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",42,36.0,6.3098,0.8309,6.1813,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",2025,2.0,8.5847,0.6993,7.5979,
+CNN,PCGrad,"('next_activity', 'next_time')",0.01,None,123,9.0,8.5326,0.7049,7.5355,
+CNN,UW_O,"('next_activity', 'next_time')",0.001,None,2025,30.0,6.6824,0.8456,6.3811,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,2.0,2025,20.0,7.163,0.8161,6.5679,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",2025,12.0,7.3649,0.83,6.823,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,20.0,123,1.0,9.2166,0.5555,7.6965,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.9,2025,12.0,9.0106,0.5242,7.6488,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,20.0,42,2.0,8.2263,0.6388,7.6462,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",2025,49.0,6.6617,0.8234,6.1611,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,123,51.0,6.554,0.8379,6.0164,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",2025,50.0,6.7249,0.8127,6.1725,
+CNN,RLW,"('next_activity', 'next_time')",0.001,None,123,15.0,7.3408,0.8148,6.6581,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,2025,54.0,6.6783,0.8257,6.2206,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,10.0,42,20.0,6.7696,0.8144,6.6648,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",2025,15.0,7.1362,0.8391,6.6785,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,3.0,42,22.0,6.5363,0.8233,6.3746,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.7,123,2.0,8.9519,0.5902,7.6264,
+CNN,RLW,"('next_activity', 'next_time')",0.001,None,2025,22.0,7.4205,0.8102,6.8173,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",2025,73.0,6.8221,0.7802,6.2298,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,42,46.0,6.2634,0.8306,6.0879,
+CNN,EW,"('next_activity', 'next_time')",0.01,None,123,2.0,9.2302,0.5604,7.7734,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,2025,43.0,6.8284,0.7984,6.2662,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,3.0,2025,5.0,8.6897,0.65,7.6114,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",123,4.0,9.2617,0.4672,7.5822,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,2.0,42,27.0,6.9417,0.8185,6.8872,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",2025,22.0,7.0156,0.8312,6.5495,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.01,None,123,9.0,8.4354,0.7252,7.4852,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,42,51.0,6.3574,0.8136,6.1611,
+CNN,UW,"('next_activity', 'next_time')",0.01,None,42,4.0,7.9463,0.732,7.6077,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.01,None,42,3.0,8.3038,0.6113,7.5289,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,2.0,42,1.0,8.5251,0.6048,7.814,
+CNN,UW,"('next_activity', 'next_time')",0.001,None,123,23.0,7.0734,0.8389,6.447,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",42,12.0,6.85,0.8287,6.8221,
+CNN,GradDrop,"('next_activity', 'next_time')",0.01,None,42,10.0,8.8628,0.4799,7.9039,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",42,82.0,6.2694,0.8125,5.9829,
+CNN,RLW,"('next_activity', 'next_time')",0.01,None,2025,5.0,9.0258,0.535,7.6446,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",123,14.0,7.6517,0.7755,6.911,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",123,38.0,7.3077,0.8034,6.6597,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,3.0,123,7.0,8.5954,0.689,7.5466,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",2025,21.0,7.5482,0.803,6.8832,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,5.0,123,9.0,8.5665,0.6765,7.4915,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",42,78.0,6.1302,0.8405,6.0457,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",123,51.0,6.8917,0.7646,6.0935,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,123,51.0,6.5983,0.8318,6.0193,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",123,17.0,7.2337,0.8259,6.5352,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",123,15.0,7.3095,0.8168,6.7044,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",123,16.0,8.537,0.6928,7.4862,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",2025,2.0,9.8362,0.379,7.8987,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,0.5,42,14.0,6.7255,0.8353,6.6687,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",42,30.0,6.7677,0.7436,6.2685,
+CNN,GLS,"('next_activity', 'next_time')",0.01,None,2025,9.0,8.5507,0.6977,7.5954,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.9,123,4.0,8.7728,0.677,7.6244,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,123,35.0,6.7398,0.8189,6.1445,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,42,70.0,6.1554,0.8368,6.03,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",123,51.0,6.7968,0.7839,6.0421,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",42,1.0,8.4859,0.5926,7.7538,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,123,66.0,6.5842,0.8154,6.0076,
+CNN,GLS,"('next_activity', 'next_time')",0.0001,None,2025,50.0,6.5748,0.8425,6.1999,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.5,42,1.0,8.5251,0.6048,7.814,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,42,58.0,6.2207,0.8344,6.0173,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",2025,14.0,8.4595,0.6933,7.5228,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",2025,77.0,6.7465,0.7939,6.1736,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,123,79.0,6.5504,0.8271,5.9701,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,5.0,123,21.0,7.2539,0.8252,6.6352,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.1,2025,11.0,7.2423,0.8164,6.6946,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.5,2025,28.0,7.1315,0.825,6.6795,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,1.0,123,8.0,7.3121,0.8087,6.7526,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",2025,22.0,7.2232,0.8379,6.7022,
+CNN,UW_O,"('next_activity', 'next_time')",0.0001,None,123,40.0,6.6953,0.8386,6.191,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",42,4.0,8.0267,0.7227,7.6358,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,3.0,2025,29.0,7.0878,0.8311,6.6067,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",2025,50.0,6.5223,0.8415,6.1101,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,15.0,42,23.0,6.7746,0.8196,6.6404,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",123,7.0,8.6529,0.6924,7.5706,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",42,7.0,7.0681,0.7842,6.8421,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.1,123,7.0,8.5786,0.6873,7.5024,
+CNN,GradDrop,"('next_activity', 'next_time')",0.001,None,42,13.0,6.9497,0.7953,6.7159,
+CNN,EW,"('next_activity', 'next_time')",0.0001,None,123,39.0,6.8679,0.7921,6.1035,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,123,66.0,6.6061,0.8176,5.9391,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",2025,22.0,7.3124,0.8109,6.6199,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,20.0,2025,4.0,9.0311,0.565,7.6888,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",123,10.0,8.9069,0.591,7.5508,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.1,123,46.0,6.9761,0.8236,6.4586,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",42,2.0,8.6264,0.5191,7.6795,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",42,19.0,7.0776,0.7923,6.8619,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,10.0,42,12.0,8.2325,0.571,7.4909,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,123,71.0,6.4727,0.8424,5.9426,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,2025,46.0,6.7169,0.8227,6.2052,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.9,123,15.0,7.2539,0.8122,6.7696,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.5,42,16.0,6.9963,0.8252,6.9214,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",123,50.0,6.5828,0.8336,6.0106,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,2025,50.0,6.686,0.8353,6.2183,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.7,123,16.0,7.4337,0.8295,6.8886,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,15.0,42,4.0,8.1592,0.6716,7.6223,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",42,48.0,6.3953,0.7907,6.0994,
+CNN,PCGrad,"('next_activity', 'next_time')",0.01,None,2025,1.0,9.0265,0.5922,7.6941,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,123,35.0,6.7681,0.8109,6.1467,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,42,83.0,6.1267,0.8448,6.0215,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.0,123,15.0,7.2389,0.8339,6.6736,
+CNN,RLW,"('next_activity', 'next_time')",0.0001,None,2025,76.0,6.7102,0.8215,6.2485,
+CNN,EW,"('next_activity', 'next_time')",0.01,None,42,1.0,8.5251,0.6048,7.814,
+CNN,GLS,"('next_activity', 'next_time')",0.01,None,123,2.0,8.5567,0.7039,7.6009,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",2025,18.0,8.6147,0.6448,7.5147,
+CNN,IMTL,"('next_activity', 'next_time')",0.0001,None,42,53.0,6.2334,0.8411,6.0843,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",123,9.0,7.1365,0.8226,6.5528,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",123,7.0,8.7854,0.628,7.531,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",2025,62.0,7.0306,0.7541,6.2396,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.0,123,5.0,8.7585,0.6741,7.666,
+CNN,GLS,"('next_activity', 'next_time')",0.0001,None,42,46.0,6.2522,0.8387,6.0992,
+CNN,PCGrad,"('next_activity', 'next_time')",0.0001,None,42,106.0,6.1239,0.8319,5.9086,
+CNN,GLS,"('next_activity', 'next_time')",0.001,None,123,28.0,6.7978,0.8403,6.3174,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",42,8.0,7.1862,0.7484,6.9248,
+CNN,PCGrad,"('next_activity', 'next_time')",0.001,None,2025,15.0,7.2792,0.8085,6.5582,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,42,72.0,6.2334,0.8416,6.1419,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.1,2025,11.0,9.2497,0.5044,7.8016,
+CNN,DWA,"('next_activity', 'next_time')",0.01,None,42,1.0,8.5251,0.6048,7.814,
+CNN,UW,"('next_activity', 'next_time')",0.01,None,123,1.0,9.6323,0.4336,7.8244,
+CNN,UW_O,"('next_activity', 'next_time')",0.01,None,2025,16.0,8.5396,0.6924,7.6025,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,15.0,2025,22.0,7.0864,0.8161,6.533,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,1.0,42,8.0,6.8924,0.8159,6.7943,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.3,2025,9.0,9.0559,0.5698,7.7468,
+CNN,GradDrop,"('next_activity', 'next_time')",0.0001,None,42,83.0,6.2602,0.808,5.9704,
+CNN,UW_O,"('next_activity', 'next_time')",0.001,None,123,37.0,6.9591,0.8487,6.3749,
+CNN,DWA,"('next_activity', 'next_time')",0.01,None,123,3.0,9.0132,0.6096,7.6693,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,123,36.0,6.7006,0.8256,6.1446,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",123,50.0,6.7883,0.7934,6.1058,
+CNN,UW,"('next_activity', 'next_time')",0.0001,None,2025,63.0,6.5537,0.8425,6.18,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,2025,63.0,6.5885,0.837,6.15,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",123,13.0,8.5852,0.6942,7.5249,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,20.0,42,22.0,6.7274,0.8135,6.5697,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,7.0,42,17.0,6.6503,0.8195,6.5312,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,10.0,123,1.0,9.3478,0.5203,7.854,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,42,70.0,6.2532,0.8125,5.9807,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,42,30.0,6.5861,0.7826,6.2686,
+CNN,RLW,"('next_activity', 'next_time')",0.001,None,42,19.0,6.8093,0.8145,6.6465,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.3,123,21.0,7.214,0.8334,6.647,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,2025,61.0,6.7701,0.8148,6.2181,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",42,12.0,8.5412,0.5453,7.6467,
+CNN,UW,"('next_activity', 'next_time')",0.0001,None,123,71.0,6.5161,0.8441,5.9492,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",2025,43.0,6.9333,0.7845,6.3339,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,5.0,2025,2.0,8.7652,0.6342,7.6048,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.3,2025,20.0,7.3433,0.8234,6.7848,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",2025,4.0,8.8769,0.6094,7.635,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",42,19.0,8.1718,0.6109,7.5277,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,1.0,2025,2.0,8.9229,0.6111,7.6868,
+CNN,UW_O,"('next_activity', 'next_time')",0.001,None,42,22.0,6.4795,0.8379,6.3734,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",2025,3.0,8.8367,0.6358,7.6839,
+CNN,EW,"('next_activity', 'next_time')",0.01,None,2025,20.0,8.5357,0.6997,7.5479,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,42,30.0,6.5922,0.7823,6.249,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",123,24.0,7.1182,0.8018,6.6031,
+CNN,UW_O,"('next_activity', 'next_time')",0.0001,None,42,66.0,6.2242,0.8455,6.0879,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.5,123,37.0,7.117,0.8247,6.4921,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.5,2025,22.0,7.3368,0.827,6.798,
+CNN,RLW,"('next_activity', 'next_time')",0.0001,None,42,84.0,6.247,0.8181,6.0474,
+CNN,GradDrop,"('next_activity', 'next_time')",0.001,None,123,11.0,7.5705,0.8038,6.8942,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",123,49.0,6.6744,0.8179,6.0797,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,1.0,2025,43.0,6.9091,0.8415,6.5276,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,10.0,2025,32.0,7.1766,0.8224,6.6943,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",2025,74.0,6.5237,0.8437,6.0562,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,42,70.0,6.2087,0.8158,6.016,
+CNN,GLS,"('next_activity', 'next_time')",0.0001,None,123,43.0,6.6397,0.8387,6.0419,
+CNN,UW_O,"('next_activity', 'next_time')",0.01,None,123,13.0,8.5487,0.703,7.5631,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.0,42,2.0,8.4523,0.5954,7.6362,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.7,42,6.0,7.0203,0.8088,6.8585,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.7,2025,21.0,6.9684,0.838,6.55,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,3.0,123,18.0,7.3529,0.812,6.7607,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.1,42,17.0,6.7733,0.8195,6.6452,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",123,2.0,9.4805,0.4486,7.7038,
+CNN,DWA,"('next_activity', 'next_time')",0.0001,None,2025,62.0,6.6418,0.8151,6.1636,
+CNN,GradDrop,"('next_activity', 'next_time')",0.0001,None,2025,72.0,6.6586,0.8035,6.1212,
+CNN,EW,"('next_activity', 'next_time')",0.0001,None,42,59.0,6.3215,0.808,6.0557,
+CNN,GLS,"('next_activity', 'next_time')",0.01,None,42,3.0,8.0839,0.7138,7.7045,
+CNN,GLS,"('next_activity', 'next_time')",0.001,None,2025,17.0,6.9615,0.8454,6.5496,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,2025,39.0,6.8685,0.7931,6.2947,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,42,79.0,6.2185,0.8206,6.0064,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,42,31.0,6.5634,0.7839,6.2802,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.001,None,2025,16.0,7.0802,0.8259,6.4818,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,5.0,42,4.0,8.5305,0.5548,7.6806,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.9,2025,26.0,7.2403,0.8305,6.6659,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,42,55.0,6.2477,0.8313,6.0275,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",123,66.0,6.5027,0.8452,5.9763,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.5,2025,10.0,8.6513,0.6614,7.5564,
+CNN,IMTL,"('next_activity', 'next_time')",0.001,None,123,5.0,7.0794,0.8194,6.4724,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,123,35.0,6.851,0.7906,6.1359,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,2.0,123,5.0,8.6893,0.7031,7.6796,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",42,40.0,6.3679,0.8134,6.1482,
+CNN,GradDrop,"('next_activity', 'next_time')",0.0001,None,123,65.0,6.6758,0.8039,6.0501,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.3,123,5.0,8.6685,0.6681,7.5842,
+CNN,IMTL,"('next_activity', 'next_time')",0.01,None,42,8.0,8.0171,0.6926,7.5894,
+CNN,PCGrad,"('next_activity', 'next_time')",0.01,None,42,1.0,8.6587,0.5881,7.8102,
+CNN,PCGrad,"('next_activity', 'next_time')",0.0001,None,123,71.0,6.5535,0.8287,5.9646,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.001,None,42,17.0,6.6034,0.8158,6.4266,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",2025,5.0,8.5532,0.6937,7.5729,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,2.0,2025,9.0,8.908,0.6394,7.6683,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,2025,71.0,6.6238,0.8155,6.1073,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,2025,77.0,6.6284,0.8242,6.1785,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,123,35.0,6.8846,0.7934,6.1958,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.5,2025,1.0,8.9694,0.5877,7.6923,
+CNN,UW,"('next_activity', 'next_time')",0.01,None,2025,6.0,8.6229,0.6832,7.5157,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.7,2025,11.0,8.6262,0.6505,7.5838,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,7.0,42,7.0,8.0572,0.6878,7.5617,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.5,123,14.0,8.4091,0.7341,7.4867,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",42,11.0,8.1458,0.6495,7.606,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.7,42,9.0,8.7582,0.5082,7.8495,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",123,5.0,8.6319,0.7071,7.6619,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",42,12.0,6.8233,0.807,6.6733,
+CNN,DWA,"('next_activity', 'next_time')",0.001,None,2025,23.0,7.3597,0.8078,6.7675,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,42,85.0,6.1505,0.8263,5.9449,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",123,44.0,6.7953,0.7939,6.0863,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.0,42,20.0,6.6545,0.8319,6.549,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.01,None,2025,27.0,8.5449,0.6927,7.447,
+CNN,RLW,"('next_activity', 'next_time')",0.01,None,123,10.0,8.9951,0.5896,7.6382,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,20.0,123,13.0,7.1041,0.809,6.5707,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,10.0,123,14.0,7.1476,0.8205,6.5277,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,5.0,2025,10.0,7.2999,0.8077,6.7905,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,123,71.0,6.5251,0.8326,5.9505,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",123,10.0,7.7352,0.7369,6.8389,
+CNN,GLS,"('next_activity', 'next_time')",0.001,None,42,25.0,6.5443,0.8448,6.4707,
+CNN,RLW,"('next_activity', 'next_time')",0.0001,None,123,78.0,6.6366,0.8196,5.9998,
+CNN,EW,"('next_activity', 'next_time')",0.001,None,42,9.0,6.8823,0.7966,6.6797,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",2025,47.0,7.4079,0.792,6.7219,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,123,43.0,6.7806,0.8107,6.1015,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,7.0,2025,7.0,8.6134,0.6952,7.5598,
+CNN,UW_O,"('next_activity', 'next_time')",0.0001,None,2025,49.0,6.683,0.8444,6.3227,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",42,13.0,8.1281,0.6721,7.6379,
+CNN,IMTL,"('next_activity', 'next_time')",0.0001,None,123,84.0,6.517,0.8479,5.9655,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,2025,53.0,6.6189,0.8386,6.215,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.5,42,2.0,8.1489,0.6951,7.635,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,2025,43.0,6.7686,0.8145,6.2736,
+CNN,UW_O,"('next_activity', 'next_time')",0.01,None,42,3.0,8.1052,0.7158,7.6828,
+CNN,GradDrop,"('next_activity', 'next_time')",0.01,None,2025,3.0,8.8465,0.6348,7.6619,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,20.0,2025,22.0,7.0249,0.8169,6.5948,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,2025,63.0,6.553,0.8383,6.1214,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.5,42,26.0,6.5922,0.8258,6.479,
+CNN,DWA,"('next_activity', 'next_time')",0.0001,None,42,79.0,6.2109,0.814,5.9772,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.9,42,23.0,6.8666,0.8307,6.8153,
+CNN,IMTL,"('next_activity', 'next_time')",0.01,None,123,5.0,8.4256,0.7333,7.5275,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",42,2.0,8.4074,0.544,7.6297,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",42,21.0,6.5983,0.8261,6.7081,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",42,34.0,6.6597,0.7611,6.3023,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,2025,64.0,6.7026,0.8276,6.1895,
+CNN,EW,"('next_activity', 'next_time')",0.001,None,2025,32.0,7.3686,0.8162,6.7855,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",2025,46.0,7.1012,0.8212,6.6738,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,1.0,123,5.0,8.8004,0.6638,7.6449,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,2025,49.0,6.6495,0.8362,6.2527,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.5,123,1.0,9.0998,0.5604,7.6999,
+CNN,UW,"('next_activity', 'next_time')",0.0001,None,42,83.0,6.1383,0.8448,5.9589,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,1.0,2025,5.0,8.8207,0.6525,7.6571,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",42,13.0,6.6051,0.8384,6.5492,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,5.0,42,18.0,6.5814,0.8254,6.4192,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,0.5,2025,7.0,8.8153,0.6357,7.6403,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.5,123,9.0,7.1602,0.8185,6.475,
+CNN,GradDrop,"('next_activity', 'next_time')",0.001,None,2025,35.0,6.8632,0.8225,6.3467,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,7.0,123,15.0,7.4302,0.8163,6.8467,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",2025,11.0,8.755,0.612,7.5784,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,10.0,2025,5.0,8.6609,0.6549,7.6094,
+CNN,Nash_MTL,"('next_activity', 'next_time')",0.001,None,123,7.0,7.401,0.8054,6.7363,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",123,14.0,7.207,0.8386,6.6782,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,123,67.0,6.5343,0.8247,5.9561,
+CNN,DWA,"('next_activity', 'next_time')",0.001,None,42,21.0,6.8789,0.8113,6.76,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,2025,48.0,6.6729,0.8305,6.2445,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",123,71.0,6.5125,0.8378,5.938,
+CNN,RLW,"('next_activity', 'next_time')",0.01,None,42,7.0,8.7491,0.5187,7.7897,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,7.0,123,6.0,8.7078,0.6643,7.61,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",123,8.0,7.5849,0.7872,6.9349,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,3.0,42,1.0,8.5363,0.6023,7.7893,
+CNN,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",42,22.0,6.5388,0.8261,6.9983,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,0.5,123,8.0,8.6695,0.6929,7.6273,
+CNN,CAGrad,"('next_activity', 'next_time')",0.001,0.3,42,8.0,6.6689,0.8162,6.6424,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,15.0,123,13.0,8.5534,0.7171,7.5019,
+CNN,UW,"('next_activity', 'next_time')",0.001,None,42,16.0,6.5701,0.8382,6.4324,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.3,42,1.0,8.242,0.6961,7.7071,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,0.5,2025,19.0,6.933,0.8403,6.4949,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",42,79.0,6.177,0.8226,5.9783,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,123,31.0,6.9142,0.7883,6.1809,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,1.0,42,1.0,8.4053,0.602,7.7676,
+CNN,UW_SO,"('next_activity', 'next_time')",0.01,15.0,2025,8.0,9.0876,0.5764,7.7583,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,7.0,2025,12.0,7.4598,0.8095,6.8726,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",123,35.0,7.1699,0.7239,6.2486,
+CNN,UW_SO,"('next_activity', 'next_time')",0.001,15.0,123,18.0,7.2132,0.8017,6.5652,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,0.5,123,26.0,7.0936,0.8342,6.5922,
+CNN,DWA,"('next_activity', 'next_time')",0.0001,None,123,57.0,6.6922,0.8078,6.0516,
+CNN,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",123,7.0,8.4169,0.7294,7.4634,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,42,108.0,6.1343,0.8374,5.9254,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",42,79.0,6.4694,0.7658,6.0271,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,2025,49.0,6.5833,0.8389,6.1793,
+CNN,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,2025,83.0,6.6103,0.8256,6.0763,
+CNN,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,42,82.0,6.1846,0.8283,5.917,
+CNN,GradDrop,"('next_activity', 'next_time')",0.01,None,123,1.0,9.2683,0.5543,7.7587,
+CNN,EW,"('next_activity', 'next_time')",0.0001,None,2025,70.0,6.6407,0.8193,6.0976,
+CNN,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,123,50.0,6.6181,0.8354,6.0916,
+CNN,CAGrad,"('next_activity', 'next_time')",0.01,0.9,42,3.0,8.1896,0.6524,7.6418,
+CNN,IMTL,"('next_activity', 'next_time')",0.001,None,42,10.0,6.7117,0.828,6.5747,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,2.0,123,23.0,7.309,0.8017,6.5438,
+CNN,GradNorm,"('next_activity', 'next_time')",0.01,0.5,42,2.0,8.3419,0.6393,7.6945,
+CNN,IMTL,"('next_activity', 'next_time')",0.0001,None,2025,61.0,6.5125,0.8469,6.1388,
+CNN,GradNorm,"('next_activity', 'next_time')",0.001,1.0,2025,9.0,7.1449,0.8194,6.6836,
+CNN,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",2025,86.0,6.614,0.8311,6.1798,
+CNN,PCGrad,"('next_activity', 'next_time')",0.001,None,42,14.0,7.0138,0.8106,6.8457,
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,2025,4.0,22.7708,0.6459,,20.8654
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,2025,40.0,18.4614,0.8225,,17.1682
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,42,4.0,23.3646,0.6055,,22.1858
+CNN,IMTL,"('next_activity', 'remaining_time')",0.0001,None,2025,70.0,18.5848,0.8502,,17.4691
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,2025,52.0,18.7296,0.8069,,17.4549
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,42,75.0,17.9872,0.7969,,17.1132
+CNN,EW,"('next_activity', 'remaining_time')",0.001,None,123,45.0,18.2619,0.8126,,17.339
+CNN,UW,"('next_activity', 'remaining_time')",0.001,None,123,40.0,18.5502,0.8434,,17.776
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,2025,30.0,18.733,0.8311,,17.8127
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,123,6.0,22.5402,0.5625,,20.8859
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,123,1.0,23.4385,0.5733,,21.8298
+CNN,DWA,"('next_activity', 'remaining_time')",0.001,None,123,27.0,18.66,0.8002,,17.8226
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,42,3.0,22.7194,0.5206,,21.1993
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,2025,68.0,18.8954,0.8067,,17.6486
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,2025,35.0,18.6907,0.8336,,17.5582
+CNN,RLW,"('next_activity', 'remaining_time')",0.001,None,42,40.0,18.5969,0.7963,,17.5755
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,42,126.0,17.4957,0.8464,,16.8684
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,123,110.0,17.8869,0.8113,,16.8785
+CNN,IMTL,"('next_activity', 'remaining_time')",0.001,None,123,41.0,18.6146,0.8391,,17.9011
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,42,116.0,17.5948,0.8177,,16.7693
+CNN,GLS,"('next_activity', 'remaining_time')",0.01,None,2025,5.0,23.0916,0.725,,21.39
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.001,None,42,24.0,18.6784,0.7884,,17.632
+CNN,IMTL,"('next_activity', 'remaining_time')",0.001,None,42,26.0,18.708,0.8385,,18.0361
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,123,2.0,23.7519,0.5006,,22.2686
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,42,114.0,17.6819,0.8363,,16.9964
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,123,87.0,18.0575,0.8057,,17.0606
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,2025,2.0,23.3042,0.5121,,21.0186
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,42,41.0,18.3431,0.8321,,17.4586
+CNN,UW_O,"('next_activity', 'remaining_time')",0.01,None,42,16.0,22.6789,0.7186,,21.9772
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,42,20.0,18.9845,0.7929,,18.0993
+CNN,DWA,"('next_activity', 'remaining_time')",0.01,None,42,5.0,22.761,0.4927,,21.154
+CNN,RLW,"('next_activity', 'remaining_time')",0.01,None,42,2.0,22.6357,0.5334,,21.1299
+CNN,EW,"('next_activity', 'remaining_time')",0.001,None,2025,19.0,19.386,0.7919,,17.8651
+CNN,UW,"('next_activity', 'remaining_time')",0.0001,None,123,74.0,18.4542,0.8423,,17.4016
+CNN,UW,"('next_activity', 'remaining_time')",0.01,None,42,10.0,22.2643,0.7044,,21.4051
+CNN,RLW,"('next_activity', 'remaining_time')",0.001,None,123,66.0,18.4109,0.7993,,17.3865
+CNN,UW,"('next_activity', 'remaining_time')",0.01,None,123,10.0,22.4669,0.5487,,20.8227
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,123,55.0,18.2815,0.8434,,17.5115
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,123,10.0,22.6612,0.5258,,20.8704
+CNN,GLS,"('next_activity', 'remaining_time')",0.01,None,123,4.0,22.1196,0.7551,,21.2642
+CNN,DWA,"('next_activity', 'remaining_time')",0.0001,None,2025,84.0,18.521,0.7983,,17.1825
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,42,76.0,18.0089,0.8232,,17.1541
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,123,4.0,23.0033,0.6771,,21.7774
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,42,20.0,18.8826,0.831,,17.9024
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,123,3.0,22.8739,0.5433,,21.1776
+CNN,DWA,"('next_activity', 'remaining_time')",0.01,None,123,10.0,22.3565,0.589,,20.8494
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,123,51.0,18.726,0.8365,,17.8059
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,123,40.0,18.4746,0.8072,,17.3666
+CNN,UW_O,"('next_activity', 'remaining_time')",0.0001,None,2025,52.0,19.0386,0.8456,,17.9232
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,2025,4.0,22.4546,0.7124,,20.7111
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,123,149.0,17.6237,0.8266,,16.6686
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,2025,4.0,22.7071,0.5702,,20.6428
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,2025,43.0,18.7827,0.8286,,17.732
+CNN,DWA,"('next_activity', 'remaining_time')",0.001,None,2025,16.0,19.2132,0.7908,,17.8211
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,123,116.0,17.7564,0.8326,,16.7655
+CNN,GLS,"('next_activity', 'remaining_time')",0.0001,None,42,128.0,18.0072,0.8493,,17.159
+CNN,GLS,"('next_activity', 'remaining_time')",0.0001,None,2025,99.0,18.3454,0.8535,,17.138
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,123,10.0,22.2995,0.6044,,20.7639
+CNN,IMTL,"('next_activity', 'remaining_time')",0.001,None,2025,27.0,18.7586,0.8447,,17.5902
+CNN,UW,"('next_activity', 'remaining_time')",0.01,None,2025,4.0,22.6604,0.7027,,20.8729
+CNN,UW,"('next_activity', 'remaining_time')",0.0001,None,42,82.0,17.9117,0.8437,,17.2446
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,2025,44.0,18.7717,0.8079,,17.469
+CNN,RLW,"('next_activity', 'remaining_time')",0.0001,None,123,68.0,18.5659,0.7835,,17.5472
+CNN,GLS,"('next_activity', 'remaining_time')",0.01,None,42,1.0,22.5128,0.6858,,21.7329
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,42,10.0,22.2759,0.643,,21.1194
+CNN,IMTL,"('next_activity', 'remaining_time')",0.01,None,123,7.0,22.1201,0.7107,,20.6604
+CNN,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,75.0,18.1406,0.7947,,17.2409
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,123,26.0,18.8334,0.8383,,17.9841
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,42,82.0,17.9413,0.8361,,17.2754
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,2025,51.0,18.9442,0.7877,,17.616
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,42,105.0,17.8107,0.8477,,17.1742
+CNN,RLW,"('next_activity', 'remaining_time')",0.01,None,2025,11.0,23.1387,0.5187,,20.7059
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,2025,54.0,18.4358,0.8406,,17.4085
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,2025,51.0,19.038,0.7984,,17.6946
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,2025,12.0,22.955,0.6793,,21.0135
+CNN,EW,"('next_activity', 'remaining_time')",0.0001,None,42,139.0,17.5104,0.8162,,16.7982
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,2025,113.0,18.2766,0.8135,,16.8814
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,42,4.0,22.5394,0.5737,,21.1571
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,123,41.0,18.4179,0.8167,,17.556
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,42,76.0,18.0412,0.8009,,17.1239
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,42,25.0,19.1845,0.789,,18.1864
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,42,24.0,18.6294,0.7983,,17.8767
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,2025,71.0,18.4486,0.8285,,17.2059
+CNN,UW_O,"('next_activity', 'remaining_time')",0.01,None,2025,11.0,23.2584,0.7114,,21.481
+CNN,RLW,"('next_activity', 'remaining_time')",0.0001,None,2025,51.0,19.0362,0.773,,17.5776
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,123,68.0,18.4029,0.8244,,17.3693
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,2025,3.0,23.0327,0.5719,,20.9774
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.01,None,123,1.0,23.5053,0.4298,,21.5497
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,42,9.0,22.4032,0.6247,,21.4343
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,123,45.0,18.2446,0.838,,17.4613
+CNN,UW_O,"('next_activity', 'remaining_time')",0.0001,None,42,94.0,18.3024,0.8484,,17.4591
+CNN,UW_O,"('next_activity', 'remaining_time')",0.01,None,123,6.0,22.9028,0.6984,,21.8245
+CNN,IMTL,"('next_activity', 'remaining_time')",0.0001,None,123,108.0,18.1855,0.8501,,17.1315
+CNN,UW,"('next_activity', 'remaining_time')",0.0001,None,2025,78.0,18.449,0.8466,,17.2557
+CNN,GLS,"('next_activity', 'remaining_time')",0.001,None,42,33.0,18.6936,0.8413,,18.0944
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,2025,113.0,18.1285,0.8453,,16.8234
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,2025,75.0,18.5341,0.8143,,17.2186
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.001,None,2025,36.0,18.8737,0.7971,,17.3819
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,123,30.0,18.6008,0.8328,,17.5458
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,2025,7.0,22.8044,0.6943,,20.8218
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,42,9.0,22.467,0.5299,,21.112
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,123,4.0,22.5288,0.5874,,20.7794
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,2025,13.0,23.1998,0.4905,,20.8218
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,123,22.0,18.8811,0.8279,,18.0316
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,2025,9.0,23.2219,0.4704,,20.6465
+CNN,GLS,"('next_activity', 'remaining_time')",0.0001,None,123,55.0,18.7161,0.8421,,17.891
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,42,107.0,17.5807,0.8252,,16.8109
+CNN,GLS,"('next_activity', 'remaining_time')",0.001,None,2025,15.0,19.2822,0.8404,,18.274
+CNN,UW_O,"('next_activity', 'remaining_time')",0.001,None,42,24.0,18.815,0.8441,,18.0049
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,123,66.0,18.4784,0.8409,,17.5323
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.01,None,2025,3.0,23.5783,0.4823,,21.2286
+CNN,UW,"('next_activity', 'remaining_time')",0.001,None,2025,30.0,18.8083,0.8425,,17.6441
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,123,72.0,18.3802,0.8422,,17.4177
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,2025,80.0,18.523,0.7972,,17.0998
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,123,95.0,18.2428,0.8417,,17.2571
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,123,142.0,17.7566,0.8118,,16.7836
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,42,6.0,22.7687,0.6544,,21.6993
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,2025,25.0,18.8666,0.8356,,17.6022
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,42,47.0,18.2552,0.8184,,17.37
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,2025,12.0,19.4134,0.8143,,18.2209
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,42,4.0,22.8742,0.494,,21.5048
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,123,10.0,22.4476,0.578,,20.844
+CNN,UW_O,"('next_activity', 'remaining_time')",0.001,None,123,22.0,19.0594,0.841,,18.5455
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,42,8.0,22.4133,0.5995,,21.1658
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,42,44.0,18.3614,0.8388,,17.4777
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,42,99.0,18.2194,0.8067,,17.325
+CNN,EW,"('next_activity', 'remaining_time')",0.01,None,123,3.0,22.621,0.5597,,20.9533
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,2025,61.0,18.8305,0.7833,,17.5687
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,123,101.0,17.843,0.8337,,16.9896
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,2025,12.0,19.3713,0.7874,,18.0864
+CNN,DWA,"('next_activity', 'remaining_time')",0.0001,None,123,102.0,17.9907,0.8031,,16.8626
+CNN,UW,"('next_activity', 'remaining_time')",0.001,None,42,36.0,18.5745,0.8415,,17.9037
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,2025,61.0,18.5972,0.8392,,17.4443
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.01,None,42,2.0,22.7187,0.5836,,21.5255
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,42,41.0,18.336,0.817,,17.4972
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,123,65.0,18.6741,0.7939,,17.5931
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,2025,75.0,18.4848,0.8047,,17.1265
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,123,3.0,22.7056,0.6275,,21.3613
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,123,5.0,22.4361,0.5975,,20.9376
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,42,5.0,22.5713,0.5444,,21.1342
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,123,45.0,18.5308,0.8145,,17.5499
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.001,None,2025,38.0,18.8019,0.8222,,17.7296
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,123,7.0,22.5859,0.5428,,20.9751
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,42,22.0,18.6435,0.8329,,17.8794
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,2025,19.0,19.1709,0.8047,,17.9877
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,42,105.0,17.8044,0.8438,,17.0609
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,42,5.0,23.097,0.5967,,22.0218
+CNN,UW_O,"('next_activity', 'remaining_time')",0.001,None,2025,17.0,19.2253,0.8432,,18.126
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,2025,86.0,18.3636,0.8314,,17.1532
+CNN,IMTL,"('next_activity', 'remaining_time')",0.0001,None,42,79.0,18.1206,0.8452,,17.3286
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,42,75.0,17.9505,0.7971,,17.0378
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,2025,4.0,23.0736,0.5581,,20.9274
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,2025,71.0,18.3874,0.8375,,17.2029
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,42,54.0,18.4525,0.7892,,17.4521
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,123,10.0,22.5499,0.7255,,21.5328
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,42,15.0,19.0208,0.8207,,18.2511
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,123,108.0,17.9376,0.8223,,16.9578
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,123,9.0,22.7342,0.7155,,21.8102
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,2025,7.0,23.7621,0.4554,,21.3089
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,2025,126.0,18.1923,0.8524,,16.8156
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,2025,6.0,23.0644,0.658,,21.0736
+CNN,DWA,"('next_activity', 'remaining_time')",0.01,None,2025,4.0,22.7192,0.5635,,20.5111
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,42,40.0,18.3767,0.8236,,17.2492
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,2025,4.0,22.8696,0.5662,,20.74
+CNN,RLW,"('next_activity', 'remaining_time')",0.01,None,123,4.0,22.6673,0.5353,,21.0686
+CNN,IMTL,"('next_activity', 'remaining_time')",0.01,None,2025,1.0,22.1966,0.6927,,20.3918
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,42,8.0,22.7397,0.5372,,21.3281
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,123,96.0,18.0341,0.8027,,16.9928
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,42,3.0,22.4065,0.666,,21.477
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,42,82.0,17.9332,0.7997,,16.9712
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,123,87.0,18.0433,0.8005,,16.8858
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,42,5.0,23.0534,0.5391,,21.5632
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,42,50.0,18.2709,0.8127,,17.2562
+CNN,UW_O,"('next_activity', 'remaining_time')",0.0001,None,123,56.0,18.9079,0.8444,,18.0371
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,2025,126.0,18.144,0.8231,,16.7696
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,2025,31.0,18.9925,0.8358,,17.8289
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,2025,88.0,18.3268,0.831,,16.8915
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,123,58.0,18.2333,0.8223,,17.2359
+CNN,GLS,"('next_activity', 'remaining_time')",0.001,None,123,26.0,19.0599,0.8389,,18.2277
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,2025,4.0,24.2224,0.4686,,21.6964
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,2025,36.0,18.9195,0.8064,,17.5733
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.01,None,2025,1.0,23.92,0.4921,,21.445
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,123,25.0,18.7683,0.8394,,18.1714
+CNN,RLW,"('next_activity', 'remaining_time')",0.001,None,2025,54.0,18.8328,0.8085,,17.537
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,42,111.0,17.6483,0.8477,,16.8723
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,123,22.0,18.6757,0.8169,,17.7895
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,42,17.0,19.3426,0.8382,,18.739
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,42,95.0,17.8191,0.7963,,17.058
+CNN,EW,"('next_activity', 'remaining_time')",0.001,None,42,25.0,18.7554,0.7998,,17.9682
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,42,76.0,18.2532,0.8452,,17.4699
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,123,101.0,17.9752,0.8088,,17.0035
+CNN,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,123,10.0,19.9591,0.7565,,18.9303
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,123,1.0,22.6662,0.5872,,21.204
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,2025,4.0,22.966,0.6448,,21.0731
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,42,5.0,22.8135,0.4546,,21.3557
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,123,40.0,18.674,0.7975,,17.6763
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,123,85.0,18.0979,0.8393,,17.1046
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,2025,34.0,18.8066,0.8131,,17.5561
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,123,87.0,18.2049,0.7877,,17.054
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,42,48.0,18.2634,0.8254,,17.2145
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,42,12.0,19.1416,0.7871,,18.3274
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,42,16.0,18.8017,0.8366,,18.121
+CNN,IMTL,"('next_activity', 'remaining_time')",0.01,None,42,6.0,22.3281,0.7225,,21.5287
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,2025,102.0,18.3267,0.8064,,16.9177
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,42,79.0,18.012,0.8235,,17.2107
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,123,9.0,22.6911,0.7321,,21.7067
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,75.0,18.0036,0.806,,17.0318
+CNN,RLW,"('next_activity', 'remaining_time')",0.0001,None,42,71.0,18.3439,0.791,,17.4326
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,42,40.0,18.4863,0.8138,,17.4831
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,2025,13.0,19.2813,0.8299,,17.9986
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,123,51.0,18.3791,0.8343,,17.5109
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.01,None,123,10.0,22.3657,0.5676,,20.7583
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.001,None,123,38.0,18.6392,0.7976,,17.6754
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,123,96.0,18.0261,0.8422,,17.0898
+CNN,EW,"('next_activity', 'remaining_time')",0.0001,None,123,116.0,17.843,0.8089,,16.8361
+CNN,EW,"('next_activity', 'remaining_time')",0.01,None,2025,3.0,23.0305,0.5724,,20.7822
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,2025,3.0,22.4965,0.673,,20.6587
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,123,16.0,18.9209,0.789,,17.9699
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,2025,85.0,18.4304,0.8474,,17.1113
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.001,None,123,63.0,18.143,0.8258,,17.2977
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,123,48.0,18.3512,0.8058,,17.3083
+CNN,GradDrop,"('next_activity', 'remaining_time')",0.01,None,42,9.0,22.6421,0.5276,,21.2326
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,123,42.0,18.6254,0.8309,,17.5657
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,2025,86.0,18.4597,0.8056,,17.141
+CNN,EW,"('next_activity', 'remaining_time')",0.01,None,42,2.0,23.0498,0.5322,,21.6493
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,2025,58.0,18.651,0.8401,,17.5638
+CNN,EW,"('next_activity', 'remaining_time')",0.0001,None,2025,99.0,18.3241,0.8034,,16.929
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,2025,30.0,18.9069,0.8325,,17.9437
+CNN,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,42,5.0,22.8878,0.6579,,21.9013
+CNN,DWA,"('next_activity', 'remaining_time')",0.001,None,42,42.0,18.2188,0.8131,,17.2094
+CNN,PCGrad,"('next_activity', 'remaining_time')",0.001,None,42,36.0,18.5018,0.8227,,17.6475
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,2025,2.0,22.7246,0.5727,,20.6838
+CNN,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,123,5.0,22.4445,0.58,,20.9367
+CNN,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,42,13.0,22.586,0.6163,,21.5411
+CNN,EW,"('next_activity',)",0.0001,None,42,105.0,1.6423,0.4646,,
+CNN,EW,"('next_activity',)",0.01,None,123,9.0,1.8524,0.4195,,
+CNN,EW,"('next_activity',)",0.0001,None,123,108.0,1.6603,0.464,,
+CNN,EW,"('next_activity',)",0.001,None,42,32.0,1.6574,0.4627,,
+CNN,EW,"('next_activity',)",0.001,None,2025,30.0,1.6368,0.4594,,
+CNN,EW,"('next_activity',)",0.0001,None,2025,90.0,1.6424,0.4614,,
+CNN,EW,"('next_activity',)",0.001,None,123,37.0,1.6658,0.4613,,
+CNN,EW,"('next_activity',)",0.01,None,2025,11.0,1.7977,0.4395,,
+CNN,EW,"('next_activity',)",0.01,None,42,5.0,1.9211,0.4065,,
+CNN,EW,"('next_time',)",0.0001,None,42,42.0,5.8646,,6.2266,
+CNN,EW,"('next_time',)",0.001,None,123,16.0,6.6859,,6.6781,
+CNN,EW,"('next_time',)",0.0001,None,123,58.0,6.1716,,6.1775,
+CNN,EW,"('next_time',)",0.01,None,42,19.0,9.0349,,9.6341,
+CNN,EW,"('next_time',)",0.001,None,2025,6.0,7.0363,,7.0092,
+CNN,EW,"('next_time',)",0.0001,None,2025,33.0,6.3501,,6.4792,
+CNN,EW,"('next_time',)",0.001,None,42,46.0,6.1029,,6.5351,
+CNN,EW,"('next_time',)",0.01,None,2025,1.0,9.546,,9.5925,
+CNN,EW,"('next_time',)",0.01,None,123,15.0,9.5272,,9.5763,
+CNN,EW,"('remaining_time',)",0.01,None,2025,12.0,35.7001,,,34.387
+CNN,EW,"('remaining_time',)",0.01,None,123,7.0,35.1017,,,34.4972
+CNN,EW,"('remaining_time',)",0.0001,None,123,134.0,17.0824,,,16.6953
+CNN,EW,"('remaining_time',)",0.01,None,42,9.0,34.9121,,,35.1815
+CNN,EW,"('remaining_time',)",0.0001,None,2025,108.0,17.6404,,,16.7157
+CNN,EW,"('remaining_time',)",0.001,None,2025,28.0,18.4079,,,17.6469
+CNN,EW,"('remaining_time',)",0.001,None,42,38.0,17.8776,,,17.5743
+CNN,EW,"('remaining_time',)",0.001,None,123,38.0,17.8513,,,17.4251
+CNN,EW,"('remaining_time',)",0.0001,None,42,75.0,17.5704,,,17.3616
+CNN,IMTL,"('next_activity', 'next_time')",0.01,None,2025,,,,,
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,123,109.0,22.9961,0.8464,5.7678,16.1002
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.4, 0.4]",42,141.0,22.1658,0.8351,5.6834,16.1034
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,53.0,22.5452,0.8548,5.6657,15.8767
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.4, 0.3]",42,141.0,22.1398,0.839,5.7004,16.1046
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,127.0,23.3173,0.8399,5.7973,16.2821
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.4, 0.5]",42,141.0,22.2589,0.8191,5.7392,16.1019
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,42.0,22.0741,0.8593,5.6588,16.2075
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,82.0,23.4338,0.8644,5.8547,16.4681
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,2025,88.0,23.1936,0.858,5.8053,16.4054
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.7, 0.1]",42,181.0,22.1192,0.8441,5.6942,16.2395
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.2, 0.5]",42,141.0,22.2827,0.8412,5.7538,16.1471
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.5, 0.1, 0.4]",42,137.0,22.2317,0.8479,5.7911,16.0975
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,123,140.0,22.6256,0.8582,5.6464,15.9308
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.5, 0.4, 0.1]",42,57.0,23.167,0.8334,5.7924,16.974
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.6, 0.3]",42,195.0,21.9693,0.8334,5.6488,15.8726
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,2025,80.0,23.381,0.8608,5.7869,16.4635
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,60.0,22.9378,0.8575,5.7454,16.8337
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.6, 0.2]",42,200.0,21.9016,0.8451,5.6456,15.9615
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.3, 0.6]",123,138.0,22.9134,0.8239,5.7446,16.097
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.3, 0.5]",42,141.0,22.2826,0.8318,5.7392,16.1354
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,42,55.0,21.7918,0.8555,5.666,15.8921
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,42,53.0,21.6337,0.8504,5.6429,15.6626
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,123,156.0,22.6182,0.855,5.6821,15.805
+LSTM,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,182.0,22.0077,0.8398,5.659,15.9359
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,42,199.0,21.8564,0.8497,5.6188,15.8091
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.4, 0.3, 0.3]",42,196.0,21.8417,0.8507,5.6828,15.9005
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,127.0,22.321,0.8617,5.7005,16.3644
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,42,95.0,21.1571,0.8514,5.4937,15.3494
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,76.0,21.6107,0.8451,5.5356,15.6962
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,2025,106.0,23.2397,0.8531,5.7518,16.2348
+LSTM,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,141.0,22.5645,0.8586,5.6682,15.8757
+LSTM,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,134.0,22.9665,0.8519,5.7378,16.0778
+LSTM,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,106.0,23.1849,0.8537,5.7578,16.2437
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,151.0,22.0643,0.8601,5.6918,16.1558
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.1, 0.7]",123,153.0,22.8553,0.826,5.7449,15.9935
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.5, 0.2]",42,198.0,21.8551,0.8497,5.6386,15.9085
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.4, 0.1, 0.5]",42,157.0,22.2174,0.8469,5.7432,16.0443
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,180.0,22.6986,0.8505,5.6824,15.9742
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,123,101.0,22.9376,0.8588,5.7472,16.225
+LSTM,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,191.0,22.8537,0.8442,5.6964,15.8596
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,2025,121.0,22.9573,0.8555,5.6998,16.0741
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,2025,70.0,23.2433,0.8633,5.8174,16.4435
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,30.0,22.1376,0.8606,5.7646,16.2488
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.7, 0.2]",123,183.0,22.555,0.8417,5.5995,15.911
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,126.0,22.2152,0.8617,5.6762,16.2512
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,76.0,21.3405,0.8501,5.5867,15.476
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,123,121.0,22.5931,0.8643,5.6601,16.0022
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,123,138.0,22.5786,0.8652,5.661,15.8555
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,123,166.0,22.5495,0.8524,5.6305,15.8434
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,144.0,22.6394,0.8634,5.6701,16.0042
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.6, 0.1]",42,151.0,22.2832,0.8472,5.7203,16.2834
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.1, 0.8]",123,180.0,22.6803,0.8238,5.7906,15.8752
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.5, 0.4]",42,150.0,22.1924,0.8255,5.6496,16.0903
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.2, 0.6]",123,198.0,22.4988,0.8329,5.652,15.8389
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,2025,136.0,22.9519,0.8456,5.7089,16.0061
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.4, 0.2, 0.4]",42,163.0,22.0097,0.8466,5.7079,15.9014
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.1, 0.7]",42,195.0,22.0831,0.8281,5.8297,15.8829
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,42,141.0,22.0148,0.8599,5.6784,16.1513
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,51.0,22.4542,0.8535,5.598,15.9812
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,42,199.0,21.8722,0.8502,5.6566,15.8287
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.4, 0.5]",123,138.0,22.8878,0.8276,5.696,16.0649
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,123,116.0,23.0098,0.8455,5.6952,16.1505
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,42,80.0,22.8107,0.8498,5.753,16.6913
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.3, 0.6]",42,181.0,22.0582,0.8255,5.7252,15.9787
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,80.0,23.3396,0.864,5.8003,16.3759
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,42,72.0,22.9629,0.8281,5.8385,16.6292
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,106.0,22.8469,0.8652,5.7519,16.2022
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,123,109.0,22.8504,0.8659,5.7467,16.2089
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,2025,177.0,22.8217,0.8499,5.6588,15.8397
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,48.0,22.6194,0.8562,5.656,15.7495
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,2025,111.0,23.1672,0.847,5.8005,16.1712
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,2025,150.0,22.9805,0.8476,5.7347,15.9173
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.8, 0.1]",42,104.0,22.9922,0.8193,5.7483,16.7919
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,42,86.0,21.3002,0.8486,5.557,15.5175
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.2, 0.6]",42,195.0,22.0867,0.8377,5.7432,15.9686
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,42,185.0,21.9252,0.8488,5.6389,15.9591
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,151.0,21.9301,0.8594,5.6803,16.1111
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,199.0,22.3381,0.8528,5.569,15.7163
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,185.0,21.8998,0.8484,5.6625,15.9436
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.2, 0.7]",42,181.0,22.2681,0.8226,5.7929,16.0411
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.7, 0.2]",42,137.0,22.321,0.8319,5.6997,16.2015
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.7, 0.2, 0.1]",42,195.0,21.8577,0.8579,5.6181,15.8674
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.8, 0.1, 0.1]",42,126.0,22.1124,0.8565,5.7358,16.0755
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.6, 0.3]",123,183.0,22.5249,0.837,5.6583,15.9125
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,133.0,23.0609,0.8444,5.7083,16.0359
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,174.0,21.9175,0.8464,5.6712,15.895
+LSTM,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,140.0,22.7078,0.8506,5.6528,16.0625
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,164.0,22.5547,0.8615,5.6213,16.0074
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,76.0,21.8312,0.848,5.5566,15.4592
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,2025,82.0,23.2131,0.8598,5.772,16.325
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,82.0,21.3766,0.8468,5.5717,15.5187
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.2, 0.7]",123,153.0,22.7801,0.8224,5.7261,15.9887
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.7, 0.1, 0.2]",42,121.0,22.278,0.8508,5.766,16.0934
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,2025,118.0,22.9281,0.8623,5.7269,16.0369
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.6, 0.2, 0.2]",42,187.0,21.8402,0.8547,5.6422,15.7544
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,42,185.0,21.8855,0.8507,5.6691,15.9194
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.5, 0.3]",42,141.0,22.1273,0.8378,5.6989,16.0838
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.5, 0.3, 0.2]",42,68.0,22.9249,0.8349,5.7874,16.697
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,53.0,22.8651,0.8605,5.6953,15.9503
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,42,140.0,22.0731,0.8593,5.6731,16.0606
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,89.0,23.3753,0.864,5.8254,16.4472
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.8, 0.1]",123,178.0,22.8594,0.8434,5.667,16.1096
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,123,133.0,22.5444,0.8622,5.6271,15.9048
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.4, 0.4, 0.2]",42,80.0,22.8502,0.836,5.7838,16.6341
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,154.0,22.7898,0.8645,5.7026,15.9726
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,42,57.0,23.2917,0.8079,5.885,16.8523
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.1, 0.6]",42,163.0,22.1938,0.8379,5.8,16.0312
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,127.0,22.5104,0.8325,5.768,16.3599
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,123,141.0,22.6894,0.8502,5.6942,15.8815
+LSTM,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,76.0,22.6438,0.8504,5.7585,16.5188
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.5, 0.2, 0.3]",42,102.0,22.5731,0.8434,5.7688,16.3576
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.3, 0.3, 0.4]",42,193.0,21.8566,0.848,5.6598,15.8431
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,42,107.0,22.325,0.8615,5.7124,16.3069
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,98.0,23.1518,0.8372,5.7475,16.1797
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,105.0,23.2757,0.832,5.792,16.267
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,141.0,22.1777,0.8584,5.688,16.1317
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,123,140.0,22.7319,0.8499,5.7007,15.8853
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,42,185.0,21.8476,0.8437,5.641,15.9584
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,2025,124.0,23.0035,0.8583,5.7868,16.1091
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,146.0,22.6073,0.8644,5.6904,15.9543
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.1, 0.8]",42,195.0,22.289,0.8187,5.8657,15.9739
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,42,46.0,23.2122,0.8538,5.8568,16.9995
+LSTM,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,116.0,23.0973,0.8248,5.7614,16.2851
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,42,54.0,21.4751,0.8535,5.542,15.5403
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.6, 0.3, 0.1]",42,110.0,22.4251,0.8521,5.716,16.2661
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.6, 0.1, 0.3]",42,138.0,22.257,0.8493,5.7752,16.0274
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,2025,80.0,23.3912,0.858,5.7857,16.4117
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,81.0,21.7446,0.8492,5.5702,15.3554
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,123,101.0,22.8187,0.8637,5.7175,16.12
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,42,141.0,22.0944,0.8545,5.6685,16.0724
+LSTM,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,123,140.0,22.6049,0.8619,5.6509,15.8945
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,123,116.0,22.7755,0.8553,5.6695,16.1115
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.4, 0.5, 0.1]",42,140.0,22.289,0.8515,5.6559,16.2882
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,123,199.0,22.3075,0.8537,5.6014,15.7333
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,39.0,22.9203,0.8635,5.7551,16.0516
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,2025,121.0,23.0419,0.8459,5.7379,16.0644
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,2025,178.0,22.8537,0.8494,5.6922,15.8077
+LSTM,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,86.0,22.7157,0.8375,5.7654,16.4767
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,2025,135.0,23.0001,0.847,5.7039,15.9114
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.3, 0.5]",123,180.0,22.4922,0.8374,5.6911,15.8552
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,71.0,22.3688,0.8504,5.5913,15.4888
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.1, 0.5, 0.4]",123,199.0,22.3874,0.8351,5.6076,15.8039
+LSTM,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,42,68.0,22.6686,0.8558,5.7758,16.6344
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,123,37.0,6.1148,0.8588,5.6855,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,42,95.0,5.8721,0.859,5.7432,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.01,None,42,9.0,6.3825,0.8164,6.2717,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.01,None,42,35.0,6.0303,0.8556,5.9549,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",42,34.0,5.8632,0.8503,5.6997,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,15.0,2025,40.0,6.3817,0.84,5.9392,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",123,17.0,6.3853,0.8553,5.9122,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,2025,77.0,6.2296,0.8495,5.8479,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,2025,62.0,6.2042,0.8615,5.8819,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,2025,64.0,6.192,0.8624,5.8777,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,2025,33.0,6.0222,0.8622,5.7751,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",2025,37.0,6.046,0.8517,5.7351,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,2025,22.0,6.0642,0.8636,5.764,
+LSTM,GLS,"('next_activity', 'next_time')",0.01,None,42,25.0,6.0011,0.8596,5.9863,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",123,22.0,6.1318,0.8631,5.6837,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,123,70.0,6.166,0.863,5.7843,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,2025,35.0,5.9776,0.8618,5.7681,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,2025,73.0,6.2601,0.8494,5.859,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",2025,22.0,6.329,0.8639,5.9368,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",2025,106.0,6.1919,0.8521,5.7969,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",2025,106.0,6.3654,0.8168,5.8634,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,123,22.0,6.1658,0.8591,5.7268,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,123,68.0,6.2104,0.8547,5.7756,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,123,32.0,6.0671,0.8588,5.7091,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.01,None,42,28.0,6.0622,0.8491,5.9705,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",2025,44.0,6.0231,0.8602,5.7042,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,15.0,123,34.0,6.3258,0.8464,5.8196,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,5.0,42,46.0,5.9417,0.8531,5.8966,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",42,95.0,5.8648,0.8584,5.7451,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,2025,39.0,6.0266,0.8627,5.7055,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",2025,37.0,6.0289,0.8643,5.7311,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.0,123,17.0,6.3867,0.8562,5.9858,
+LSTM,UW_O,"('next_activity', 'next_time')",0.01,None,42,11.0,6.1571,0.8513,6.0509,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.7,2025,17.0,6.3512,0.8568,5.9808,
+LSTM,IMTL,"('next_activity', 'next_time')",0.01,None,42,10.0,6.1069,0.8517,6.0371,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,42,32.0,5.8235,0.8607,5.6567,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",2025,36.0,6.0166,0.8642,5.7112,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,2025,125.0,6.1749,0.851,5.772,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",42,24.0,6.0225,0.8493,5.9022,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",42,34.0,5.8136,0.8555,5.715,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",42,95.0,5.923,0.8511,5.7233,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",123,58.0,6.2481,0.8417,5.8478,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,10.0,2025,68.0,6.2893,0.8524,5.9227,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.5,123,17.0,6.3154,0.8508,5.8508,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,42,22.0,5.8188,0.859,5.6837,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,7.0,123,19.0,6.424,0.8477,5.9269,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",2025,55.0,6.1478,0.8601,5.8501,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,42,41.0,5.8054,0.8601,5.6546,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.9,123,10.0,6.3269,0.8557,5.8844,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",42,13.0,6.0128,0.8552,5.9643,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,42,113.0,5.8879,0.852,5.7231,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,42,37.0,5.9602,0.8558,5.9097,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,123,79.0,6.1502,0.852,5.7657,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.01,None,123,17.0,6.3894,0.8458,5.9401,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.01,None,2025,29.0,6.2886,0.8555,5.8687,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",42,34.0,5.7861,0.8584,5.722,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,2025,38.0,6.0232,0.8608,5.7665,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,123,48.0,6.2408,0.8605,5.8666,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,123,105.0,6.1116,0.8512,5.7362,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,20.0,123,19.0,6.3868,0.8326,5.9008,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,2025,39.0,6.037,0.8594,5.7187,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",2025,40.0,6.1178,0.8373,5.7201,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.5,123,26.0,6.335,0.8578,5.8936,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,2.0,2025,15.0,6.4134,0.854,5.9386,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,2025,48.0,6.0049,0.864,5.6885,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",123,57.0,6.2272,0.8578,5.8218,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,2025,64.0,6.2553,0.8472,5.8822,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,123,78.0,6.1684,0.8566,5.7462,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,123,44.0,6.2157,0.8581,5.831,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,2025,29.0,6.0257,0.8635,5.729,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,2025,64.0,6.2011,0.8633,5.9108,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,123,41.0,6.1266,0.8559,5.7055,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,123,79.0,6.1695,0.8494,5.7693,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,42,42.0,6.0372,0.8385,5.9035,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,2025,55.0,6.2846,0.8482,5.9298,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",2025,41.0,6.0303,0.8605,5.6958,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,123,58.0,6.2682,0.8341,5.8089,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,2025,48.0,6.0193,0.8614,5.6625,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,2025,88.0,6.2096,0.8526,5.8336,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,123,32.0,6.1062,0.8621,5.7168,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",42,21.0,6.2145,0.822,5.9871,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,2025,64.0,6.2784,0.8447,5.8708,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",2025,22.0,6.3358,0.8542,5.913,
+LSTM,DWA,"('next_activity', 'next_time')",0.01,None,2025,22.0,6.3901,0.8482,5.9492,
+LSTM,UW,"('next_activity', 'next_time')",0.01,None,42,22.0,6.0086,0.8585,6.0534,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,42,76.0,5.889,0.8597,5.8007,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",123,17.0,7.407,0.7585,6.5925,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,123,68.0,6.2204,0.8453,5.8577,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,123,32.0,6.0733,0.8624,5.7167,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,20.0,2025,22.0,6.4238,0.841,5.9427,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",123,17.0,6.8082,0.813,6.1476,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,42,99.0,5.9208,0.8544,5.768,
+LSTM,DWA,"('next_activity', 'next_time')",0.01,None,123,19.0,6.4143,0.8427,5.9257,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,2.0,42,25.0,6.0032,0.8541,5.9029,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,42,76.0,5.9758,0.8469,5.8139,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.01,None,2025,14.0,6.513,0.8269,6.0523,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,7.0,2025,17.0,6.4008,0.8475,5.9894,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",42,36.0,5.8009,0.8587,5.6939,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",2025,55.0,6.317,0.8424,5.9012,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,2025,64.0,6.1637,0.8624,5.8726,
+LSTM,EW,"('next_activity', 'next_time')",0.01,None,2025,21.0,6.4554,0.8356,5.9425,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,42,55.0,5.9584,0.859,5.8445,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,42,25.0,5.8242,0.8577,5.7066,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,2025,68.0,6.2474,0.8513,5.9435,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,5.0,2025,31.0,6.2687,0.8563,5.9117,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,123,61.0,6.2415,0.8476,5.8485,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,42,98.0,5.9047,0.8549,5.7294,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,2025,39.0,6.0202,0.8612,5.7743,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",123,16.0,6.3438,0.8477,5.8808,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,42,34.0,5.8081,0.8559,5.6612,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,2025,41.0,6.0443,0.8619,5.7544,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,10.0,123,44.0,6.3267,0.8474,5.8476,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",42,95.0,5.9517,0.8487,5.8074,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,42,76.0,5.8944,0.8584,5.7542,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",2025,18.0,6.3315,0.858,5.9291,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,123,31.0,6.1026,0.8628,5.6589,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,42,26.0,5.7905,0.8561,5.6613,
+LSTM,RLW,"('next_activity', 'next_time')",0.01,None,2025,42.0,6.4018,0.84,5.911,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,2025,39.0,6.343,0.8412,5.9446,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.5,2025,25.0,6.3555,0.8574,5.9865,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,123,68.0,6.1099,0.861,5.7767,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,123,44.0,6.0931,0.8575,5.7042,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,123,18.0,6.1534,0.8595,5.7353,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",42,23.0,6.1486,0.8353,5.9795,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,42,26.0,5.8454,0.8596,5.6944,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,42,28.0,5.8181,0.8542,5.6863,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",2025,42.0,6.0481,0.8623,5.7418,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",42,99.0,6.0638,0.8309,5.7776,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,7.0,42,21.0,6.0683,0.8502,5.9403,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,2025,109.0,6.1472,0.8601,5.8079,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,42,25.0,5.7927,0.8571,5.6434,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,2025,55.0,6.2755,0.8491,5.9366,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",123,31.0,6.1432,0.8531,5.7017,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",123,20.0,6.3748,0.8463,5.9201,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.5,42,25.0,6.1069,0.8482,5.9535,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,42,70.0,5.8993,0.86,5.7864,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.5,42,24.0,6.067,0.8491,5.9812,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",2025,13.0,6.5171,0.8358,5.9888,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,2025,39.0,6.0087,0.8639,5.7486,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,42,77.0,5.9376,0.8517,5.7807,
+LSTM,UW_O,"('next_activity', 'next_time')",0.01,None,2025,12.0,6.4133,0.8551,6.0766,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,42,26.0,5.8604,0.8542,5.721,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,42,42.0,6.0001,0.8513,5.8571,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,2025,95.0,6.1987,0.8568,5.803,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",123,107.0,6.1142,0.8587,5.7402,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,3.0,2025,37.0,6.2941,0.8572,5.8882,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",42,41.0,5.8499,0.8418,5.6694,
+LSTM,IMTL,"('next_activity', 'next_time')",0.01,None,123,12.0,6.3728,0.8587,5.901,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,2025,52.0,5.9947,0.8634,5.7292,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",123,30.0,6.1371,0.8533,5.7004,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",42,33.0,6.0105,0.8536,5.9233,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",2025,49.0,6.6055,0.8007,5.9978,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,2025,49.0,6.0708,0.8586,5.7793,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,2025,41.0,6.0046,0.8586,5.7542,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,42,61.0,5.9694,0.8512,5.7978,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,123,18.0,6.1234,0.8558,5.7004,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.5,2025,11.0,6.3955,0.8467,6.0268,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",42,36.0,5.8592,0.85,5.6539,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,0.5,2025,49.0,6.208,0.8637,5.8709,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,2025,64.0,6.1902,0.8614,5.8772,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",42,61.0,5.9885,0.8436,5.7956,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.9,2025,14.0,6.4536,0.8586,6.0485,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,42,33.0,5.8333,0.8577,5.7015,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,42,28.0,5.7851,0.8602,5.6752,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,42,42.0,5.8251,0.8594,5.6985,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,42,26.0,5.7978,0.8614,5.7153,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,10.0,42,34.0,6.0106,0.8431,5.9744,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",123,99.0,6.259,0.8386,5.7574,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",42,130.0,6.0522,0.8203,5.7204,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,2025,37.0,6.0407,0.8624,5.7842,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",2025,49.0,6.5889,0.7919,5.9976,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,42,32.0,5.8174,0.8533,5.6833,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,123,52.0,6.1054,0.8613,5.7336,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",123,105.0,6.0726,0.8635,5.703,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",2025,64.0,6.1533,0.8579,5.7966,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,123,42.0,6.309,0.8303,5.8321,
+LSTM,RLW,"('next_activity', 'next_time')",0.01,None,123,20.0,6.4135,0.8393,5.9334,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,42,83.0,5.9507,0.8509,5.7501,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,42,25.0,5.8372,0.8623,5.729,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,2025,75.0,6.1322,0.8625,5.8511,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,123,99.0,6.1125,0.8535,5.7427,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",2025,35.0,6.2267,0.8589,5.8698,
+LSTM,UW_O,"('next_activity', 'next_time')",0.01,None,123,20.0,6.3546,0.8613,5.9109,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.9,42,21.0,6.0306,0.8582,5.9527,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,42,27.0,6.0394,0.8477,5.9152,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,1.0,123,11.0,6.3227,0.8593,5.939,
+LSTM,IMTL,"('next_activity', 'next_time')",0.01,None,2025,37.0,6.2524,0.8586,5.8913,
+LSTM,UW,"('next_activity', 'next_time')",0.01,None,123,16.0,6.3157,0.8549,5.8905,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",42,34.0,5.7975,0.8564,5.7491,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,123,45.0,6.2627,0.8457,5.8725,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,123,57.0,6.1743,0.8598,5.794,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",123,32.0,6.1511,0.8446,5.6766,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,42,95.0,5.9016,0.8556,5.7162,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",123,78.0,6.2091,0.8583,5.8075,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.7,123,23.0,6.4145,0.8556,5.9951,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,123,68.0,6.179,0.8548,5.8027,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,1.0,2025,13.0,6.2594,0.8575,5.9913,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,2025,64.0,6.1662,0.8603,5.8184,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,42,36.0,5.8608,0.8598,5.715,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",123,17.0,6.1558,0.8604,5.7442,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.0,2025,34.0,6.3035,0.8574,5.915,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,2025,29.0,6.0979,0.8642,5.8441,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,123,18.0,6.1404,0.8551,5.7357,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",42,33.0,6.0226,0.8487,5.9713,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.3,42,22.0,6.0609,0.8472,5.9072,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,123,32.0,6.0904,0.8621,5.7009,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",123,76.0,6.2137,0.8458,5.8244,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.3,123,28.0,6.3325,0.8575,5.8917,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,2025,49.0,6.0108,0.859,5.7198,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,2025,75.0,6.1328,0.8625,5.8347,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,42,36.0,5.7802,0.859,5.6348,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,123,19.0,6.1611,0.8587,5.7388,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,123,27.0,6.1344,0.8585,5.7072,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,2.0,123,18.0,6.3473,0.8532,5.8886,
+LSTM,RLW,"('next_activity', 'next_time')",0.01,None,42,37.0,6.0014,0.8473,5.862,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,123,68.0,6.171,0.8517,5.8368,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,0.5,42,24.0,6.004,0.857,5.9697,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",42,72.0,5.9232,0.8552,5.8269,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,3.0,123,17.0,6.358,0.8558,5.8892,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,42,95.0,5.9177,0.85,5.7156,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",123,13.0,6.4393,0.8511,6.0038,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,42,42.0,5.8226,0.8615,5.7127,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.1,42,37.0,5.982,0.8482,5.8759,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,123,42.0,6.08,0.8594,5.681,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",123,12.0,6.6242,0.8188,6.052,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,42,41.0,5.7981,0.8574,5.7138,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",2025,82.0,6.2122,0.8539,5.854,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,123,79.0,6.1786,0.8587,5.7703,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.1,2025,13.0,6.5435,0.8484,6.0987,
+LSTM,GLS,"('next_activity', 'next_time')",0.01,None,123,4.0,6.4466,0.854,6.06,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,123,79.0,6.1366,0.8538,5.7533,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,2025,29.0,6.1039,0.8617,5.7789,
+LSTM,GLS,"('next_activity', 'next_time')",0.01,None,2025,20.0,6.2803,0.8477,5.9598,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,42,28.0,5.8254,0.857,5.6633,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,42,53.0,5.9474,0.858,5.7788,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,123,18.0,6.1202,0.8595,5.698,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,1.0,42,24.0,5.9733,0.8584,5.9657,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.3,2025,14.0,6.3435,0.8536,5.935,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,42,26.0,5.8318,0.8542,5.6821,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,2025,35.0,6.0141,0.8647,5.7482,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,2025,94.0,6.1313,0.857,5.8077,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,2025,38.0,5.9975,0.8606,5.7604,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,123,37.0,6.0722,0.8658,5.6625,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,2025,39.0,6.0746,0.8615,5.7272,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.7,42,22.0,6.1072,0.8498,6.0379,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",2025,55.0,6.2309,0.8499,5.8865,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,42,108.0,5.9177,0.849,5.7436,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",2025,94.0,6.3101,0.8234,5.8681,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",123,26.0,6.5956,0.8176,5.9619,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",42,25.0,5.8305,0.8587,5.6711,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",123,18.0,6.1926,0.859,5.8187,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,42,42.0,5.9669,0.8556,5.8961,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,20.0,42,26.0,6.0299,0.8495,5.9281,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,123,16.0,6.1176,0.8618,5.7407,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,2025,38.0,6.0487,0.86,5.8171,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.01,0.1,123,16.0,6.3793,0.841,5.8788,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,2025,55.0,6.3228,0.8351,5.9104,
+LSTM,EW,"('next_activity', 'next_time')",0.01,None,123,15.0,6.4349,0.8324,5.8995,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,123,60.0,6.2147,0.8597,5.8265,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,123,49.0,6.2283,0.8611,5.8645,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.01,None,123,37.0,6.2554,0.8552,5.8023,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,123,12.0,6.2262,0.8515,5.7757,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,1.0,42,11.0,6.1232,0.8531,6.0884,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",42,53.0,6.3275,0.7785,5.9917,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",123,133.0,6.2509,0.8243,5.7124,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,5.0,123,33.0,6.3109,0.8418,5.9031,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",2025,47.0,6.2915,0.8514,5.8802,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",123,23.0,6.3278,0.8593,5.9077,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,2025,90.0,6.1276,0.8654,5.8213,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",2025,25.0,6.1124,0.8551,5.7933,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,2025,64.0,6.1693,0.8605,5.8432,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.01,None,2025,42.0,6.2419,0.851,5.8619,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",42,9.0,6.8151,0.7258,6.4016,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,123,18.0,6.0873,0.8545,5.7276,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.01,0.5,123,27.0,6.3256,0.8609,5.8564,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,42,87.0,5.9745,0.8398,5.756,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",2025,106.0,6.2667,0.845,5.8369,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",42,34.0,5.8164,0.8567,5.702,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",123,32.0,6.1197,0.8635,5.7253,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,2025,37.0,6.0021,0.8602,5.7146,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,42,26.0,5.819,0.8591,5.7862,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",123,31.0,6.1415,0.8529,5.6901,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,42,33.0,5.8373,0.8617,5.706,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,123,78.0,6.149,0.8528,5.7835,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.01,None,123,6.0,7.0788,0.7925,6.3778,
+LSTM,EW,"('next_activity', 'next_time')",0.01,None,42,41.0,6.0696,0.8384,5.9506,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,123,42.0,6.1999,0.8615,5.8193,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,3.0,42,35.0,5.9875,0.8541,5.9217,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,42,83.0,5.9198,0.8549,5.7649,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",2025,44.0,6.0354,0.8589,5.6635,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.01,15.0,42,13.0,6.1267,0.8403,5.9835,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",2025,37.0,6.5661,0.8123,6.1348,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,123,27.0,6.0137,0.8625,5.6598,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",123,79.0,6.2525,0.8371,5.7657,
+LSTM,DWA,"('next_activity', 'next_time')",0.01,None,42,37.0,6.0668,0.845,5.9498,
+LSTM,UW,"('next_activity', 'next_time')",0.01,None,2025,14.0,6.3387,0.8614,5.9261,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",42,40.0,5.976,0.8542,5.82,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,2025,55.0,6.1722,0.8628,5.8619,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",42,24.0,5.9902,0.8545,5.9187,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,42,26.0,5.7723,0.8572,5.6436,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,2025,34.0,6.0505,0.8615,5.7543,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,2025,64.0,6.292,0.8425,5.9182,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,123,105.0,6.0408,0.8638,5.7631,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,42,21.0,5.8311,0.8604,5.7216,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,123,34.0,6.0756,0.8578,5.6885,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,123,30.0,6.1207,0.8591,5.685,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,42,120.0,5.8796,0.8556,5.704,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,123,16.0,6.1496,0.8659,5.821,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,2025,48.0,6.0069,0.858,5.6922,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",123,27.0,6.1312,0.8561,5.717,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,123,96.0,6.137,0.864,5.7548,
+LSTM,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",42,102.0,5.9303,0.8424,5.7665,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,42,95.0,5.8625,0.8586,5.7481,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,42,95.0,5.8961,0.8546,5.7161,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,123,16.0,6.1571,0.8609,5.744,
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.1, 0.9]",2025,79.0,16.9448,0.8255,,15.5409
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,2025,43.0,18.198,0.8107,,16.9937
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.9, 0.1]",123,96.0,17.2178,0.8612,,16.2708
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.7, 0.3]",42,55.0,16.3185,0.8526,,15.7622
+LSTM,RLW,"('next_activity', 'remaining_time')",0.001,None,2025,84.0,16.7909,0.8502,,15.614
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,123,97.0,16.3978,0.8495,,15.4831
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,2025,32.0,18.2193,0.8585,,16.9637
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.01,None,2025,40.0,18.8806,0.8037,,17.249
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,123,32.0,16.9118,0.8618,,15.9721
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,42,82.0,16.2228,0.846,,15.526
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,123,58.0,17.8054,0.8628,,16.8363
+LSTM,EW,"('next_activity', 'remaining_time')",0.01,None,2025,30.0,18.9097,0.8134,,17.815
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.001,None,2025,136.0,16.6377,0.8465,,15.2648
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,42,139.0,16.8715,0.8409,,16.1318
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,42,79.0,16.1742,0.8423,,15.6128
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,123,85.0,17.3744,0.8505,,16.3332
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,123,128.0,17.0209,0.8631,,16.0657
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,2025,25.0,17.9375,0.855,,16.8526
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.9, 0.1]",123,64.0,16.4991,0.8572,,15.577
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,42,54.0,17.2241,0.8359,,16.4249
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.001,None,2025,24.0,17.3445,0.8614,,16.1885
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,2025,46.0,18.1095,0.8431,,16.8413
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,42,169.0,16.6279,0.8617,,16.0274
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,2025,105.0,17.4219,0.8553,,16.2151
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,42,167.0,16.7287,0.859,,16.047
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,42,68.0,16.5466,0.8604,,16.0101
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.01,None,123,31.0,19.6942,0.7615,,18.2254
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,42,44.0,16.4702,0.8502,,15.756
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.5, 0.5]",42,57.0,16.2805,0.8482,,15.7628
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,2025,170.0,17.3347,0.8431,,15.9249
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,123,43.0,17.632,0.8579,,16.8167
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,2025,66.0,16.9101,0.8604,,15.7631
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,42,150.0,16.8529,0.8472,,16.0297
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.3, 0.7]",123,149.0,17.131,0.8313,,16.147
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,42,28.0,17.8673,0.8275,,17.1701
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.8, 0.2]",42,57.0,16.2506,0.8545,,15.6744
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.8, 0.2]",123,80.0,16.4488,0.8546,,15.469
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,2025,93.0,18.0082,0.8058,,16.5654
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,123,34.0,17.9174,0.8232,,16.9806
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,163.0,16.7682,0.8466,,16.1064
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,123,157.0,17.0242,0.8463,,16.0625
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,42,107.0,16.8815,0.8602,,16.3375
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.1, 0.9]",42,195.0,16.753,0.8181,,16.0156
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,123,35.0,17.5346,0.8599,,16.7646
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,123,110.0,17.3267,0.8579,,16.3187
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,123,14.0,18.3367,0.8176,,17.3038
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,42,144.0,16.6189,0.8606,,16.0524
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,42,57.0,17.5458,0.8352,,16.84
+LSTM,GLS,"('next_activity', 'remaining_time')",0.01,None,2025,24.0,18.3658,0.8605,,17.0284
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,2025,38.0,17.1909,0.8636,,15.9657
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.01,None,123,31.0,17.6888,0.8557,,16.8215
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.01,None,42,15.0,18.3359,0.8565,,17.675
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,123,10.0,19.1747,0.8021,,18.0547
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,2025,48.0,18.565,0.8123,,17.1824
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.001,None,123,32.0,17.0263,0.861,,16.0071
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,2025,140.0,17.3943,0.8468,,16.1318
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,123,109.0,17.1142,0.8647,,16.1019
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,123,138.0,17.0726,0.848,,16.0178
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,123,84.0,16.4377,0.8508,,15.4153
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.6, 0.4]",123,152.0,17.0165,0.8508,,16.0186
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,123,73.0,16.558,0.8513,,15.6992
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,123,89.0,16.3913,0.8397,,15.5132
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,2025,88.0,17.6326,0.8622,,16.493
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,42,181.0,16.6782,0.8493,,16.0116
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,42,28.0,17.8345,0.8337,,17.2355
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.5, 0.5]",123,178.0,16.9466,0.8503,,16.0096
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,2025,140.0,17.4202,0.8457,,16.047
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.9, 0.1]",2025,36.0,17.1081,0.8635,,15.9422
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,42,120.0,16.7974,0.8545,,16.1216
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.2, 0.8]",42,120.0,17.2038,0.81,,16.3393
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.01,None,123,25.0,17.8093,0.8408,,17.0533
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,42,141.0,16.9265,0.8375,,16.1449
+LSTM,DWA,"('next_activity', 'remaining_time')",0.001,None,2025,72.0,16.7742,0.8518,,15.4493
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,2025,89.0,17.6872,0.8493,,16.4344
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.5, 0.5]",123,55.0,16.6652,0.8506,,15.7764
+LSTM,RLW,"('next_activity', 'remaining_time')",0.01,None,2025,28.0,18.6885,0.8054,,17.617
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,123,23.0,18.5922,0.8144,,17.3958
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.1, 0.9]",42,49.0,17.8393,0.7576,,16.7408
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.3, 0.7]",42,31.0,17.9935,0.8093,,17.0899
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,2025,109.0,17.5517,0.8424,,16.2399
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.2, 0.8]",2025,70.0,16.9234,0.832,,15.5912
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,123,58.0,16.6026,0.8603,,15.6202
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,2025,87.0,17.4447,0.8633,,16.2766
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.3, 0.7]",42,141.0,16.9871,0.8328,,16.1845
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,2025,197.0,17.1715,0.8507,,15.8897
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.4, 0.6]",42,40.0,17.8709,0.805,,16.9232
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.7, 0.3]",123,32.0,16.9809,0.8565,,16.0113
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,2025,35.0,17.1969,0.8551,,15.9224
+LSTM,UW,"('next_activity', 'remaining_time')",0.01,None,42,23.0,17.6733,0.8546,,17.1145
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.8, 0.2]",2025,93.0,17.5524,0.8515,,16.3422
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,42,81.0,17.1379,0.8587,,16.4155
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,2025,106.0,17.4084,0.862,,16.2225
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,123,14.0,18.5354,0.8427,,17.8285
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.1, 0.9]",42,117.0,16.1099,0.8195,,15.512
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,123,29.0,18.5421,0.8172,,17.4609
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,2025,118.0,17.5042,0.8469,,16.2523
+LSTM,EW,"('next_activity', 'remaining_time')",0.01,None,123,22.0,18.2665,0.8194,,17.3907
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.01,None,42,22.0,17.9867,0.8333,,17.176
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,2025,66.0,16.7612,0.8516,,15.6237
+LSTM,GLS,"('next_activity', 'remaining_time')",0.01,None,123,23.0,18.097,0.8528,,17.2126
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,42,60.0,16.4318,0.8521,,15.8532
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,2025,89.0,17.5152,0.8639,,16.3881
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,42,120.0,16.8218,0.8594,,16.1485
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.2, 0.8]",2025,118.0,17.8628,0.8053,,16.4002
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,2025,106.0,17.6804,0.8308,,16.2813
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.1, 0.9]",123,200.0,17.038,0.8094,,15.939
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,123,63.0,17.6348,0.8363,,16.8267
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,42,25.0,18.1547,0.8239,,17.2747
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.01,None,123,16.0,18.4384,0.8587,,17.5941
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,42,57.0,16.338,0.8517,,15.7319
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,2025,48.0,17.1155,0.8444,,15.8759
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,2025,99.0,17.8873,0.8137,,16.5349
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,123,116.0,17.1058,0.8645,,16.2912
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,121.0,16.9962,0.8479,,16.2575
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,123,32.0,16.9642,0.8616,,16.0008
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,2025,40.0,17.9444,0.8526,,16.7043
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,123,58.0,16.6807,0.8531,,15.681
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,123,166.0,16.8985,0.8642,,16.0265
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,123,63.0,16.6772,0.8504,,15.7306
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,123,11.0,18.5491,0.8159,,17.483
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.01,None,2025,13.0,18.5352,0.8215,,17.2943
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.001,None,123,57.0,16.9201,0.854,,15.8553
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,123,166.0,16.8869,0.8621,,15.9187
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,42,137.0,16.9361,0.8481,,16.2696
+LSTM,DWA,"('next_activity', 'remaining_time')",0.01,None,42,44.0,17.4871,0.8345,,16.7143
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,123,146.0,17.2165,0.8418,,16.0534
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.001,None,42,60.0,16.4976,0.8547,,16.0066
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,2025,87.0,17.4553,0.8637,,16.2761
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.5, 0.5]",2025,189.0,17.235,0.8457,,15.9309
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,123,16.0,18.7727,0.8147,,17.5867
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,123,183.0,16.8346,0.8537,,15.9187
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,123,34.0,17.619,0.857,,16.6884
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.1, 0.9]",123,23.0,19.3118,0.7409,,17.9814
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.9, 0.1]",2025,127.0,17.2222,0.8629,,15.9957
+LSTM,GLS,"('next_activity', 'remaining_time')",0.001,None,123,33.0,17.1278,0.8566,,15.878
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,123,56.0,16.9979,0.8583,,15.9559
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.4, 0.6]",42,52.0,16.3709,0.8438,,15.6962
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,42,141.0,16.8949,0.8437,,16.148
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.3, 0.7]",123,81.0,16.5328,0.8425,,15.5137
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,2025,121.0,17.6043,0.8336,,16.2393
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.1,42,27.0,17.809,0.8421,,16.9574
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.2, 0.8]",42,85.0,16.1764,0.8322,,15.629
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.8, 0.2]",123,85.0,17.4108,0.8489,,16.3108
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.01,None,42,16.0,18.6191,0.789,,17.834
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,42,86.0,17.4002,0.8235,,16.546
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,2025,118.0,17.3596,0.8637,,16.1894
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.6, 0.4]",2025,140.0,17.427,0.8477,,16.1159
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,123,142.0,17.0688,0.8629,,16.0265
+LSTM,UW,"('next_activity', 'remaining_time')",0.01,None,2025,24.0,17.9851,0.8598,,16.8988
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,123,66.0,16.4943,0.8524,,15.6623
+LSTM,RLW,"('next_activity', 'remaining_time')",0.001,None,123,51.0,16.7998,0.8517,,15.9137
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,2025,121.0,17.5212,0.8439,,16.1532
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.2, 0.8]",42,16.0,18.4439,0.7929,,17.4794
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,123,83.0,16.3592,0.851,,15.4933
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.01,None,2025,40.0,18.0012,0.8627,,16.807
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.5, 0.5]",42,31.0,18.201,0.8064,,17.2351
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,2025,41.0,18.111,0.8581,,17.1007
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.1, 0.9]",2025,133.0,17.7333,0.8006,,16.2583
+LSTM,EW,"('next_activity', 'remaining_time')",0.001,None,123,97.0,16.3908,0.8451,,15.505
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,42,57.0,16.2967,0.854,,15.629
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.001,None,2025,66.0,16.8053,0.856,,15.63
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.8, 0.2]",42,30.0,17.656,0.8447,,16.8859
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.4, 0.6]",123,84.0,16.5075,0.8445,,15.5764
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,2025,66.0,16.861,0.8563,,15.564
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.8, 0.2]",42,115.0,16.8703,0.8522,,16.1871
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,42,52.0,16.3376,0.8414,,15.8188
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,42,70.0,16.4921,0.8472,,15.8374
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,42,8.0,18.4411,0.8472,,17.8299
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,123,138.0,17.1421,0.8455,,16.1294
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.6, 0.4]",2025,69.0,16.7126,0.853,,15.4914
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,2025,52.0,16.9712,0.8569,,15.7954
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.001,None,2025,21.0,17.5004,0.8651,,16.4458
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,42,14.0,18.1623,0.8188,,17.3647
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.3, 0.7]",42,80.0,16.2119,0.8399,,15.5669
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.2, 0.8]",123,198.0,16.9767,0.8258,,15.8999
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.4, 0.6]",123,25.0,18.9161,0.7715,,17.9889
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.7, 0.3]",2025,41.0,17.035,0.8561,,15.7806
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,2025,80.0,17.7055,0.8637,,16.4735
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,42,20.0,17.9491,0.8442,,17.2118
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,2025,44.0,17.0119,0.8591,,15.8585
+LSTM,EW,"('next_activity', 'remaining_time')",0.001,None,2025,66.0,16.8534,0.8499,,15.4928
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,2025,57.0,18.1827,0.8238,,16.8574
+LSTM,RLW,"('next_activity', 'remaining_time')",0.01,None,42,61.0,17.4003,0.8336,,16.5692
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,42,141.0,16.6858,0.8587,,16.0906
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,123,116.0,17.3025,0.839,,16.211
+LSTM,EW,"('next_activity', 'remaining_time')",0.001,None,42,68.0,16.2467,0.8456,,15.757
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,123,131.0,17.1305,0.8631,,16.0372
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,123,96.0,16.3741,0.8492,,15.443
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,2.0,2025,15.0,18.6289,0.8233,,17.3297
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,123,95.0,16.5231,0.8436,,15.4609
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,123,56.0,17.6031,0.8392,,16.8999
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,42,49.0,17.6653,0.8471,,17.1206
+LSTM,DWA,"('next_activity', 'remaining_time')",0.01,None,123,14.0,19.1174,0.7907,,17.8035
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.4, 0.6]",2025,48.0,16.9781,0.847,,15.7485
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.5, 0.5]",42,163.0,16.7537,0.8473,,16.1288
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,2025,18.0,18.3167,0.8577,,17.1387
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,123,199.0,17.0443,0.8149,,15.9323
+LSTM,GLS,"('next_activity', 'remaining_time')",0.001,None,2025,53.0,17.0742,0.8572,,15.8509
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.01,None,2025,20.0,18.1654,0.8496,,17.0742
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.4, 0.6]",123,193.0,16.9287,0.8417,,15.9062
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.01,None,42,79.0,17.4503,0.8565,,16.7203
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,2025,35.0,18.5338,0.8133,,17.1774
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.6, 0.4]",42,35.0,17.3671,0.8398,,16.5646
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.7, 0.3]",123,187.0,16.9271,0.8546,,15.9333
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.001,None,42,71.0,16.7179,0.8539,,16.0797
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.001,None,123,64.0,16.4621,0.8558,,15.5468
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.2, 0.8]",123,54.0,16.7398,0.8349,,15.8123
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,2025,173.0,17.364,0.8098,,15.9738
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,2025,66.0,16.8292,0.8588,,15.6163
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,2025,150.0,17.387,0.8468,,16.0678
+LSTM,UW,"('next_activity', 'remaining_time')",0.01,None,123,51.0,17.638,0.8617,,16.7794
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,0.5,42,42.0,17.2424,0.8585,,16.6354
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,2025,67.0,16.8236,0.854,,15.4589
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.1, 0.9]",123,68.0,16.655,0.824,,15.7735
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,42,104.0,16.2097,0.8453,,15.5674
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,123,64.0,16.5183,0.8511,,15.613
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,123,198.0,16.9037,0.8493,,15.8936
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,123,99.0,16.3502,0.844,,15.3817
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,2025,63.0,17.7524,0.8618,,16.7781
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,42,32.0,17.6076,0.8523,,17.0465
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,42,189.0,16.752,0.8163,,15.9629
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,42,153.0,16.8998,0.8463,,16.1603
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,42,141.0,16.912,0.8476,,16.2175
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,2025,25.0,18.7937,0.8051,,17.5281
+LSTM,DWA,"('next_activity', 'remaining_time')",0.01,None,2025,11.0,19.5247,0.7776,,18.3176
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.7, 0.3]",42,138.0,16.8016,0.8511,,16.0694
+LSTM,RLW,"('next_activity', 'remaining_time')",0.01,None,123,30.0,19.0653,0.7666,,17.7005
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.9,2025,16.0,18.3108,0.8596,,17.2392
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.9, 0.1]",42,137.0,16.6867,0.8588,,16.0788
+LSTM,DWA,"('next_activity', 'remaining_time')",0.001,None,42,44.0,16.4667,0.8503,,15.8192
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,42,138.0,16.7449,0.8607,,16.0977
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,42,28.0,17.6961,0.8539,,17.0264
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,42,42.0,16.56,0.8589,,16.0095
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.7,123,40.0,17.9237,0.8545,,16.9152
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,42,40.0,16.5433,0.8558,,15.9197
+LSTM,RLW,"('next_activity', 'remaining_time')",0.001,None,42,63.0,16.501,0.8502,,15.832
+LSTM,UW,"('next_activity', 'remaining_time')",0.001,None,42,42.0,16.5655,0.8587,,15.9524
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,123,180.0,16.9167,0.8501,,15.9578
+LSTM,GLS,"('next_activity', 'remaining_time')",0.001,None,42,51.0,16.6795,0.856,,16.0835
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,123,158.0,16.946,0.8507,,15.9533
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,123,161.0,16.9278,0.8582,,15.998
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.8, 0.2]",2025,45.0,16.9868,0.8591,,15.7712
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.9, 0.1]",42,68.0,17.406,0.8525,,16.6622
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,42,92.0,17.1467,0.8547,,16.4302
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,2025,63.0,16.9093,0.8506,,15.5297
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,42,22.0,17.791,0.8535,,17.1995
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,123,138.0,17.1046,0.8499,,15.9674
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.6, 0.4]",123,87.0,16.3232,0.8522,,15.5445
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,42,94.0,16.1197,0.8467,,15.6015
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,123,80.0,17.23,0.8605,,16.3449
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,2025,27.0,18.0708,0.8609,,17.0363
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,42,48.0,16.543,0.8592,,15.8875
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,123,116.0,17.3468,0.826,,16.2868
+LSTM,EW,"('next_activity', 'remaining_time')",0.01,None,42,13.0,18.3845,0.8071,,17.3775
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,2025,23.0,18.7583,0.8185,,17.6235
+LSTM,UW,"('next_activity', 'remaining_time')",0.001,None,2025,66.0,17.0859,0.8553,,15.8145
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,2025,66.0,16.865,0.8506,,15.5392
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.3,123,35.0,17.7513,0.853,,16.7434
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,123,166.0,16.815,0.8634,,15.9254
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.3, 0.7]",123,56.0,18.0822,0.7966,,17.1418
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,2025,32.0,18.3249,0.8279,,16.9113
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.3, 0.7]",2025,196.0,17.4037,0.8371,,15.9544
+LSTM,DWA,"('next_activity', 'remaining_time')",0.001,None,123,74.0,16.4154,0.8513,,15.64
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.6, 0.4]",42,64.0,16.3663,0.8524,,15.6752
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.01,0.5,2025,18.0,18.1007,0.8596,,17.1429
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.3, 0.7]",2025,75.0,16.8093,0.8401,,15.4236
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,2025,82.0,17.7288,0.8501,,16.5678
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.5, 0.5]",2025,41.0,17.0702,0.8511,,15.8918
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.4, 0.6]",2025,150.0,17.5384,0.8326,,16.1787
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,42,94.0,16.9923,0.8596,,16.3236
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,42,152.0,16.6383,0.8628,,16.0022
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.4, 0.6]",42,107.0,17.2174,0.8245,,16.4173
+LSTM,UW,"('next_activity', 'remaining_time')",0.001,None,123,59.0,16.9141,0.8569,,15.9294
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,42,28.0,17.6901,0.8549,,17.0316
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,42,36.0,17.5782,0.8341,,16.6234
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,2025,79.0,16.8405,0.8523,,15.6358
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,2025,31.0,17.2896,0.8628,,16.256
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,42,57.0,16.3035,0.8523,,15.6977
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.7, 0.3]",42,32.0,17.3831,0.8482,,16.7408
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.001,None,42,92.0,16.2313,0.8349,,15.4834
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,42,163.0,16.5576,0.8581,,15.8852
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.7, 0.3]",2025,167.0,17.1246,0.8553,,15.9096
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,42,45.0,16.536,0.8521,,15.9125
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.5,123,16.0,18.4665,0.8256,,17.42
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,2025,31.0,17.3263,0.865,,16.2741
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.01,None,42,44.0,18.2349,0.8115,,17.3626
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,2025,64.0,16.8766,0.8525,,15.6722
+LSTM,GLS,"('next_activity', 'remaining_time')",0.01,None,42,21.0,17.948,0.8579,,17.1545
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,2025,63.0,16.8671,0.8526,,15.6824
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,42,83.0,16.1758,0.8472,,15.5717
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,2025,38.0,18.0515,0.8475,,16.9186
+LSTM,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,123,55.0,16.7839,0.8622,,15.7823
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.001,"[0.9, 0.1]",42,60.0,16.3416,0.8545,,15.8175
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,2025,28.0,18.1245,0.8504,,17.1721
+LSTM,GradDrop,"('next_activity', 'remaining_time')",0.001,None,123,83.0,16.4488,0.8483,,15.6343
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.2, 0.8]",123,13.0,19.4241,0.7547,,17.9916
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,123,129.0,17.1603,0.841,,16.1617
+LSTM,PCGrad,"('next_activity', 'remaining_time')",0.001,None,42,57.0,16.3219,0.8541,,15.7126
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.0001,"[0.6, 0.4]",42,195.0,16.5887,0.8507,,15.856
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,42,163.0,16.7383,0.8471,,16.0701
+LSTM,GradNorm,"('next_activity', 'remaining_time')",0.01,1.0,123,35.0,17.7341,0.8614,,16.7953
+LSTM,EW,"('next_activity',)",0.0001,None,123,62.0,1.1511,0.6259,,
+LSTM,EW,"('next_activity',)",0.01,None,123,13.0,1.3885,0.5654,,
+LSTM,EW,"('next_activity',)",0.001,None,123,33.0,1.2241,0.6011,,
+LSTM,EW,"('next_activity',)",0.001,None,42,19.0,1.2383,0.5994,,
+LSTM,EW,"('next_activity',)",0.01,None,2025,7.0,1.4021,0.5589,,
+LSTM,EW,"('next_activity',)",0.0001,None,42,56.0,1.1668,0.6197,,
+LSTM,EW,"('next_activity',)",0.01,None,42,25.0,1.3637,0.5745,,
+LSTM,EW,"('next_activity',)",0.001,None,2025,17.0,1.2338,0.5992,,
+LSTM,EW,"('next_activity',)",0.0001,None,2025,41.0,1.1776,0.6175,,
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,2025,146.0,22.6216,,5.6951,16.135
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,42,69.0,21.0673,,5.5898,15.6196
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,2025,154.0,22.712,,5.7624,16.1084
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,123,94.0,21.2633,,5.4727,15.3293
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,123,141.0,22.2555,,5.6497,15.9334
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,123,180.0,22.0134,,5.6566,15.9324
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,2025,93.0,21.7929,,5.6321,15.4429
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,42,140.0,21.8762,,5.7511,16.2532
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,2025,99.0,21.6697,,5.5846,15.3057
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,2025,178.0,22.5451,,5.6827,15.8783
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,42,120.0,21.8819,,5.7254,16.2552
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,123,110.0,21.1495,,5.5139,15.1661
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,42,123.0,20.7651,,5.647,15.4378
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,123,80.0,21.3102,,5.5148,15.4661
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,123,65.0,21.6345,,5.6277,15.6914
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,123,81.0,21.2117,,5.4996,15.2699
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,123,138.0,22.3706,,5.6943,16.0089
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,2025,173.0,22.4996,,5.7078,15.948
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,123,156.0,22.1765,,5.6073,15.9548
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,123,178.0,21.9933,,5.6399,15.8664
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,2025,105.0,22.9917,,5.8244,16.3978
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,42,87.0,20.825,,5.6298,15.4136
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,123,70.0,21.3752,,5.5827,15.5138
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,42,43.0,21.4429,,5.6248,15.9054
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,2025,200.0,22.4311,,5.6995,15.8327
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,2025,64.0,21.9294,,5.5949,15.4309
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,42,171.0,21.5611,,5.7157,16.0132
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,42,76.0,21.2421,,5.6737,15.7808
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,2025,91.0,23.3301,,5.8447,16.8191
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,42,69.0,21.1198,,5.5768,15.6563
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,42,89.0,22.295,,5.8328,16.5655
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,123,119.0,21.1731,,5.5812,15.2405
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,2025,118.0,21.4093,,5.4969,15.1173
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,42,102.0,21.0716,,5.6793,15.5712
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,42,76.0,22.5316,,5.8742,16.871
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,42,73.0,20.9615,,5.5839,15.6356
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,123,95.0,22.9152,,5.7595,16.524
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,2025,130.0,22.8509,,5.8018,16.2671
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,123,90.0,21.3687,,5.5804,15.3497
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,123,81.0,21.4823,,5.5733,15.6923
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,2025,105.0,22.9578,,5.7633,16.5276
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,123,64.0,21.4215,,5.5535,15.4995
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,42,120.0,21.9117,,5.7479,16.3097
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,2025,105.0,22.894,,5.8173,16.3319
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,42,37.0,21.6293,,5.625,16.0983
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,2025,68.0,23.5072,,5.9213,16.8861
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,42,56.0,21.1463,,5.6243,15.7552
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,123,95.0,22.8047,,5.7518,16.2967
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,123,95.0,22.8094,,5.7749,16.3399
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,42,68.0,21.0549,,5.6129,15.6249
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,2025,134.0,22.7574,,5.7684,16.1524
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,2025,53.0,22.109,,5.6195,15.7946
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,2025,86.0,21.863,,5.639,15.4164
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,42,28.0,21.7666,,5.6453,16.3096
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,42,103.0,20.8551,,5.6358,15.402
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,42,181.0,21.5121,,5.6857,15.9511
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,2025,195.0,22.4294,,5.6737,15.8961
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,2025,83.0,21.7484,,5.6247,15.3031
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,2025,69.0,21.7174,,5.531,15.3682
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,42,44.0,21.3942,,5.6421,15.7663
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,42,199.0,21.3444,,5.6734,15.8085
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,42,79.0,21.1009,,5.6176,15.5986
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,42,60.0,21.0591,,5.5711,15.7063
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,123,119.0,21.1268,,5.4903,15.2268
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,42,90.0,22.2893,,5.8051,16.5328
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,123,94.0,22.8074,,5.7823,16.3228
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,123,116.0,22.7139,,5.716,16.3806
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,2025,93.0,21.801,,5.6051,15.4265
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,123,89.0,23.0409,,5.7749,16.5237
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,2025,85.0,21.7383,,5.6255,15.2864
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,42,60.0,21.1448,,5.6479,15.6519
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,2025,112.0,21.6684,,5.59,15.1945
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,2025,105.0,23.0179,,5.8182,16.3852
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,2025,42.0,22.3549,,5.6711,15.9595
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,42,119.0,20.8397,,5.635,15.4773
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,123,109.0,21.2124,,5.5402,15.1515
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,42,121.0,22.0155,,5.7654,16.2976
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,123,153.0,22.361,,5.6395,16.1762
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,2025,95.0,21.569,,5.6571,15.2693
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,42,103.0,20.659,,5.654,15.4019
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,2025,88.0,21.7686,,5.6464,15.5649
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,123,95.0,23.0598,,5.7545,16.6395
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,42,195.0,21.3737,,5.7073,15.8982
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,123,65.0,21.4065,,5.5191,15.4727
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,42,68.0,21.1084,,5.5909,15.7939
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,2025,121.0,22.747,,5.6968,16.2396
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,123,70.0,21.3975,,5.5141,15.5295
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,2025,146.0,22.6085,,5.7185,16.1063
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,2025,140.0,22.654,,5.6851,16.1138
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,2025,64.0,21.8144,,5.5632,15.5172
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,2025,140.0,22.6691,,5.7018,16.1382
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,123,129.0,21.0652,,5.4002,15.1826
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,123,74.0,21.2762,,5.5009,15.5072
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,123,138.0,22.3781,,5.7188,16.0291
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,42,110.0,22.2539,,5.7666,16.5383
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,42,43.0,21.3169,,5.6258,15.8673
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,123,94.0,22.8822,,5.748,16.5005
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,42,159.0,21.619,,5.7183,15.9846
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,2025,66.0,21.8525,,5.5921,15.4874
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,123,178.0,22.1479,,5.6289,15.9889
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,123,49.0,21.807,,5.6445,15.7853
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,2025,135.0,22.7172,,5.7175,16.0601
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,42,102.0,22.0981,,5.8338,16.4082
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,123,116.0,21.2053,,5.5344,15.4154
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,123,140.0,22.2343,,5.6032,16.0747
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,2025,178.0,22.4595,,5.6517,15.826
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,42,140.0,21.7712,,5.7678,16.2139
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,2025,92.0,21.9664,,5.6844,15.4429
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,42,127.0,21.9629,,5.7241,16.3228
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,2025,68.0,21.8729,,5.684,15.4382
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,123,117.0,21.0636,,5.5145,15.1699
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,42,140.0,21.8523,,5.7292,16.2578
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,123,52.0,21.6439,,5.5689,15.6894
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,2025,61.0,22.0005,,5.5977,15.589
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,123,116.0,22.7092,,5.7297,16.3691
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,42,120.0,21.9038,,5.7424,16.3163
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,2025,75.0,22.108,,5.6296,15.5986
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,42,163.0,21.6532,,5.677,16.1289
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,2025,146.0,22.6283,,5.7228,16.064
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,123,116.0,22.5457,,5.7223,16.2503
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,42,45.0,21.2323,,5.6235,15.8712
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,2025,52.0,22.3677,,5.7222,15.7915
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,2025,152.0,22.582,,5.6903,16.1094
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,2025,178.0,22.4391,,5.7086,15.9057
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,123,116.0,22.4437,,5.6905,16.2693
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,42,76.0,22.6369,,5.8964,16.9047
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,123,116.0,21.0693,,5.5385,15.1987
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,2025,87.0,21.9085,,5.6403,15.4109
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,42,155.0,21.809,,5.7496,16.1586
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,2025,77.0,21.7418,,5.6119,15.3482
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,2025,30.0,22.4748,,5.7091,16.093
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,42,76.0,22.5313,,5.8179,16.9225
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,42,99.0,22.2501,,5.7289,16.6035
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,42,103.0,22.1012,,5.7626,16.4043
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,123,121.0,22.5154,,5.7431,16.1869
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,123,141.0,20.9691,,5.4972,15.0317
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,42,38.0,21.4666,,5.652,15.8932
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,123,96.0,22.8008,,5.7627,16.3004
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,42,126.0,22.1322,,5.6811,16.57
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,42,110.0,22.1048,,5.7684,16.4601
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,123,138.0,22.3519,,5.6814,16.0628
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,123,138.0,21.1877,,5.5872,15.2504
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,123,94.0,22.7944,,5.7474,16.3006
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,2025,114.0,22.928,,5.8032,16.343
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,123,140.0,22.2278,,5.6556,16.0824
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,123,156.0,22.0821,,5.5898,15.882
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,2025,167.0,22.4642,,5.6712,15.8963
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,123,101.0,21.1943,,5.5439,15.3815
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,2025,105.0,22.9681,,5.792,16.4166
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,42,45.0,21.3618,,5.5783,15.8366
+LSTM,EW,"('next_time',)",0.0001,None,42,95.0,5.5064,,5.8739,
+LSTM,EW,"('next_time',)",0.01,None,42,7.0,6.1134,,6.5405,
+LSTM,EW,"('next_time',)",0.01,None,2025,24.0,6.0877,,6.2081,
+LSTM,EW,"('next_time',)",0.0001,None,2025,68.0,5.8605,,6.0223,
+LSTM,EW,"('next_time',)",0.001,None,42,41.0,5.4222,,5.7537,
+LSTM,EW,"('next_time',)",0.001,None,123,38.0,5.6434,,5.6798,
+LSTM,EW,"('next_time',)",0.001,None,2025,41.0,5.6577,,5.7207,
+LSTM,EW,"('next_time',)",0.0001,None,123,67.0,5.7928,,5.9122,
+LSTM,EW,"('next_time',)",0.01,None,123,33.0,5.9292,,5.9328,
+LSTM,EW,"('remaining_time',)",0.01,None,123,30.0,18.4049,,,18.1976
+LSTM,EW,"('remaining_time',)",0.01,None,42,14.0,18.4166,,,18.2011
+LSTM,EW,"('remaining_time',)",0.01,None,2025,28.0,18.1259,,,17.6567
+LSTM,EW,"('remaining_time',)",0.0001,None,123,180.0,16.4253,,,15.9035
+LSTM,EW,"('remaining_time',)",0.001,None,2025,142.0,16.1118,,,15.2328
+LSTM,EW,"('remaining_time',)",0.0001,None,2025,167.0,16.9457,,,16.0852
+LSTM,EW,"('remaining_time',)",0.001,None,42,59.0,16.0299,,,15.8214
+LSTM,EW,"('remaining_time',)",0.001,None,123,116.0,15.8217,,,15.395
+LSTM,EW,"('remaining_time',)",0.0001,None,42,120.0,16.7656,,,16.5285
+LSTM,UW_O,"('next_time', 'remaining_time')",0.01,None,42,,,,,
+LSTM,Scalarization,"('next_activity', 'remaining_time')",0.01,"[0.5, 0.5]",123,,,,,
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,,,,,
+LSTM,Scalarization,"('next_activity', 'next_time', 'remaining_time')",0.0001,"[0.2, 0.4, 0.4]",123,,,,,
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.001,None,42,,,,,
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,42,,,,,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",42,7.0,6.9877,0.7885,6.7905,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,42,26.0,5.7913,0.8631,5.7079,
+Transformer,RLW,"('next_activity', 'next_time')",0.0001,None,42,36.0,5.7974,0.8631,5.6516,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,2025,43.0,6.0095,0.8558,5.792,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",123,30.0,6.1596,0.8682,5.6853,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,123,27.0,6.1612,0.8658,5.6972,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",2025,17.0,6.658,0.8624,6.2408,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,42,20.0,5.9202,0.8652,5.8731,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,123,16.0,6.152,0.8657,5.809,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",2025,5.0,10.834,0.121,8.1812,
+Transformer,RLW,"('next_activity', 'next_time')",0.0001,None,2025,37.0,6.0593,0.8669,5.7186,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",42,42.0,6.0652,0.8606,5.9991,
+Transformer,GLS,"('next_activity', 'next_time')",0.0001,None,42,33.0,5.835,0.8657,5.7054,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,2025,42.0,6.0387,0.8659,5.7738,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",2025,17.0,6.1032,0.8558,5.8076,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",123,40.0,7.3252,0.8091,6.7231,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",42,24.0,7.4069,0.7563,7.198,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",2025,16.0,6.6249,0.8678,6.2698,
+Transformer,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,42,24.0,5.8235,0.865,5.7144,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",123,38.0,6.1039,0.8678,5.6341,
+Transformer,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,42,26.0,5.774,0.8639,5.686,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",123,16.0,6.2724,0.8159,5.7072,
+Transformer,RLW,"('next_activity', 'next_time')",0.0001,None,123,17.0,6.1569,0.8659,5.76,
+Transformer,EW,"('next_activity', 'next_time')",0.0001,None,2025,20.0,6.1196,0.8636,5.8583,
+Transformer,DWA,"('next_activity', 'next_time')",0.0001,None,123,21.0,6.1439,0.867,5.7218,
+Transformer,IMTL,"('next_activity', 'next_time')",0.0001,None,123,42.0,6.1643,0.8681,5.7088,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,2025,19.0,6.0817,0.8648,5.7628,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",42,26.0,5.8533,0.8634,5.7249,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",42,33.0,5.8246,0.8662,5.6546,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,2025,28.0,6.0081,0.8679,5.7387,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",123,30.0,6.1412,0.8686,5.71,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,2025,20.0,6.0892,0.8599,5.7692,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,2025,37.0,5.9807,0.8684,5.7771,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",42,20.0,7.9163,0.5581,7.0302,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",2025,19.0,6.0593,0.8637,5.8195,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",42,26.0,6.7454,0.7719,6.4081,
+Transformer,GLS,"('next_activity', 'next_time')",0.0001,None,123,12.0,6.2934,0.869,5.9053,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,123,30.0,6.1162,0.8691,5.7125,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,123,22.0,6.1277,0.8648,5.6545,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",42,33.0,5.8443,0.8615,5.6578,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",2025,38.0,6.0489,0.8672,5.7767,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",42,54.0,5.8464,0.8642,5.7886,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",123,16.0,8.2609,0.6331,7.0876,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",42,16.0,7.8162,0.4755,6.8774,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",42,34.0,5.9488,0.8555,6.074,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",42,7.0,6.5772,0.8063,6.5637,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",42,7.0,8.7069,0.3469,7.2237,
+Transformer,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,42,37.0,5.8021,0.8644,5.7258,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",42,40.0,5.7943,0.8651,5.6611,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,123,42.0,6.0464,0.8659,5.6402,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",42,15.0,6.4188,0.8619,6.4355,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",2025,23.0,8.1656,0.5786,6.7729,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",2025,27.0,8.6439,0.5808,7.0345,
+Transformer,UW_O,"('next_activity', 'next_time')",0.0001,None,123,19.0,6.2854,0.8693,5.9115,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",2025,42.0,6.0001,0.864,5.7171,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",2025,29.0,6.5765,0.8663,6.1317,
+Transformer,UW,"('next_activity', 'next_time')",0.0001,None,2025,33.0,6.0476,0.8684,5.7958,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.8, 0.2]",42,27.0,5.856,0.867,5.7883,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",2025,47.0,6.1153,0.8652,5.764,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,123,42.0,6.0652,0.8667,5.6349,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",42,42.0,6.0435,0.8169,5.8506,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,123,7.0,6.2822,0.8601,5.8564,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.9, 0.1]",123,11.0,6.3335,0.865,5.9079,
+Transformer,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,42,12.0,5.9261,0.8623,5.8484,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",123,17.0,6.2446,0.8508,5.7738,
+Transformer,DWA,"('next_activity', 'next_time')",0.0001,None,2025,20.0,6.1164,0.8568,5.8389,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",123,41.0,6.2857,0.8299,5.7823,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.5, 0.5]",123,45.0,6.2064,0.8586,5.8159,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,42,15.0,5.9174,0.8636,5.8018,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",2025,33.0,7.5042,0.7055,6.736,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",123,20.0,8.0377,0.6121,6.7697,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",123,38.0,6.2531,0.8605,5.7962,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",42,16.0,6.9922,0.7561,6.6394,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",2025,80.0,6.2356,0.8257,5.8141,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",123,17.0,8.3103,0.5925,7.0671,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,42,26.0,5.8737,0.8634,5.7813,
+Transformer,IMTL,"('next_activity', 'next_time')",0.0001,None,42,26.0,5.8406,0.8642,5.7655,
+Transformer,UW,"('next_activity', 'next_time')",0.0001,None,42,9.0,6.0033,0.8531,5.9138,
+Transformer,UW_O,"('next_activity', 'next_time')",0.0001,None,42,36.0,5.7857,0.8664,5.7508,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.6, 0.4]",123,38.0,6.2335,0.859,5.7903,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",2025,33.0,6.6603,0.8531,6.1718,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,2025,27.0,6.0448,0.8675,5.7851,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.1, 0.9]",123,21.0,9.3008,0.2507,7.1702,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,123,27.0,6.1426,0.8677,5.7276,
+Transformer,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,123,30.0,6.1637,0.8668,5.7083,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,123,22.0,6.1774,0.8635,5.6557,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,2025,18.0,6.1191,0.8678,5.8009,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",2025,42.0,6.033,0.8513,5.7476,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",123,27.0,6.8535,0.7514,5.9465,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",2025,20.0,6.0744,0.8561,5.8295,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",42,26.0,5.7922,0.8622,5.7066,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",42,41.0,5.7981,0.8657,5.6815,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,123,16.0,6.1593,0.8649,5.7341,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.1, 0.9]",2025,42.0,6.5153,0.7994,5.9163,
+Transformer,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,2025,22.0,6.1018,0.8589,5.9019,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.9, 0.1]",2025,18.0,7.3607,0.7591,6.6437,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,42,36.0,5.7686,0.8638,5.6685,
+Transformer,GradDrop,"('next_activity', 'next_time')",0.0001,None,2025,43.0,6.0261,0.8635,5.7199,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.9, 0.1]",2025,20.0,6.089,0.8569,5.8585,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",42,36.0,5.9098,0.8629,5.7361,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.2, 0.8]",123,24.0,8.3442,0.5973,7.1423,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",2025,12.0,7.8762,0.7148,6.938,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,2025,18.0,6.0787,0.866,5.7953,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.4, 0.6]",2025,24.0,6.4538,0.8544,6.1963,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",42,33.0,6.3215,0.8349,6.1352,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.8, 0.2]",123,42.0,6.1227,0.8672,5.7177,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",2025,19.0,6.111,0.8659,5.83,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,42,31.0,5.8184,0.8648,5.664,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,2025,16.0,6.1036,0.8653,5.7513,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,2025,42.0,6.0155,0.8653,5.7381,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",123,21.0,8.1991,0.612,7.0065,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,42,26.0,5.8093,0.8639,5.6607,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,42,32.0,5.7953,0.8637,5.6705,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.7, 0.3]",2025,18.0,7.6256,0.7431,6.8098,
+Transformer,PCGrad,"('next_activity', 'next_time')",0.0001,None,123,21.0,6.1698,0.8658,5.7261,
+Transformer,PCGrad,"('next_activity', 'next_time')",0.0001,None,2025,42.0,5.9913,0.8671,5.7737,
+Transformer,UW,"('next_activity', 'next_time')",0.0001,None,123,18.0,6.1997,0.8532,5.7527,
+Transformer,PCGrad,"('next_activity', 'next_time')",0.0001,None,42,26.0,5.796,0.8629,5.7118,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,42,33.0,5.7843,0.863,5.6251,
+Transformer,GradDrop,"('next_activity', 'next_time')",0.0001,None,123,27.0,6.1474,0.8661,5.6577,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",42,9.0,7.5992,0.6471,7.0184,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.4, 0.6]",123,38.0,6.1408,0.865,5.6286,
+Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,42,26.0,5.7913,0.8646,5.6802,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.1, 0.9]",42,26.0,5.9577,0.825,5.7244,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.5, 0.5]",2025,17.0,6.0686,0.8656,5.8274,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",42,41.0,7.2506,0.7255,6.9142,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.7, 0.3]",123,18.0,6.1838,0.8578,5.7739,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.3, 0.7]",2025,18.0,8.2323,0.6373,6.9772,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.5, 0.5]",2025,53.0,8.0547,0.5624,6.8474,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.2, 0.8]",42,54.0,5.7878,0.8615,5.6288,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,42,26.0,5.8185,0.862,5.7508,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.8, 0.2]",123,28.0,7.271,0.8193,6.6461,
+Transformer,EW,"('next_activity', 'next_time')",0.0001,None,42,26.0,5.8468,0.8639,5.7354,
+Transformer,GLS,"('next_activity', 'next_time')",0.0001,None,2025,31.0,6.0645,0.8707,5.8392,
+Transformer,IMTL,"('next_activity', 'next_time')",0.0001,None,2025,42.0,5.9748,0.8691,5.7294,
+Transformer,GradDrop,"('next_activity', 'next_time')",0.0001,None,42,45.0,5.7528,0.8626,5.6324,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.3, 0.7]",123,22.0,6.1792,0.8635,5.711,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.6, 0.4]",123,7.0,8.6905,0.471,7.2438,
+Transformer,EW,"('next_activity', 'next_time')",0.0001,None,123,22.0,6.2077,0.8662,5.7284,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.2, 0.8]",123,30.0,6.5843,0.8003,5.8514,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.01,"[0.4, 0.6]",42,35.0,7.3509,0.6943,6.7834,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.3, 0.7]",123,29.0,6.5406,0.813,5.9272,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.0001,"[0.6, 0.4]",123,22.0,6.1498,0.866,5.7254,
+Transformer,Scalarization,"('next_activity', 'next_time')",0.001,"[0.7, 0.3]",2025,28.0,6.1164,0.8628,5.9984,
+Transformer,DWA,"('next_activity', 'next_time')",0.0001,None,42,33.0,5.822,0.8651,5.6354,
+Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,123,16.0,6.1813,0.865,5.7679,
+Transformer,UW_O,"('next_activity', 'next_time')",0.0001,None,2025,34.0,6.0105,0.8702,5.7653,
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,123,33.0,17.88,0.8086,,16.9375
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,123,48.0,17.5337,0.8297,,16.5633
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,42,38.0,17.6712,0.8241,,16.7609
+Transformer,GLS,"('next_activity', 'remaining_time')",0.0001,None,123,32.0,17.268,0.8693,,16.4393
+Transformer,RLW,"('next_activity', 'remaining_time')",0.001,None,2025,49.0,17.5722,0.8539,,16.3495
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,42,9.0,21.5432,0.8097,,21.3512
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,123,9.0,21.0362,0.7561,,20.6317
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,123,23.0,17.2282,0.8619,,16.3651
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,123,25.0,17.2212,0.866,,16.5626
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,123,14.0,17.5369,0.8507,,16.6938
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,2025,46.0,17.2572,0.8538,,16.1239
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,2025,45.0,17.5834,0.8413,,16.3782
+Transformer,RLW,"('next_activity', 'remaining_time')",0.001,None,123,24.0,18.0768,0.7923,,16.9732
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.001,None,123,20.0,17.7813,0.8607,,17.027
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,123,33.0,17.1659,0.8548,,16.3072
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,42,21.0,20.9156,0.5937,,19.8065
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,123,28.0,20.8688,0.5991,,19.5883
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,123,18.0,20.8682,0.6021,,19.527
+Transformer,DWA,"('next_activity', 'remaining_time')",0.001,None,123,20.0,18.3682,0.7388,,16.8804
+Transformer,UW,"('next_activity', 'remaining_time')",0.0001,None,42,15.0,17.2998,0.8614,,16.5848
+Transformer,UW,"('next_activity', 'remaining_time')",0.001,None,123,24.0,17.7725,0.8513,,16.9147
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,42,39.0,16.9782,0.8621,,16.2123
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,2025,23.0,18.0932,0.8575,,16.8987
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,42,39.0,16.9022,0.86,,16.1767
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,2025,16.0,17.895,0.8428,,16.7518
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,2025,38.0,17.1777,0.8625,,16.12
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.001,None,2025,30.0,17.8944,0.8412,,16.6837
+Transformer,UW,"('next_activity', 'remaining_time')",0.001,None,42,23.0,17.371,0.8479,,16.6829
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,2025,24.0,18.0018,0.8659,,16.8687
+Transformer,EW,"('next_activity', 'remaining_time')",0.01,None,123,7.0,21.6526,0.4638,,20.2145
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.0001,None,123,35.0,17.2834,0.8677,,16.4795
+Transformer,DWA,"('next_activity', 'remaining_time')",0.001,None,2025,22.0,18.0539,0.8107,,16.7402
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,42,30.0,16.8543,0.8504,,16.1017
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,123,39.0,17.6413,0.8293,,16.6654
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,42,30.0,17.4475,0.864,,16.6596
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,42,23.0,17.3415,0.865,,16.5506
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.5,2025,47.0,17.1514,0.8642,,15.8981
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,123,17.0,22.3066,0.4832,,20.7351
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,123,25.0,17.081,0.8577,,16.3452
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,42,24.0,17.3519,0.8639,,16.6433
+Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,123,25.0,17.1362,0.8575,,16.2283
+Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,2025,30.0,17.3751,0.8599,,16.1665
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,123,23.0,17.3397,0.8557,,16.5077
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.001,None,42,53.0,17.19,0.8488,,16.5057
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,123,42.0,17.0394,0.8586,,16.097
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,42,30.0,17.5197,0.856,,16.9434
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,2025,24.0,17.8474,0.8694,,16.8071
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,42,37.0,17.1692,0.8506,,16.5619
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,2025,24.0,17.513,0.8677,,16.4067
+Transformer,EW,"('next_activity', 'remaining_time')",0.001,None,42,37.0,17.12,0.8295,,16.3866
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.01,None,42,6.0,31.5467,0.1174,,29.1493
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,42,29.0,17.5539,0.8639,,16.9079
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,2025,29.0,18.0661,0.8662,,16.9199
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.001,None,123,36.0,17.7321,0.8189,,16.7817
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,42,26.0,17.4695,0.846,,16.9114
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,123,11.0,17.6521,0.8447,,16.6505
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,2025,23.0,17.9795,0.8543,,16.9392
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,42,45.0,17.6237,0.8614,,16.8908
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,2025,20.0,18.0042,0.8683,,16.9942
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,5.0,123,48.0,17.4809,0.8341,,16.5815
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,42,40.0,17.5062,0.8633,,16.7993
+Transformer,GLS,"('next_activity', 'remaining_time')",0.0001,None,2025,24.0,17.8676,0.8678,,16.8758
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.001,None,2025,38.0,17.642,0.8675,,16.5276
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.001,None,123,49.0,17.4247,0.8639,,16.6813
+Transformer,DWA,"('next_activity', 'remaining_time')",0.001,None,42,30.0,17.6433,0.7956,,16.8812
+Transformer,RLW,"('next_activity', 'remaining_time')",0.0001,None,123,33.0,17.3187,0.8595,,16.4584
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.001,None,2025,16.0,17.9279,0.8378,,16.6627
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,123,47.0,16.7353,0.8656,,15.892
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,123,47.0,20.7985,0.8673,,20.3499
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,123,23.0,17.1512,0.8594,,16.2585
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,42,39.0,16.7392,0.862,,16.0761
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,123,44.0,17.2023,0.8677,,16.3535
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,2025,49.0,17.3086,0.8669,,16.1335
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,42,74.0,16.8084,0.8661,,16.0866
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.001,None,2025,22.0,17.9691,0.8687,,16.9804
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,7.0,42,15.0,21.8878,0.4361,,20.42
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,123,34.0,17.0943,0.8651,,16.323
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,123,25.0,17.2629,0.8665,,16.5786
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,2025,34.0,17.7663,0.8665,,16.6305
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,123,47.0,16.9831,0.8699,,16.2246
+Transformer,RLW,"('next_activity', 'remaining_time')",0.0001,None,2025,24.0,17.3558,0.8563,,16.1717
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,2025,16.0,17.558,0.858,,16.362
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,2025,47.0,17.2367,0.8617,,16.1132
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,1.0,123,26.0,17.8598,0.8459,,16.8366
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,5.0,123,14.0,21.1458,0.4978,,19.4354
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,42,39.0,16.8042,0.8619,,16.1716
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,42,51.0,16.7918,0.8605,,16.0935
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,123,9.0,21.0362,0.7561,,20.6317
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,42,25.0,17.5837,0.8254,,16.8244
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,39.0,16.8617,0.8577,,16.1533
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,42,18.0,17.4054,0.8645,,16.5214
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,123,23.0,17.3428,0.8476,,16.508
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,2025,15.0,18.2269,0.8235,,17.0471
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,123,32.0,17.1758,0.8694,,16.47
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,123,29.0,17.7935,0.867,,16.921
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,1.0,42,35.0,20.848,0.678,,19.399
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,123,35.0,17.845,0.8628,,17.0418
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,42,31.0,17.5795,0.8673,,16.5808
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,2025,22.0,17.6732,0.8623,,16.6111
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,42,26.0,18.0987,0.8447,,17.2866
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.001,None,42,26.0,17.6032,0.8636,,16.9536
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,123,32.0,17.6438,0.8694,,16.8602
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.001,None,42,37.0,17.3298,0.8186,,16.5917
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.001,None,42,29.0,17.4403,0.8643,,16.9646
+Transformer,EW,"('next_activity', 'remaining_time')",0.001,None,123,25.0,17.9801,0.79,,16.7414
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,123,33.0,17.1798,0.866,,16.2959
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,42,16.0,22.202,0.5746,,20.9885
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.3,123,33.0,17.2298,0.8614,,16.3986
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,3.0,123,17.0,21.0717,0.6257,,19.7515
+Transformer,RLW,"('next_activity', 'remaining_time')",0.0001,None,42,23.0,17.1359,0.8494,,16.4133
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,38.0,16.8039,0.861,,16.0347
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,42,45.0,16.8321,0.8636,,16.1807
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,42,39.0,17.4572,0.8454,,16.6484
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.5,2025,43.0,17.4053,0.8574,,16.3549
+Transformer,EW,"('next_activity', 'remaining_time')",0.001,None,2025,29.0,17.8831,0.8351,,16.5856
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,123,47.0,17.2311,0.8671,,16.5689
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,10.0,42,9.0,21.2716,0.4787,,19.8683
+Transformer,UW,"('next_activity', 'remaining_time')",0.0001,None,123,23.0,17.3094,0.8675,,16.3881
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,42,26.0,20.8634,0.8618,,20.7474
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.7,42,37.0,17.3973,0.865,,16.7803
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,2025,23.0,18.2811,0.8475,,17.3228
+Transformer,GLS,"('next_activity', 'remaining_time')",0.001,None,2025,40.0,17.6685,0.8688,,16.526
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,2025,22.0,17.8473,0.8501,,16.7829
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,42,53.0,19.5282,0.8644,,19.0738
+Transformer,RLW,"('next_activity', 'remaining_time')",0.001,None,42,51.0,17.1939,0.8423,,16.4122
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.1,2025,16.0,17.5596,0.8666,,16.512
+Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,42,26.0,17.028,0.8553,,16.3428
+Transformer,EW,"('next_activity', 'remaining_time')",0.01,None,2025,12.0,21.445,0.5575,,19.4391
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,123,44.0,17.5187,0.8655,,16.7905
+Transformer,EW,"('next_activity', 'remaining_time')",0.01,None,42,48.0,20.5737,0.5243,,19.2041
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,2025,33.0,17.875,0.8362,,16.5675
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,2025,43.0,17.1723,0.8585,,16.1215
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,42,18.0,17.6496,0.8666,,16.9119
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,2025,24.0,17.481,0.8434,,16.2164
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,42,38.0,16.6865,0.8592,,15.8524
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,2025,49.0,17.1408,0.8638,,16.0557
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,20.0,42,40.0,21.0763,0.5979,,19.8565
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,42,14.0,17.2116,0.8513,,16.539
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,123,20.0,17.2582,0.8512,,16.2697
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,42,30.0,17.0746,0.8658,,16.3148
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,2025,21.0,17.4386,0.8602,,16.2698
+Transformer,PCGrad,"('next_activity', 'remaining_time')",0.0001,None,2025,46.0,17.2638,0.8648,,16.1965
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,3.0,123,48.0,17.2293,0.8423,,16.3777
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,2.0,42,26.0,17.0467,0.8447,,16.3052
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,42,21.0,21.1912,0.5751,,19.8415
+Transformer,GLS,"('next_activity', 'remaining_time')",0.0001,None,42,58.0,16.9949,0.864,,16.2971
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.01,None,2025,31.0,20.7853,0.7902,,19.5492
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,15.0,42,26.0,17.5424,0.8204,,16.862
+Transformer,DWA,"('next_activity', 'remaining_time')",0.01,None,42,12.0,21.8339,0.4716,,20.3144
+Transformer,GradDrop,"('next_activity', 'remaining_time')",0.001,None,123,34.0,17.7422,0.7783,,16.7659
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.0,2025,14.0,18.0294,0.8643,,16.8207
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.01,None,123,17.0,21.0274,0.6852,,19.9275
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,1.5,42,20.0,21.0021,0.8598,,20.8682
+Transformer,GLS,"('next_activity', 'remaining_time')",0.001,None,42,15.0,17.6907,0.8631,,16.9613
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,20.0,123,22.0,18.071,0.7846,,16.9725
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,0.5,123,9.0,20.8688,0.7571,,20.4806
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,1.0,2025,38.0,17.5196,0.8688,,16.3748
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.3,2025,30.0,17.8178,0.8591,,16.7083
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.0001,None,2025,20.0,17.6293,0.856,,16.6363
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.5,123,20.0,18.1593,0.8605,,17.4295
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.9,2025,41.0,17.7021,0.8674,,16.6789
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,2025,34.0,17.2545,0.8609,,15.9717
+Transformer,Nash_MTL,"('next_activity', 'remaining_time')",0.001,None,123,18.0,18.0993,0.7821,,16.8199
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,10.0,42,16.0,17.7499,0.7858,,16.8799
+Transformer,UW,"('next_activity', 'remaining_time')",0.001,None,2025,23.0,17.872,0.8613,,16.8311
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.001,2.0,2025,22.0,18.0707,0.8613,,17.1369
+Transformer,GLS,"('next_activity', 'remaining_time')",0.001,None,123,25.0,17.6064,0.8658,,16.8769
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.0001,0.9,2025,12.0,18.1145,0.869,,16.9274
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.001,7.0,2025,29.0,18.0033,0.8436,,16.961
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,42,39.0,16.8517,0.8601,,16.2035
+Transformer,GradNorm,"('next_activity', 'remaining_time')",0.0001,0.5,2025,16.0,17.7364,0.8677,,16.5813
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.7,2025,11.0,18.2157,0.8645,,17.3606
+Transformer,IMTL,"('next_activity', 'remaining_time')",0.0001,None,42,49.0,17.2388,0.8651,,16.5435
+Transformer,CAGrad,"('next_activity', 'remaining_time')",0.001,0.1,123,48.0,17.2999,0.8552,,16.4916
+Transformer,UW,"('next_activity', 'remaining_time')",0.0001,None,2025,16.0,17.5843,0.8653,,16.5283
+Transformer,EW,"('next_activity',)",0.01,None,2025,13.0,2.0362,0.3452,,
+Transformer,EW,"('next_activity',)",0.01,None,123,15.0,2.0032,0.3202,,
+Transformer,EW,"('next_activity',)",0.001,None,123,40.0,1.337,0.5707,,
+Transformer,EW,"('next_activity',)",0.01,None,42,36.0,1.9441,0.3523,,
+Transformer,EW,"('next_activity',)",0.001,None,2025,64.0,0.8241,0.7379,,
+Transformer,EW,"('next_activity',)",0.001,None,42,54.0,0.9449,0.7051,,
+Transformer,EW,"('next_activity',)",0.0001,None,2025,59.0,1.3565,0.5571,,
+Transformer,EW,"('next_activity',)",0.0001,None,42,49.0,1.5033,0.5183,,
+Transformer,EW,"('next_activity',)",0.0001,None,123,46.0,1.382,0.5564,,
+Transformer,EW,"('next_time',)",0.001,None,42,8.0,6.0979,,6.5708,
+Transformer,EW,"('next_time',)",0.001,None,123,15.0,9.5272,,9.5763,
+Transformer,EW,"('next_time',)",0.0001,None,42,31.0,5.3987,,5.7048,
+Transformer,EW,"('next_time',)",0.01,None,42,5.0,417562.9821,,417562.4074,
+Transformer,EW,"('next_time',)",0.001,None,2025,10.0,6.2766,,6.1986,
+Transformer,EW,"('next_time',)",0.01,None,2025,10.0,417562.4611,,417562.449,
+Transformer,EW,"('next_time',)",0.0001,None,123,18.0,5.7461,,5.719,
+Transformer,EW,"('next_time',)",0.01,None,123,11.0,417562.4748,,417562.4652,
+Transformer,EW,"('next_time',)",0.0001,None,2025,18.0,5.6633,,5.8209,
+Transformer,EW,"('remaining_time',)",0.0001,None,123,48.0,16.3877,,,16.0044
+Transformer,EW,"('remaining_time',)",0.0001,None,42,39.0,16.0901,,,15.9071
+Transformer,EW,"('remaining_time',)",0.001,None,42,17.0,17.4851,,,17.2306
+Transformer,EW,"('remaining_time',)",0.001,None,123,7.0,35.1017,,,34.4972
+Transformer,EW,"('remaining_time',)",0.01,None,123,8.0,26433040.6687,,,26433041.3486
+Transformer,EW,"('remaining_time',)",0.0001,None,2025,16.0,17.1141,,,16.2926
+Transformer,EW,"('remaining_time',)",0.01,None,2025,9.0,26433040.0547,,,26433041.4587
+Transformer,EW,"('remaining_time',)",0.001,None,2025,19.0,17.7339,,,17.1598
+Transformer,EW,"('remaining_time',)",0.01,None,42,4.0,26433040.8571,,,26433040.6643
+Transformer,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,42,,,,,
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.01,15.0,123,,,,,
+Transformer,DWA,"('next_activity', 'remaining_time')",0.01,None,123,,,,,
