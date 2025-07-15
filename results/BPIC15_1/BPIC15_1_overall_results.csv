@@ -712,6 +712,14 @@ LSTM,EW,"('remaining_time',)",0.001,None,123,153.0,13.8327,,,13.2735
 LSTM,EW,"('remaining_time',)",0.0001,None,42,198.0,17.447,,,16.3744
 LSTM,GradDrop,"('next_activity', 'remaining_time')",0.0001,None,2025,,,,,
 LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,,,,,
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,42,42.0,27.2742,0.1658,2.0112,20.089
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,42,37.0,27.6847,0.1604,2.0095,20.6362
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,37.0,28.2389,0.1647,2.007,20.9536
+Transformer,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,41.0,29.6679,0.4521,1.9378,24.5883
+Transformer,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,64.0,27.7043,0.4867,1.8917,21.7745
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,42,59.0,26.4308,0.1905,2.0001,19.4712
+Transformer,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,32.0,29.1365,0.4088,2.3777,25.2744
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,42,52.0,26.2552,0.1807,2.0104,19.2036
 Transformer,GradDrop,"('next_activity', 'next_time')",0.001,None,123,24.0,4.2577,0.4814,1.8095,
 Transformer,DWA,"('next_activity', 'next_time')",0.01,None,2025,44.0,5.7478,0.1453,2.3683,
 Transformer,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,42,28.0,4.0581,0.5167,1.89,
@@ -944,9 +952,20 @@ Transformer,EW,"('next_activity', 'next_time')",0.01,None,42,28.0,5.6548,0.1372,
 Transformer,DWA,"('next_activity', 'next_time')",0.0001,None,42,28.0,4.0582,0.5221,1.8878,
 Transformer,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,123,34.0,4.0946,0.5015,1.8448,
 Transformer,UW_O,"('next_activity', 'next_time')",0.0001,None,2025,53.0,4.1772,0.4988,2.2638,
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,42,58.0,24.0891,0.2223,,19.3802
 Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,123,31.0,26.0003,0.1631,,22.0415
 Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,2025,60.0,22.1813,0.1588,,19.9059
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,123,39.0,25.2136,0.1677,,20.9411
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,2025,65.0,25.1904,0.4885,,23.9562
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,42,24.0,27.292,0.1493,,22.2592
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,2025,42.0,24.3655,0.1489,,21.7262
+Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,79.0,21.886,0.2052,,17.4927
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,47.0,24.5761,0.1781,,19.6369
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,123,47.0,27.9272,0.4892,,24.89
 Transformer,EW,"('next_activity', 'remaining_time')",0.0001,None,42,79.0,21.858,0.1948,,17.241
+Transformer,UW_O,"('next_activity', 'remaining_time')",0.0001,None,42,49.0,27.0437,0.5126,,23.4832
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,42,42.0,25.4778,0.1722,,20.4415
+Transformer,GLS,"('next_activity', 'remaining_time')",0.0001,None,42,22.0,29.1672,0.4691,,25.6394
 Transformer,EW,"('next_activity',)",0.01,None,2025,2.0,4.638,0.0487,,
 Transformer,EW,"('next_activity',)",0.01,None,123,15.0,4.4524,0.0651,,
 Transformer,EW,"('next_activity',)",0.001,None,123,9.0,3.5165,0.1321,,
@@ -956,6 +975,18 @@ Transformer,EW,"('next_activity',)",0.001,None,42,23.0,3.4289,0.1442,,
 Transformer,EW,"('next_activity',)",0.0001,None,2025,2.0,3.8279,0.1082,,
 Transformer,EW,"('next_activity',)",0.0001,None,42,6.0,3.6214,0.1309,,
 Transformer,EW,"('next_activity',)",0.0001,None,123,3.0,3.7265,0.124,,
+Transformer,DWA,"('next_time', 'remaining_time')",0.0001,None,123,45.0,24.0793,,1.9789,20.3315
+Transformer,UW_O,"('next_time', 'remaining_time')",0.0001,None,123,81.0,21.2024,,1.9767,17.9382
+Transformer,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,42,81.0,21.155,,2.0109,16.783
+Transformer,EW,"('next_time', 'remaining_time')",0.0001,None,42,53.0,23.1835,,2.0085,19.1802
+Transformer,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,42,53.0,23.9272,,2.0111,19.8468
+Transformer,UW_O,"('next_time', 'remaining_time')",0.0001,None,2025,54.0,23.0595,,2.3701,21.0438
+Transformer,EW,"('next_time', 'remaining_time')",0.0001,None,123,76.0,21.1135,,1.9787,17.2945
+Transformer,DWA,"('next_time', 'remaining_time')",0.0001,None,42,43.0,23.7866,,2.008,19.7294
+Transformer,EW,"('next_time', 'remaining_time')",0.0001,None,2025,90.0,20.6742,,2.3771,19.035
+Transformer,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,42,81.0,21.1486,,2.011,17.2125
+Transformer,UW_O,"('next_time', 'remaining_time')",0.0001,None,42,62.0,23.1348,,2.1184,18.8602
+Transformer,DWA,"('next_time', 'remaining_time')",0.0001,None,2025,89.0,19.8203,,2.3784,18.1319
 Transformer,EW,"('next_time',)",0.001,None,42,7.0,3.2841,,2.9991,
 Transformer,EW,"('next_time',)",0.001,None,123,6.0,3.4555,,2.9661,
 Transformer,EW,"('next_time',)",0.0001,None,42,41.0,2.1958,,1.9138,
@@ -974,6 +1005,11 @@ Transformer,EW,"('remaining_time',)",0.0001,None,2025,49.0,20.4155,,,21.2109
 Transformer,EW,"('remaining_time',)",0.01,None,2025,1.0,53.6096,,,52.5789
 Transformer,EW,"('remaining_time',)",0.001,None,2025,1.0,53.6096,,,52.5789
 Transformer,EW,"('remaining_time',)",0.01,None,42,9.0,211161441.6875,,,211161444.9811
+Transformer,GLS,"('next_activity', 'remaining_time')",0.0001,None,123,,,,,
+Transformer,GLS,"('next_time', 'remaining_time')",0.0001,None,42,,,,,
 Transformer,IMTL,"('next_activity', 'next_time')",0.01,None,123,,,,,
-Transformer,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,,,,,
+Transformer,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,42,,,,,
+Transformer,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,42,,,,,
 Transformer,IMTL,"('next_activity', 'next_time')",0.001,None,123,,,,,
+Transformer,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,42,,,,,
+Transformer,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,42,,,,,
