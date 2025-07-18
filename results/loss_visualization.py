@@ -9,7 +9,8 @@ import torch
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
+from matplotlib.backends.backend_pdf import PdfPages
+#import numpy as np
 
 def main():
     dataset = 'Production'
@@ -24,17 +25,23 @@ def main():
     srch_str, task_str = comb_string(tasks)
     res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', dataset)
     rel_loss_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_relative_loss.pdf'
+    grad_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_gradient.pdf'
     loss_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_loss.pdf'    
     
+    # Visualize task weights, gradient cosine and magnitude similarities
     mtl_lst, weight_lst, grad_cos_lst, grad_mag_lst = get_result(
         csv_path, res_dir, srch_str, task_str, model)    
     #print(len(mtl_lst), len(weight_lst), len(grad_cos_lst), len(grad_mag_lst))    
     combined = list(zip(mtl_lst, weight_lst, grad_cos_lst, grad_mag_lst))
     combined_sorted = sorted([item for item in combined if item[0] in mto_order],
         key=lambda x: mto_order.index(x[0]))
-    mtl_lst, weight_lst, grad_cos_lst, grad_mag_lst = map(list, zip(*combined_sorted))    
+    mtl_lst, weight_lst, grad_cos_lst, grad_mag_lst = map(list, zip(*combined_sorted))  
+    # Visualize task weights
     weight_vis(mtl_lst, weight_lst, focus_task, rel_loss_pdf)
+    # Visualize gradients
+    grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf)
     
+    # Visualize validation losses
     mtl_lst, loss_lst = get_losses(
         csv_path, res_dir, srch_str, task_str, model, focus_task)
     mto_order_plus = mto_order + ['STL']
@@ -43,7 +50,142 @@ def main():
         key=lambda x: mto_order_plus.index(x[0]))
     mtl_lst, loss_lst = map(list, zip(*combined_sorted))  
     loss_vis(mtl_lst, loss_lst, focus_task, loss_pdf)
+    
 
+def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
+    
+    nap_ntp_cos_lst, nap_rtp_cos_lst, ntp_rtp_cos_lst =   [], [] , []
+    nap_ntp_mag_lst, nap_rtp_mag_lst, ntp_rtp_mag_lst =   [], [], []
+    labels = []
+    for mtl, grad_cos, grad_mag in zip(mtl_lst, grad_cos_lst, grad_mag_lst):
+        nap_ntp_cos_lst.append(grad_cos['next_activity_vs_next_time'])
+        nap_rtp_cos_lst.append(grad_cos['next_activity_vs_remaining_time'])
+        ntp_rtp_cos_lst.append(grad_cos['next_time_vs_remaining_time'])
+        nap_ntp_mag_lst.append(grad_mag['next_activity_vs_next_time'])
+        nap_rtp_mag_lst.append(grad_mag['next_activity_vs_remaining_time'])
+        ntp_rtp_mag_lst.append(grad_mag['next_time_vs_remaining_time'])
+        if mtl == 'UW_SO':
+            labels.append('UW-SO')
+        elif mtl == 'UW_O':
+            labels.append('UW-O')
+        elif mtl == 'Nash_MTL':
+            labels.append('NashMTL')
+        else:
+            labels.append(mtl) 
+    if len(mtl_lst) > 10:
+        colors = sns.color_palette("tab20", n_colors=len(labels))
+    else:
+        colors = sns.color_palette("tab10", n_colors=len(labels))
+    sns.set_theme(context="talk")
+    max_epochs_nap_ntp_cos = max(len(w) for w in nap_ntp_cos_lst) 
+    max_epochs_nap_rtp_cos = max(len(w) for w in nap_rtp_cos_lst)
+    max_epochs_ntp_rtp_cos = max(len(w) for w in ntp_rtp_cos_lst)
+    max_epochs_nap_ntp_mag = max(len(w) for w in nap_ntp_mag_lst)
+    max_epochs_nap_rtp_mag = max(len(w) for w in nap_rtp_mag_lst)
+    max_epochs_ntp_rtp_mag = max(len(w) for w in ntp_rtp_mag_lst)
+    with PdfPages(grad_pdf) as pdf:
+        fig, axes = plt.subplots(3, 2, figsize=(15, 18))  # 2x2 grid of subplots
+        for (label, grads, color) in zip(labels, nap_ntp_cos_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[0, 0].plot(epochs, grads, label=label, color=color)
+            axes[0, 0].set_xlabel('Epoch')
+            axes[0, 0].set_ylabel('Gradient Cosine Similarity NAP vs. NTP')
+            axes[0, 0].set_ylabel('Gradient Cosine Similarity NAP vs. NTP')
+            axes[0, 0].set_xticks(range(10, max_epochs_nap_ntp_cos + 1, 10))
+            axes[0, 0].grid(True)
+            axes[0, 0].legend()
+        for (label, grads, color) in zip(labels, nap_ntp_mag_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[0, 1].plot(epochs, grads, label=label, color=color)
+            axes[0, 1].set_xlabel('Epoch')
+            axes[0, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. NTP')
+            axes[0, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. NTP')
+            axes[0, 1].set_xticks(range(10, max_epochs_nap_ntp_mag + 1, 10))
+            axes[0, 1].grid(True)
+            axes[0, 1].legend()
+        for (label, grads, color) in zip(labels, nap_rtp_cos_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[1, 0].plot(epochs, grads, label=label, color=color)
+            axes[1, 0].set_xlabel('Epoch')
+            axes[1, 0].set_ylabel('Gradient Cosine Similarity NAP vs. RTP')
+            axes[1, 0].set_ylabel('Gradient Cosine Similarity NAP vs. RTP')
+            axes[1, 0].set_xticks(range(10, max_epochs_nap_rtp_cos + 1, 10))
+            axes[1, 0].grid(True)
+            axes[1, 0].legend()
+        for (label, grads, color) in zip(labels, nap_rtp_mag_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[1, 1].plot(epochs, grads, label=label, color=color)
+            axes[1, 1].set_xlabel('Epoch')
+            axes[1, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. RTP')
+            axes[1, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. RTP')
+            axes[1, 1].set_xticks(range(10, max_epochs_nap_rtp_mag + 1, 10))
+            axes[1, 1].grid(True)
+            axes[1, 1].legend()
+        for (label, grads, color) in zip(labels, ntp_rtp_cos_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[2, 0].plot(epochs, grads, label=label, color=color)
+            axes[2, 0].set_xlabel('Epoch')
+            axes[2, 0].set_ylabel('Gradient Cosine Similarity NTP vs. RTP')
+            axes[2, 0].set_ylabel('Gradient Cosine Similarity NTP vs. RTP')
+            axes[2, 0].set_xticks(range(10, max_epochs_ntp_rtp_cos + 1, 10))
+            axes[2, 0].grid(True)
+            axes[2, 0].legend()
+        for (label, grads, color) in zip(labels, ntp_rtp_mag_lst, colors):
+            epochs = list(range(1, len(grads) + 1))
+            axes[2, 1].plot(epochs, grads, label=label, color=color)
+            axes[2, 1].set_xlabel('Epoch')
+            axes[2, 1].set_ylabel('Gradient Magnitude Similarity NTP vs. RTP')
+            axes[2, 1].set_ylabel('Gradient Magnitude Similarity NTP vs. RTP')
+            axes[2, 1].set_xticks(range(10, max_epochs_ntp_rtp_mag + 1, 10))
+            axes[2, 1].grid(True)
+            axes[2, 1].legend()
+        #fig.legend(loc='upper center', ncol=len(labels), bbox_to_anchor=(0.5, 1.05))
+        #handles, labels = axes[0, 0].get_legend_handles_labels()
+        #fig.legend(handles, labels, loc='upper center', ncol=len(labels), bbox_to_anchor=(0.5, 1.05))
+        plt.tight_layout()
+        pdf.savefig(fig)
+        plt.close()       
+
+def weight_vis(mtl_lst, weight_lst, focus_task, rel_loss_pdf): 
+    
+    labels, focus_weights = [], []
+    for mtl, task_weights in zip(mtl_lst, weight_lst):
+        num_epochs = len(next(iter(task_weights.values())))
+        task_names = list(task_weights.keys())
+        for epoch in range(num_epochs):
+            total = sum(task_weights[task][epoch] for task in task_names)
+            task_weights[focus_task][epoch] /= total
+        values = [w.item() if isinstance(w, torch.Tensor) else w for w in task_weights[focus_task]]
+        focus_weights.append(values)
+        if mtl == 'UW_SO':
+            labels.append('UW-SO')
+        elif mtl == 'UW_O':
+            labels.append('UW-O')
+        elif mtl == 'Nash_MTL':
+            labels.append('NashMTL')
+        else:
+            labels.append(mtl)         
+    if len(mtl_lst) > 10:
+        colors = sns.color_palette("tab20", n_colors=len(labels))
+    else:
+        colors = sns.color_palette("tab10", n_colors=len(labels))
+    sns.set_theme(context="talk")
+    max_epochs = max(len(w) for w in focus_weights)
+    plt.figure(figsize=(10, 6))
+    for (label, weights, color) in zip(labels, focus_weights, colors):
+        epochs = list(range(1, len(weights) + 1))
+        plt.plot(epochs, weights, label=label, color=color)
+    plt.xlabel("Epoch")
+    plt.ylabel("Relatvie Loss Weight")
+    #plt.ylabel(f"Relatvie Loss Weight: {focus_task}")
+    plt.xticks(range(10, max_epochs + 1, 10))
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()    
+    plt.savefig(rel_loss_pdf)
+    plt.close()
+    
+    
 def loss_vis(mtl_lst, loss_lst, focus_task, loss_pdf): 
     # upper level for y-axis
     #all_losses = [v for loss in losses for v in loss]
@@ -85,45 +227,7 @@ def loss_vis(mtl_lst, loss_lst, focus_task, loss_pdf):
     plt.tight_layout()    
     plt.savefig(loss_pdf)
     plt.close()
-    
-def weight_vis(mtl_lst, weight_lst, focus_task, rel_loss_pdf):    
-    labels, focus_weights = [], []
-    for mtl, task_weights in zip(mtl_lst, weight_lst):
-        num_epochs = len(next(iter(task_weights.values())))
-        task_names = list(task_weights.keys())
-        for epoch in range(num_epochs):
-            total = sum(task_weights[task][epoch] for task in task_names)
-            task_weights[focus_task][epoch] /= total
-        values = [w.item() if isinstance(w, torch.Tensor) else w for w in task_weights[focus_task]]
-        focus_weights.append(values)
-        if mtl == 'UW_SO':
-            labels.append('UW-SO')
-        elif mtl == 'UW_O':
-            labels.append('UW-O')
-        elif mtl == 'Nash_MTL':
-            labels.append('NashMTL')
-        else:
-            labels.append(mtl)         
-    if len(mtl_lst) > 10:
-        colors = sns.color_palette("tab20", n_colors=len(labels))
-    else:
-        colors = sns.color_palette("tab10", n_colors=len(labels))
-    sns.set_theme(context="talk")
-    max_epochs = max(len(w) for w in focus_weights)
-    plt.figure(figsize=(10, 6))
-    for (label, weights, color) in zip(labels, focus_weights, colors):
-        epochs = list(range(1, len(weights) + 1))
-        plt.plot(epochs, weights, label=label, color=color)
-    plt.xlabel("Epoch")
-    plt.ylabel("Relatvie Loss Weight")
-    #plt.ylabel(f"Relatvie Loss Weight: {focus_task}")
-    plt.xticks(range(10, max_epochs + 1, 10))
-    plt.legend()
-    plt.grid(True)
-    plt.tight_layout()    
-    plt.savefig(rel_loss_pdf)
-    plt.close()
-    
+   
           
 def get_result(csv_path, res_dir, srch_str, task_str, model, seed=42):
     # get all relevant MTL results (loss weights, gradient magnitude and cosine similarity)

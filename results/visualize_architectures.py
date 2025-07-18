@@ -10,7 +10,9 @@ import seaborn as sns
 #import numpy as np
 
 def main():
-    dataset_names = ['P2P', 'Production', 'HelpDesk', 'BPIC20_DomesticDeclarations'] 
+    dataset_names = ['P2P', 'Production', 'HelpDesk', 'Sepsis', 
+                     'BPIC20_DomesticDeclarations',
+                     'BPIC20_InternationalDeclarations'] 
     #task_combinations = ['NAP+NTP+RTP', 'NTP+RTP', 'NAP+NTP', 'NAP+RTP', 'ALL']
     task_combinations = ['ALL']
     #select_combinations = [True, True, True, True, False]
@@ -51,8 +53,10 @@ def main():
 
 
 def plot_model_performance_boxplot(df, combination, select, arch, title=False):
+    
     output_pdf_path = combination+'_'+arch+'_architecture_performance.pdf'
-    plt.figure(figsize=(6, 3))
+    plt.figure(figsize=(5, 4))
+    
     ax = sns.boxplot(
         x='Model', y='delta_m', data=df, order=['LSTM', 'CNN', 'Transformer'],
         boxprops=dict(facecolor='none', edgecolor='black'),
@@ -63,19 +67,14 @@ def plot_model_performance_boxplot(df, combination, select, arch, title=False):
                         markeredgecolor='black', markersize=6, linestyle='none'),
         showcaps=True
     )
+    
     for label in ax.get_xticklabels():
-        label.set_fontweight('bold')
-        label.set_fontsize(16)
-    ax.tick_params(axis='y', labelsize=14)
-    
-    #ax.set_facecolor('#d3d3d3')
-    ax.set_facecolor('#e0e0e0')
-    #ax.set_facecolor('lightgray')
-    
+        #label.set_fontweight('bold')
+        label.set_fontsize(14)
+    ax.tick_params(axis='y', labelsize=13)
     # Remove the axes frame (the black box around plot area)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    
     # White grid lines
     ax.grid(True, color='white')
     if title:
@@ -85,15 +84,16 @@ def plot_model_performance_boxplot(df, combination, select, arch, title=False):
     else:
         ax.set_xlabel('')
     ax.set_ylabel(r'$\Delta_m$', fontsize=20, fontweight='bold')
-    
     plt.tight_layout()
     plt.savefig(output_pdf_path, format='pdf')
     plt.close()
     
 
 def plot_mto_boxplot(df, combination, select, mto_order, arch, title=False):
+    
     output_pdf_path = combination+'_'+arch+ '_mto_performance.pdf'
     plt.figure(figsize=(9, 6))
+    
     ax = sns.boxplot(
         x='MTO', y='delta_m', data=df, order=mto_order,
         boxprops=dict(facecolor='none', edgecolor='black'),
@@ -104,25 +104,17 @@ def plot_mto_boxplot(df, combination, select, mto_order, arch, title=False):
                         markeredgecolor='black', markersize=6, linestyle='none'),
         showcaps=True
     )
+    
     for label in ax.get_xticklabels():
-        label.set_fontweight('bold')
+        #label.set_fontweight('bold')
         label.set_rotation(90)
     ax.tick_params(axis='x', labelsize=20)
-    ax.tick_params(axis='y', labelsize=18)
-    
-    
-    #ax.set_facecolor('#d3d3d3')
-    ax.set_facecolor('#e0e0e0')
-    #ax.set_facecolor('lightgray')
-    
+    ax.tick_params(axis='y', labelsize=18) 
     # Remove the axes frame (the black box around plot area)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    
     # White grid lines
     ax.grid(True, color='white')
-    
-    # Title and labels with bigger bold font
     if title:
         ax.set_title(f'Performance of MTO approaches ({combination}, {arch})',
                      fontsize=14, fontweight='bold')
