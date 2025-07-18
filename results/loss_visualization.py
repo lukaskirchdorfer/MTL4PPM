@@ -14,7 +14,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 def main():
     dataset = 'Production' #'Production'
-    model = 'LSTM'
+    model = 'CNN'  # CNN LSTM Transformer
     tasks = 'NAP+NTP+RTP'
     focus_task = 'next_activity'
     #mto_order = ['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop', 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']  
@@ -268,7 +268,6 @@ def get_losses(csv_path, res_dir, srch_str, task_str, model, focus_task, seed=42
         res_dir, model + '_' + focus_task + '_EW_None_' + str(lr) + '_' + str(seed) + '.log')
     stl_loss = extract_losses(stl_log) 
     # get results for multi-task learning methods
-    #CNN_next_activity_next_time_remaining_time_CAGrad_0.1_0.001_42.log
     df_task = df_inp[df_inp['Tasks'] == srch_str]
     df = df_task[df_task['Model'] == model].copy()
     df = df.reset_index(drop=True)
