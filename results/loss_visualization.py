@@ -13,8 +13,8 @@ from matplotlib.backends.backend_pdf import PdfPages
 #import numpy as np
 
 def main():
-    dataset = 'Production'
-    model = 'CNN'
+    dataset = 'Production' #'Production'
+    model = 'LSTM'
     tasks = 'NAP+NTP+RTP'
     focus_task = 'next_activity'
     #mto_order = ['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop', 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']  
