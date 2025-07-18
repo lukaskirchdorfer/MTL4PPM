@@ -26,6 +26,8 @@ def main():
                                'CAGrad', 'GradNorm', 'GradDrop', 'PCGrad',
                                'Nash_MTL', 'UW_SO', 'Scalarization'],
                       help='Weighting strategy to use')
+    parser.add_argument('--mtl_hpo', type=str, default='None',
+                      help='mtl hyper_parameter')
     parser.add_argument('--learning_rate', type=float, default=0.001,
                       help='Learning rate')
     parser.add_argument('--seed', type=int, default=42,
@@ -40,24 +42,25 @@ def main():
     tasks = ['next_activity', 'next_time', 'remaining_time'] if 'multi' in args.tasks else args.tasks
     root_path = os.getcwd()
     save_dir = os.path.join(root_path, 'models', args.dataset)
+    plot_dir = os.path.join(root_path, 'models')
     task_weight_path = os.path.join(
         save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_task_weights.json')   
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_task_weights.json') 
     gradient_cosine_path = os.path.join(
         save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_cosine.pt')    
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_cosine.pt')    
     gradient_magnitude_path = os.path.join(
         save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_magnitude.pt')   
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_magnitude.pt')   
     task_weight_plot_path = os.path.join(
-        save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_task_weights.pdf')
+        plot_dir,
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_task_weights.pdf')
     gradient_cosine_plot_path = os.path.join(
-        save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_cosine_similarity.pdf')
+        plot_dir,
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_cosine_similarity.pdf')
     gradient_magnitude_plot_path = os.path.join(
-        save_dir,
-        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.learning_rate}_{args.seed}_gradient_magnitude_similarity.pdf')
+        plot_dir,
+        f'{args.model}_{"_".join(tasks)}_{mtl_name}_{args.mtl_hpo}_{args.learning_rate}_{args.seed}_gradient_magnitude_similarity.pdf')
     
     task_weights = json.load(open(task_weight_path))
     gradient_cosine_sim = torch.load(gradient_cosine_path)

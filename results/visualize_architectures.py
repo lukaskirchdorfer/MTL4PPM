@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 16 10:21:39 2025
-
 @author: kamirel
 """
 import os
@@ -21,8 +20,10 @@ def main():
     trans_choice = [True, False, False, True]  
     arch_choice = ['ALL', 'LSTM', 'CNN', 'Transformer']
     
-    mto_order = ['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop',
-                 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']   
+    sns.set_theme(context="talk")
+    
+    mto_order = ['EW', 'DWA' , 'RLW', 'UW', 'UW-SO', 'UW-O', 'GLS', 'GradDrop',
+                 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'NashMTL']   
     for combination, select in zip(task_combinations, select_combinations): 
         for lstm, cnn, trans, arch in zip(
                 lstm_choice, cnn_choice, trans_choice, arch_choice):
@@ -33,6 +34,9 @@ def main():
                 csv_path = os.path.join(os.getcwd(), name, csv_name)
                 df = pd.read_csv(csv_path) 
                 df.rename(columns={'MTL': 'MTO'}, inplace=True)
+                df['MTO'] = df['MTO'].replace('UW_SO', 'UW-SO')
+                df['MTO'] = df['MTO'].replace('UW_O', 'UW-O')
+                df['MTO'] = df['MTO'].replace('Nash_MTL', 'NashMTL')
                 res_df = add_delta_m(df, combination, select,
                                      lstm=lstm, cnn=cnn, transformer=trans)
                 dataframes.append(res_df)
@@ -48,7 +52,7 @@ def main():
 
 def plot_model_performance_boxplot(df, combination, select, arch, title=False):
     output_pdf_path = combination+'_'+arch+'_architecture_performance.pdf'
-    plt.figure(figsize=(6, 6))
+    plt.figure(figsize=(6, 3))
     ax = sns.boxplot(
         x='Model', y='delta_m', data=df, order=['LSTM', 'CNN', 'Transformer'],
         boxprops=dict(facecolor='none', edgecolor='black'),
@@ -61,9 +65,12 @@ def plot_model_performance_boxplot(df, combination, select, arch, title=False):
     )
     for label in ax.get_xticklabels():
         label.set_fontweight('bold')
+        label.set_fontsize(16)
+    ax.tick_params(axis='y', labelsize=14)
     
-    # Light gray background (very light)
-    ax.set_facecolor('#d3d3d3')
+    #ax.set_facecolor('#d3d3d3')
+    ax.set_facecolor('#e0e0e0')
+    #ax.set_facecolor('lightgray')
     
     # Remove the axes frame (the black box around plot area)
     for spine in ax.spines.values():
@@ -77,7 +84,7 @@ def plot_model_performance_boxplot(df, combination, select, arch, title=False):
                      fontsize=14, fontweight='bold')
     else:
         ax.set_xlabel('')
-    ax.set_ylabel(r'$\Delta_m$', fontsize=24, fontweight='bold')
+    ax.set_ylabel(r'$\Delta_m$', fontsize=20, fontweight='bold')
     
     plt.tight_layout()
     plt.savefig(output_pdf_path, format='pdf')
@@ -100,9 +107,13 @@ def plot_mto_boxplot(df, combination, select, mto_order, arch, title=False):
     for label in ax.get_xticklabels():
         label.set_fontweight('bold')
         label.set_rotation(90)
+    ax.tick_params(axis='x', labelsize=20)
+    ax.tick_params(axis='y', labelsize=18)
     
-    # Light gray background (very light)
-    ax.set_facecolor('#d3d3d3')
+    
+    #ax.set_facecolor('#d3d3d3')
+    ax.set_facecolor('#e0e0e0')
+    #ax.set_facecolor('lightgray')
     
     # Remove the axes frame (the black box around plot area)
     for spine in ax.spines.values():
@@ -117,7 +128,7 @@ def plot_mto_boxplot(df, combination, select, mto_order, arch, title=False):
                      fontsize=14, fontweight='bold')
     else:
         ax.set_xlabel('')
-    ax.set_ylabel(r'$\Delta_m$', fontsize=24, fontweight='bold')    
+    ax.set_ylabel(r'$\Delta_m$', fontsize=30, fontweight='bold')    
     plt.tight_layout()
     plt.savefig(output_pdf_path, format='pdf')
     plt.close()
