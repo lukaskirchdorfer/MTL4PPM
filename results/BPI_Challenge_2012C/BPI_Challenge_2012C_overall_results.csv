@@ -1,0 +1,638 @@
+Model,MTL,Tasks,Learning Rate,MTL HPO,Seed,Best Epoch,Best Validation Loss,NEXT_ACTIVITY,NEXT_TIME,REMAINING_TIME
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,200.0,7.7232,0.7709,0.6101,6.4463
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,123,118.0,7.9265,0.778,0.5856,6.5922
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,27.0,8.1876,0.777,0.6033,6.8603
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,32.0,8.1567,0.7771,0.6216,6.8719
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,2025,20.0,8.1917,0.7758,0.6246,6.8978
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,42,185.0,7.7268,0.7761,0.605,6.4605
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,123,79.0,8.0358,0.781,0.5793,6.749
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,42,95.0,7.8565,0.772,0.6135,6.5662
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,29.0,8.1638,0.7801,0.6371,6.8808
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,42,65.0,8.0665,0.7781,0.6175,6.8055
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,123,49.0,8.1233,0.7805,0.5886,6.8348
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,49.0,8.196,0.7863,0.5922,6.9251
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,2025,30.0,8.1895,0.7826,0.6225,6.8802
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,123,31.0,8.1675,0.7828,0.6034,6.8656
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,42,22.0,8.1661,0.7787,0.6235,6.89
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,2025,38.0,8.213,0.7843,0.6147,6.9104
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,2025,72.0,8.0464,0.7789,0.6104,6.7725
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,140.0,7.7696,0.7718,0.6194,6.4348
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,42,43.0,8.1519,0.7776,0.6307,6.8583
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,2025,79.0,8.0184,0.7804,0.6086,6.7443
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,123,37.0,8.1645,0.7792,0.6241,6.823
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,123,27.0,8.1678,0.7838,0.5981,6.8893
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,2025,113.0,7.8323,0.7744,0.6135,6.5347
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,123,27.0,8.1791,0.7836,0.5816,6.9042
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,49.0,8.1053,0.7795,0.6179,6.8223
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,123,15.0,8.2069,0.7758,0.6102,6.8863
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,42,124.0,7.8175,0.774,0.6017,6.5768
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,91.0,8.0548,0.7788,0.6092,6.7852
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,123,112.0,7.8125,0.7751,0.5944,6.5127
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,175.0,7.7627,0.7741,0.591,6.4426
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,42,39.0,8.1445,0.7768,0.6247,6.8676
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,54.0,8.1487,0.7767,0.6233,6.866
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,123,79.0,7.93,0.7761,0.5855,6.6221
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,2025,52.0,8.0985,0.7831,0.6133,6.8494
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,52.0,8.1417,0.7796,0.6097,6.8686
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,42,64.0,8.1275,0.7795,0.6206,6.8483
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,31.0,8.2295,0.7755,0.6246,6.9229
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,2025,43.0,8.1567,0.7794,0.6159,6.8845
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,16.0,8.2445,0.7821,0.6169,6.979
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,42,18.0,8.2181,0.7783,0.615,6.9452
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,116.0,7.8341,0.7722,0.6101,6.5309
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,42,15.0,8.2279,0.778,0.618,6.9575
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,2025,18.0,8.2226,0.7815,0.6294,6.9301
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,2025,20.0,8.2344,0.7777,0.625,6.927
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,58.0,8.1028,0.779,0.587,6.783
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,42,17.0,8.1624,0.778,0.6166,6.9113
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,42,44.0,8.1636,0.7797,0.6235,6.8831
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,123,83.0,7.8784,0.7738,0.5923,6.5705
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,2025,20.0,8.2389,0.779,0.6197,6.9435
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,42,53.0,8.0581,0.7767,0.6111,6.7908
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,199.0,7.7424,0.7748,0.6172,6.4252
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,38.0,8.1684,0.7859,0.6093,6.9094
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,42,22.0,8.1912,0.7787,0.6371,6.9005
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,21.0,8.2091,0.7785,0.6134,6.9574
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,123,134.0,7.7699,0.775,0.5903,6.4704
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,47.0,8.2324,0.7731,0.6043,6.8888
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,123,27.0,8.149,0.7798,0.6065,6.8391
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,178.0,7.7868,0.7751,0.6076,6.5391
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,123,27.0,8.1683,0.7764,0.5982,6.8593
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,123,135.0,7.7973,0.7768,0.5871,6.4843
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,131.0,7.7656,0.7708,0.6148,6.4791
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,58.0,8.1359,0.7822,0.5865,6.8409
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,2025,154.0,7.8109,0.7772,0.6038,6.5424
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,123,65.0,8.0729,0.7806,0.591,6.7536
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,49.0,8.196,0.7755,0.6339,6.9007
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,123,23.0,8.1837,0.7826,0.5907,6.901
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,30.0,8.1788,0.775,0.5998,6.8734
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,18.0,8.2319,0.7803,0.6183,6.9589
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,123,116.0,7.8448,0.7754,0.5882,6.5144
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,54.0,8.1244,0.7793,0.6245,6.8363
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,139.0,7.7913,0.7734,0.592,6.438
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,123,106.0,7.9797,0.7784,0.5811,6.6474
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,52.0,8.1238,0.78,0.6272,6.8181
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,2025,172.0,7.8037,0.7753,0.602,6.5098
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,123,27.0,8.1709,0.7828,0.5892,6.8917
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,42,115.0,7.7892,0.772,0.6109,6.4904
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,123,162.0,7.7241,0.7725,0.5908,6.3772
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,177.0,7.69,0.7711,0.5966,6.3673
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,42,159.0,7.7327,0.7735,0.6106,6.4731
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,123,41.0,8.1883,0.7852,0.6064,6.9066
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,67.0,8.1303,0.7796,0.6069,6.8704
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,157.0,7.7597,0.7745,0.6151,6.4479
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,61.0,8.12,0.7807,0.6095,6.87
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,123,195.0,7.7422,0.7728,0.5827,6.4177
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.5,123,155.0,7.8081,0.7751,0.5852,6.4772
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,27.0,8.226,0.7842,0.5959,6.9369
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,2025,23.0,8.1889,0.7792,0.6175,6.9038
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,15.0,8.2116,0.7713,0.6239,6.9198
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,2025,161.0,7.7348,0.7728,0.6176,6.4269
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,2025,142.0,7.7547,0.7773,0.6189,6.4595
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,42,139.0,7.7596,0.7726,0.6074,6.4703
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,46.0,8.1596,0.7801,0.6123,6.874
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,123,27.0,8.1893,0.7777,0.6002,6.8822
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,54.0,8.153,0.7794,0.6071,6.8785
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,17.0,8.2305,0.7811,0.613,6.9778
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,30.0,8.1608,0.7808,0.6091,6.8501
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,123,99.0,7.9346,0.7782,0.5813,6.6247
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,123,30.0,8.1546,0.7802,0.5937,6.865
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,123,46.0,8.1407,0.7784,0.6049,6.8202
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,42,20.0,8.1995,0.776,0.6199,6.9254
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,19.0,8.2255,0.7755,0.6325,6.8986
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,42,129.0,7.805,0.7724,0.6053,6.5347
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,15.0,8.2131,0.7841,0.6124,6.9693
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,43.0,8.1652,0.7844,0.5841,6.919
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,42,32.0,8.1609,0.7773,0.6338,6.866
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,123,25.0,8.2415,0.782,0.5997,6.9119
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,2025,127.0,7.8144,0.773,0.62,6.4971
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,42,41.0,8.1389,0.7831,0.607,6.8838
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,200.0,7.6662,0.7697,0.6174,6.3872
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,110.0,7.8529,0.7737,0.6218,6.5175
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,42,100.0,7.9531,0.7771,0.6039,6.693
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,42,20.0,8.1643,0.7815,0.6259,6.8933
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,2025,194.0,7.7018,0.7757,0.615,6.3941
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,2025,131.0,7.904,0.7778,0.6042,6.6139
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,42,173.0,7.7026,0.7712,0.6115,6.4096
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,2025,37.0,8.1567,0.7825,0.6283,6.8751
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,2025,25.0,8.2019,0.7846,0.6239,6.9262
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,48.0,8.2019,0.7875,0.6099,6.9567
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,123,30.0,8.1507,0.78,0.6044,6.8581
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,156.0,7.731,0.7738,0.6094,6.4635
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,165.0,7.7303,0.7693,0.6195,6.4355
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,42,152.0,7.7259,0.7738,0.6078,6.4514
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.7,42,65.0,8.0546,0.7774,0.6138,6.7882
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,79.0,8.1076,0.7797,0.5837,6.8001
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,50.0,8.1508,0.7806,0.6143,6.8301
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,123,83.0,7.9821,0.7798,0.584,6.6741
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,92.0,8.0401,0.7778,0.6048,6.7643
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,58.0,8.1465,0.7814,0.5915,6.8433
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,158.0,7.748,0.7755,0.616,6.447
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,171.0,7.7098,0.7689,0.5998,6.3777
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,15.0,8.1979,0.7824,0.617,6.9377
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,42,30.0,8.1515,0.7781,0.6226,6.8769
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,68.0,8.0599,0.7804,0.6069,6.7947
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,2025,23.0,8.1941,0.7782,0.6184,6.9059
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,2025,111.0,7.8437,0.77,0.6195,6.5538
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,42,50.0,8.1357,0.7762,0.6222,6.8552
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,118.0,7.7875,0.7744,0.5928,6.4319
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.5,2025,116.0,7.9454,0.778,0.6079,6.6531
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,25.0,8.2054,0.7846,0.5905,6.9225
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,2025,43.0,8.1489,0.7799,0.6181,6.8527
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,98.0,7.877,0.7757,0.5892,6.5515
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,42,17.0,8.2275,0.7776,0.6153,6.9573
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,2025,115.0,7.8558,0.7765,0.6134,6.5593
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,2025,79.0,8.0449,0.7806,0.6079,6.7882
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.3,42,128.0,7.8605,0.776,0.6092,6.582
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,2025,38.0,8.1614,0.7837,0.6075,6.9058
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,140.0,7.7669,0.7735,0.6165,6.4511
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,44.0,8.1489,0.781,0.6028,6.8269
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,17.0,8.2092,0.7733,0.6314,6.9168
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,79.0,8.0967,0.7779,0.608,6.8315
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.1,123,167.0,7.7315,0.7746,0.596,6.3998
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,30.0,8.2001,0.7799,0.6261,6.8896
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.0001,0.9,2025,83.0,8.0788,0.7823,0.6118,6.7812
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.0001,2.0,2025,85.0,7.9214,0.7734,0.609,6.6499
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,2025,48.0,8.1185,0.7815,0.6203,6.8368
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,2025,37.0,8.1606,0.7817,0.6275,6.8598
+CNN,EW,"('next_activity',)",0.0001,None,42,144.0,1.5435,0.5056,,
+CNN,EW,"('next_activity',)",0.01,None,123,4.0,1.7116,0.4431,,
+CNN,EW,"('next_activity',)",0.0001,None,123,124.0,1.5455,0.4987,,
+CNN,EW,"('next_activity',)",0.001,None,42,31.0,1.7047,0.439,,
+CNN,EW,"('next_activity',)",0.001,None,2025,16.0,1.7005,0.4317,,
+CNN,EW,"('next_activity',)",0.0001,None,2025,128.0,1.5551,0.4954,,
+CNN,EW,"('next_activity',)",0.001,None,123,19.0,1.7004,0.4263,,
+CNN,EW,"('next_activity',)",0.01,None,2025,3.0,1.71,0.4399,,
+CNN,EW,"('next_activity',)",0.01,None,42,3.0,1.7024,0.4486,,
+CNN,EW,"('next_time',)",0.0001,None,42,20.0,0.6225,,0.6114,
+CNN,EW,"('next_time',)",0.001,None,123,20.0,0.6024,,0.5853,
+CNN,EW,"('next_time',)",0.0001,None,123,27.0,0.6009,,0.5872,
+CNN,EW,"('next_time',)",0.01,None,42,15.0,1.7515,,1.7492,
+CNN,EW,"('next_time',)",0.001,None,2025,33.0,0.5934,,0.6105,
+CNN,EW,"('next_time',)",0.0001,None,2025,46.0,0.5918,,0.608,
+CNN,EW,"('next_time',)",0.001,None,42,18.0,0.6158,,0.6063,
+CNN,EW,"('next_time',)",0.01,None,2025,6.0,1.7402,,1.7394,
+CNN,EW,"('next_time',)",0.01,None,123,1.0,1.7344,,1.7298,
+CNN,EW,"('remaining_time',)",0.01,None,2025,18.0,11.5947,,,11.5917
+CNN,EW,"('remaining_time',)",0.01,None,123,8.0,11.5181,,,11.5478
+CNN,EW,"('remaining_time',)",0.0001,None,123,194.0,6.311,,,6.2634
+CNN,EW,"('remaining_time',)",0.01,None,42,8.0,11.6438,,,143.4977
+CNN,EW,"('remaining_time',)",0.0001,None,2025,152.0,6.4389,,,6.357
+CNN,EW,"('remaining_time',)",0.001,None,2025,12.0,7.0091,,,6.9377
+CNN,EW,"('remaining_time',)",0.001,None,42,2.0,11.2638,,,11.2185
+CNN,EW,"('remaining_time',)",0.001,None,123,8.0,11.5181,,,11.5478
+CNN,EW,"('remaining_time',)",0.0001,None,42,153.0,6.4024,,,6.3547
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,123,199.0,6.4005,0.7869,0.5689,5.1886
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,197.0,6.597,0.7862,0.5964,5.3922
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,196.0,7.114,0.7881,0.5958,5.8746
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,200.0,7.0807,0.786,0.6022,5.83
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,123,197.0,6.4801,0.7879,0.5711,5.2573
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,42,200.0,6.4379,0.7853,0.6037,5.2291
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,199.0,7.1963,0.7847,0.5956,5.955
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,199.0,7.0586,0.7849,0.6081,5.8035
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,197.0,6.5817,0.7842,0.5723,5.3509
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,123,199.0,6.8493,0.7886,0.5725,5.6093
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,197.0,7.1996,0.7859,0.6011,5.9582
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,123,197.0,6.422,0.7876,0.5725,5.2213
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,199.0,7.114,0.7868,0.5701,5.8461
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,42,196.0,6.4445,0.7845,0.6072,5.2252
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,199.0,7.1164,0.7858,0.5988,5.8957
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,42,200.0,6.4572,0.7845,0.6004,5.2646
+LSTM,GLS,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,198.0,7.1138,0.7872,0.5739,5.8175
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,2025,198.0,6.4722,0.7875,0.5991,5.2201
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,3.0,2025,200.0,6.5184,0.7865,0.6006,5.2863
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,2025,200.0,6.4326,0.7862,0.6001,5.2043
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,42,198.0,6.4274,0.7847,0.6037,5.203
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,200.0,6.4111,0.7844,0.5772,5.1974
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,198.0,6.4309,0.785,0.604,5.2092
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,199.0,6.4271,0.7852,0.5976,5.2099
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,200.0,6.4378,0.7863,0.605,5.2363
+LSTM,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,197.0,7.2056,0.7849,0.5762,5.917
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,42,197.0,6.4472,0.7855,0.6006,5.2422
+LSTM,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,199.0,7.1119,0.7869,0.5988,5.9085
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,200.0,7.1304,0.7849,0.6028,5.872
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,42,198.0,6.4402,0.7851,0.6017,5.2043
+LSTM,RLW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,199.0,6.6003,0.7837,0.6004,5.404
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,10.0,123,199.0,6.4153,0.7865,0.5708,5.1884
+LSTM,EW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,200.0,6.408,0.7851,0.5706,5.1889
+LSTM,DWA,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,2025,198.0,6.4296,0.785,0.5982,5.2181
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,42,196.0,6.8577,0.7869,0.6004,5.6138
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,123,200.0,6.3766,0.7842,0.5705,5.1717
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,1.0,2025,199.0,6.9416,0.7892,0.5998,5.7214
+LSTM,UW,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,200.0,7.1301,0.7818,0.5812,5.8357
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,20.0,123,199.0,6.3903,0.7868,0.5729,5.2099
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,7.0,2025,199.0,6.467,0.7869,0.6002,5.2469
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,15.0,2025,198.0,6.4244,0.7878,0.5967,5.1995
+LSTM,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,42,197.0,6.4296,0.7856,0.6001,5.2204
+LSTM,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.0001,5.0,2025,200.0,6.4473,0.7857,0.6,5.2224
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,123,31.0,1.1335,0.7953,0.5592,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,42,64.0,1.1537,0.7912,0.5902,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,2025,64.0,1.1303,0.7931,0.5888,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,2025,82.0,1.1332,0.7943,0.5915,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,2025,64.0,1.1324,0.793,0.5912,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,2025,30.0,1.1332,0.793,0.5857,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,2025,26.0,1.1333,0.7923,0.589,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,123,62.0,1.145,0.7928,0.5672,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,2025,26.0,1.1286,0.7929,0.5828,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,2025,64.0,1.1304,0.7928,0.5903,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,123,17.0,1.142,0.7931,0.562,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,123,71.0,1.144,0.7927,0.5659,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,123,19.0,1.1379,0.7931,0.5615,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,2025,21.0,1.1312,0.7931,0.5871,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,42,25.0,1.1525,0.7906,0.5838,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,2025,74.0,1.13,0.7943,0.5883,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,42,23.0,1.1524,0.7882,0.5834,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,42,30.0,1.1528,0.7913,0.5807,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,42,64.0,1.1559,0.7913,0.5908,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,42,50.0,1.1597,0.7902,0.5913,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,123,70.0,1.1412,0.7929,0.5646,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,2025,26.0,1.1271,0.7934,0.5837,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,123,70.0,1.1445,0.7931,0.5671,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,123,58.0,1.1421,0.7913,0.5661,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,2025,24.0,1.1323,0.7916,0.5829,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,2025,26.0,1.1312,0.7938,0.5823,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,2025,66.0,1.1325,0.7944,0.5903,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,123,62.0,1.1423,0.7933,0.5662,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,123,62.0,1.1445,0.7931,0.5672,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,2025,26.0,1.1375,0.7957,0.5883,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,2025,78.0,1.1329,0.7938,0.5903,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,123,19.0,1.1419,0.7933,0.5643,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,123,70.0,1.1418,0.7928,0.5649,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,42,50.0,1.16,0.7899,0.5926,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,2025,78.0,1.1321,0.7944,0.5884,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,123,69.0,1.1445,0.791,0.5647,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,2025,19.0,1.1323,0.7878,0.5936,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,2025,78.0,1.1292,0.7933,0.5894,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,123,22.0,1.143,0.7951,0.5631,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,2025,64.0,1.1323,0.7924,0.5919,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,42,64.0,1.1585,0.7907,0.5908,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,123,69.0,1.1404,0.7917,0.5645,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,123,24.0,1.1437,0.7941,0.56,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,42,79.0,1.1526,0.7906,0.5857,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,42,61.0,1.1557,0.7912,0.5902,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,2025,78.0,1.1294,0.793,0.5882,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,42,64.0,1.1617,0.7915,0.5956,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,42,25.0,1.1498,0.7908,0.5854,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,2025,83.0,1.1322,0.7927,0.5888,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,20.0,123,70.0,1.1405,0.7933,0.5645,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,42,64.0,1.1544,0.7912,0.5877,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,2025,26.0,1.1269,0.7935,0.5834,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,42,22.0,1.1571,0.7926,0.59,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,2025,17.0,1.1329,0.7929,0.5896,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,42,79.0,1.1521,0.7905,0.587,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,123,24.0,1.1461,0.7919,0.5621,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,42,28.0,1.1516,0.7893,0.58,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,2025,74.0,1.1303,0.7938,0.5868,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,123,69.0,1.1412,0.7916,0.5649,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,123,18.0,1.1449,0.7724,0.5662,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,123,23.0,1.146,0.7932,0.562,
+LSTM,IMTL,"('next_activity', 'next_time')",0.001,None,42,23.0,1.1566,0.7862,0.5851,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,42,17.0,1.1551,0.793,0.5926,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,2025,77.0,1.1324,0.7944,0.5876,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,10.0,42,21.0,1.1543,0.7893,0.588,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,2025,83.0,1.1294,0.7956,0.5889,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,42,79.0,1.1534,0.7912,0.5875,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,2025,26.0,1.1308,0.7922,0.5839,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.0001,None,42,64.0,1.1564,0.7907,0.591,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,42,23.0,1.1487,0.7859,0.5825,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,42,79.0,1.1576,0.7914,0.5924,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,2025,64.0,1.1338,0.7939,0.5913,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,2025,26.0,1.1301,0.7935,0.5855,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,2025,25.0,1.1269,0.7931,0.5833,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,2025,19.0,1.1268,0.7929,0.5869,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,42,64.0,1.1558,0.7914,0.5898,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,123,28.0,1.1397,0.7919,0.5605,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.0,2025,83.0,1.1304,0.7923,0.5909,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,42,19.0,1.1512,0.7924,0.5882,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,42,21.0,1.1539,0.789,0.5859,
+LSTM,GLS,"('next_activity', 'next_time')",0.001,None,42,21.0,1.1546,0.7905,0.5901,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,42,21.0,1.1527,0.7904,0.5862,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,2025,17.0,1.1312,0.7927,0.5908,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.001,None,42,25.0,1.1568,0.7916,0.5895,
+LSTM,PCGrad,"('next_activity', 'next_time')",0.001,None,123,18.0,1.1412,0.7842,0.5659,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,123,58.0,1.1484,0.7919,0.5685,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,42,65.0,1.1546,0.7914,0.59,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,42,26.0,1.1573,0.7906,0.5896,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.9,2025,64.0,1.1356,0.793,0.592,
+LSTM,DWA,"('next_activity', 'next_time')",0.0001,None,123,70.0,1.1421,0.7928,0.5649,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,42,64.0,1.1574,0.7913,0.5891,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,1.5,123,70.0,1.141,0.7925,0.562,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,123,70.0,1.1418,0.7927,0.5664,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,42,64.0,1.154,0.7914,0.5882,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,123,69.0,1.1441,0.7929,0.5641,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,2025,64.0,1.1348,0.7938,0.5934,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,42,32.0,1.1571,0.7916,0.5869,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,2025,26.0,1.1328,0.7921,0.5879,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,123,19.0,1.1436,0.793,0.5638,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,123,23.0,1.1448,0.7944,0.5628,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,2025,19.0,1.1334,0.7945,0.5921,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.7,2025,63.0,1.1338,0.7936,0.5909,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.001,None,42,25.0,1.1517,0.7922,0.5846,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.5,123,24.0,1.1426,0.794,0.5618,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,123,24.0,1.1464,0.7939,0.564,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,3.0,123,69.0,1.1473,0.7918,0.5677,
+LSTM,EW,"('next_activity', 'next_time')",0.0001,None,42,49.0,1.1594,0.7897,0.5901,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,42,14.0,1.1628,0.7894,0.5961,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.1,123,18.0,1.1384,0.7807,0.5621,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,42,35.0,1.1535,0.7893,0.5846,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.3,123,58.0,1.144,0.7918,0.5675,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,7.0,123,69.0,1.144,0.7931,0.5662,
+LSTM,RLW,"('next_activity', 'next_time')",0.001,None,2025,31.0,1.134,0.7889,0.5849,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,42,23.0,1.1516,0.7881,0.5855,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,0.5,42,64.0,1.1537,0.791,0.5895,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.0,123,22.0,1.1401,0.792,0.564,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,42,21.0,1.1531,0.7904,0.5878,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,2025,26.0,1.1317,0.793,0.5846,
+LSTM,Nash_MTL,"('next_activity', 'next_time')",0.0001,None,2025,78.0,1.1313,0.7935,0.5894,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,2025,26.0,1.1316,0.793,0.5822,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.9,123,32.0,1.1427,0.7909,0.5628,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,1.0,2025,21.0,1.1303,0.7942,0.5908,
+LSTM,GradDrop,"('next_activity', 'next_time')",0.0001,None,42,87.0,1.1526,0.7913,0.5891,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,42,72.0,1.156,0.7921,0.592,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,1.5,123,24.0,1.139,0.7934,0.5577,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,15.0,2025,19.0,1.1349,0.7842,0.5923,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,2025,83.0,1.137,0.7924,0.5886,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,1.0,123,70.0,1.1488,0.7934,0.569,
+LSTM,UW_O,"('next_activity', 'next_time')",0.0001,None,123,53.0,1.1495,0.7923,0.5703,
+LSTM,EW,"('next_activity', 'next_time')",0.001,None,123,19.0,1.1403,0.7935,0.5657,
+LSTM,GLS,"('next_activity', 'next_time')",0.0001,None,2025,78.0,1.1325,0.7927,0.5916,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,2025,63.0,1.1354,0.7938,0.5899,
+LSTM,DWA,"('next_activity', 'next_time')",0.001,None,123,15.0,1.1444,0.7806,0.5641,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.0001,2.0,42,64.0,1.1576,0.7904,0.587,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,2025,21.0,1.1323,0.7938,0.5906,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,0.5,42,28.0,1.1535,0.7907,0.583,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.7,42,30.0,1.1566,0.79,0.582,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,10.0,123,58.0,1.1425,0.7917,0.5658,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,123,62.0,1.1437,0.7931,0.5661,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.1,42,65.0,1.1532,0.7907,0.5901,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.001,0.3,123,26.0,1.1404,0.7915,0.5595,
+LSTM,IMTL,"('next_activity', 'next_time')",0.0001,None,2025,64.0,1.1334,0.7932,0.5903,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,42,21.0,1.153,0.789,0.5886,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,7.0,2025,26.0,1.1332,0.7919,0.5839,
+LSTM,RLW,"('next_activity', 'next_time')",0.0001,None,2025,50.0,1.1384,0.7922,0.591,
+LSTM,UW,"('next_activity', 'next_time')",0.0001,None,123,69.0,1.142,0.7918,0.5666,
+LSTM,UW,"('next_activity', 'next_time')",0.001,None,42,25.0,1.1486,0.7903,0.5816,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,20.0,123,23.0,1.1465,0.7934,0.5636,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,5.0,123,19.0,1.1454,0.7934,0.5672,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,15.0,42,79.0,1.1521,0.791,0.5867,
+LSTM,UW_O,"('next_activity', 'next_time')",0.001,None,123,19.0,1.144,0.7947,0.5689,
+LSTM,GradNorm,"('next_activity', 'next_time')",0.001,2.0,2025,26.0,1.13,0.7934,0.5838,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,123,69.0,1.1437,0.7924,0.5663,
+LSTM,CAGrad,"('next_activity', 'next_time')",0.0001,0.5,42,64.0,1.1549,0.7921,0.5889,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.0001,5.0,42,64.0,1.1536,0.7916,0.5883,
+LSTM,UW_SO,"('next_activity', 'next_time')",0.001,3.0,123,23.0,1.1468,0.793,0.5653,
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,123,199.0,6.5872,0.7866,,5.8762
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,42,178.0,6.3793,0.7804,,5.7195
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,42,200.0,6.2117,0.7843,,5.5959
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,2025,197.0,5.8724,0.7832,,5.1854
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,42,199.0,5.8057,0.7842,,5.2019
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,42,199.0,5.7978,0.7839,,5.1979
+LSTM,DWA,"('next_activity', 'remaining_time')",0.0001,None,123,200.0,5.8841,0.7826,,5.2573
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,123,189.0,6.2373,0.7843,,5.5718
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,2025,200.0,5.8632,0.7834,,5.2266
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,123,200.0,6.5119,0.7828,,5.8014
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,123,199.0,5.9068,0.7852,,5.2749
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,2025,200.0,6.3546,0.7853,,5.6874
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,7.0,42,193.0,5.8482,0.7866,,5.2579
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,2025,199.0,5.871,0.7861,,5.2188
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,2025,200.0,5.8586,0.7843,,5.2213
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,2025,199.0,5.9342,0.7867,,5.2871
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,2025,199.0,5.8441,0.784,,5.1933
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,2025,198.0,5.9574,0.7852,,5.3132
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,123,199.0,6.4894,0.7853,,5.8205
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,42,199.0,5.8859,0.7849,,5.281
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,42,199.0,5.8535,0.7852,,5.2582
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,123,199.0,5.9587,0.7856,,5.349
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,2025,200.0,6.4097,0.7871,,5.7785
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,42,199.0,5.8207,0.7834,,5.2282
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,2025,198.0,5.85,0.7836,,5.2123
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,42,200.0,5.8348,0.7853,,5.2193
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,2025,195.0,6.3006,0.7805,,5.6499
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,2025,198.0,5.8584,0.786,,5.2271
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,2025,191.0,6.4067,0.7872,,5.7555
+LSTM,GLS,"('next_activity', 'remaining_time')",0.0001,None,42,197.0,6.5031,0.7838,,5.8754
+LSTM,EW,"('next_activity', 'remaining_time')",0.0001,None,123,200.0,5.8694,0.781,,5.2238
+LSTM,UW,"('next_activity', 'remaining_time')",0.0001,None,123,200.0,6.3503,0.779,,5.6166
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,15.0,123,200.0,5.8718,0.7807,,5.2439
+LSTM,RLW,"('next_activity', 'remaining_time')",0.0001,None,42,199.0,5.9435,0.7834,,5.3577
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,42,182.0,5.8974,0.784,,5.3004
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,123,200.0,5.8616,0.7816,,5.2154
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,5.0,123,200.0,5.899,0.7852,,5.254
+LSTM,UW_O,"('next_activity', 'remaining_time')",0.0001,None,42,197.0,6.5085,0.7834,,5.8571
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,3.0,123,199.0,5.9174,0.7857,,5.2895
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,1.0,2025,194.0,6.1202,0.7845,,5.4751
+LSTM,IMTL,"('next_activity', 'remaining_time')",0.0001,None,42,195.0,6.5078,0.784,,5.8669
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,20.0,123,199.0,5.9158,0.7831,,5.2951
+LSTM,UW_SO,"('next_activity', 'remaining_time')",0.0001,10.0,42,198.0,5.8664,0.7849,,5.262
+LSTM,EW,"('next_activity',)",0.0001,None,123,46.0,1.0005,0.6659,,
+LSTM,EW,"('next_activity',)",0.01,None,123,7.0,1.4319,0.5265,,
+LSTM,EW,"('next_activity',)",0.001,None,123,14.0,1.149,0.6142,,
+LSTM,EW,"('next_activity',)",0.001,None,42,21.0,1.1503,0.6083,,
+LSTM,EW,"('next_activity',)",0.01,None,2025,5.0,1.4322,0.5108,,
+LSTM,EW,"('next_activity',)",0.0001,None,42,32.0,1.0296,0.6508,,
+LSTM,EW,"('next_activity',)",0.01,None,42,10.0,1.3465,0.5515,,
+LSTM,EW,"('next_activity',)",0.001,None,2025,17.0,1.1316,0.6169,,
+LSTM,EW,"('next_activity',)",0.0001,None,2025,18.0,1.0733,0.6399,,
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,2025,199.0,6.1355,,0.6175,5.4324
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,42,103.0,5.4021,,0.6041,4.759
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,2025,200.0,5.831,,0.6011,5.1604
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,123,106.0,5.5532,,0.5933,4.8984
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,123,200.0,6.0036,,0.6024,5.3348
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,123,199.0,5.7526,,0.5829,5.1055
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,2025,105.0,5.6041,,0.6162,4.9238
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,42,200.0,5.7537,,0.6105,5.1139
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,2025,140.0,5.344,,0.609,4.6606
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,2025,200.0,6.3366,,0.6205,5.6909
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,42,199.0,5.8869,,0.6274,5.2253
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,123,123.0,5.3461,,0.59,4.6712
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,42,102.0,5.5524,,0.6259,4.9336
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,123,108.0,5.5378,,0.5891,4.8748
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,123,101.0,5.5312,,0.5781,4.873
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,123,127.0,5.3718,,0.6026,4.6998
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,123,199.0,5.8214,,0.5864,5.1502
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.001,None,123,91.0,5.4757,,0.5807,4.8503
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,2025,198.0,5.8223,,0.6065,5.1455
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,123,199.0,6.1037,,0.6083,5.3846
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,123,200.0,5.8185,,0.5901,5.1506
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,2025,200.0,5.7616,,0.6068,5.107
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,42,137.0,5.2785,,0.6114,4.6365
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,123,152.0,5.4689,,0.6012,4.818
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,42,109.0,5.3717,,0.604,4.7131
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,2025,199.0,6.074,,0.6214,5.3898
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,2025,123.0,5.4187,,0.6053,4.7633
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,42,196.0,5.75,,0.6117,5.0991
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,42,143.0,5.9025,,0.6141,5.2817
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,2025,197.0,6.2544,,0.6099,5.6065
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,42,110.0,5.4977,,0.6215,4.8788
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,42,199.0,6.2457,,0.6283,5.5839
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.001,None,123,143.0,5.2623,,0.5792,4.6281
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,123,125.0,5.5401,,0.5944,4.9138
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,2025,119.0,5.3338,,0.608,4.6834
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,42,79.0,6.0137,,0.609,5.3775
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,42,200.0,5.9746,,0.6399,5.3151
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.001,None,2025,139.0,5.2314,,0.6085,4.5486
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,42,133.0,5.3032,,0.6129,4.6633
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,123,198.0,6.1261,,0.6044,5.4186
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.0001,None,2025,198.0,5.7702,,0.6049,5.1062
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,123,127.0,5.95,,0.6032,5.2935
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.001,None,2025,151.0,5.2904,,0.6029,4.6296
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,123,138.0,5.8613,,0.5861,5.2205
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,2025,200.0,5.8315,,0.6185,5.1403
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,123,172.0,5.2535,,0.591,4.632
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,42,200.0,5.7086,,0.6094,5.0906
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,2025,199.0,5.7864,,0.6007,5.1168
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,42,73.0,6.0647,,0.611,5.4163
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,2025,199.0,5.7295,,0.6053,5.0631
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,42,128.0,5.3458,,0.6142,4.7329
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,123,200.0,5.8148,,0.5838,5.1632
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,123,200.0,5.8131,,0.5852,5.1763
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,42,112.0,5.4172,,0.6149,4.7606
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,2025,199.0,5.8042,,0.602,5.128
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,2025,127.0,5.6111,,0.6139,4.9483
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,2025,124.0,5.9139,,0.6147,5.2423
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,42,156.0,5.5189,,0.6327,4.8677
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,42,68.0,5.8064,,0.612,5.1693
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,42,196.0,5.7322,,0.6154,5.094
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,2025,200.0,6.1026,,0.6217,5.3933
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,2025,142.0,5.3496,,0.6159,4.6606
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,2025,161.0,5.2641,,0.6101,4.5747
+LSTM,DWA,"('next_time', 'remaining_time')",0.001,None,42,93.0,5.4667,,0.6126,4.8249
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,42,200.0,5.7484,,0.6119,5.1054
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,42,70.0,5.8303,,0.6217,5.1782
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,42,103.0,5.5161,,0.6166,4.8921
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,123,146.0,5.3369,,0.5847,4.693
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,5.0,42,200.0,5.7787,,0.6077,5.1454
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,123,200.0,5.7739,,0.5879,5.1068
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.5,123,200.0,6.0806,,0.6091,5.385
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,2025,141.0,5.4881,,0.6101,4.8448
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,123,199.0,5.8711,,0.5889,5.202
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,7.0,2025,104.0,5.3554,,0.6101,4.6846
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,42,102.0,5.6175,,0.627,4.9844
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,2025,69.0,5.6641,,0.6034,5.0279
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,15.0,2025,199.0,5.7505,,0.6073,5.0734
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,2025,176.0,5.3364,,0.6035,4.6562
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,3.0,42,115.0,5.4257,,0.614,4.7688
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,123,129.0,5.5261,,0.5986,4.8497
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,42,200.0,6.044,,0.6358,5.4019
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.001,None,42,99.0,5.4317,,0.6123,4.7779
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,123,196.0,6.3524,,0.594,5.6603
+LSTM,EW,"('next_time', 'remaining_time')",0.001,None,2025,123.0,5.3143,,0.6079,4.6273
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,42,141.0,5.3274,,0.6134,4.6898
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,2.0,2025,141.0,5.4426,,0.6297,4.7513
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,123,199.0,6.3345,,0.587,5.6473
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,42,200.0,5.7153,,0.6099,5.0726
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,20.0,123,117.0,5.3367,,0.5776,4.6951
+LSTM,RLW,"('next_time', 'remaining_time')",0.001,None,42,130.0,5.3927,,0.6079,4.7379
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,2025,200.0,6.0271,,0.6251,5.3317
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,123,171.0,5.4023,,0.602,4.7423
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,2025,199.0,6.0587,,0.6172,5.3636
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,2025,195.0,6.0576,,0.6154,5.3493
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,2025,138.0,5.2737,,0.603,4.6291
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,2025,199.0,6.1192,,0.6236,5.4174
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,123,108.0,5.3829,,0.5785,4.7353
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,5.0,123,115.0,5.3407,,0.5835,4.7066
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,123,199.0,6.2512,,0.595,5.5815
+LSTM,GLS,"('next_time', 'remaining_time')",0.0001,None,42,200.0,6.3558,,0.6243,5.7207
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,42,99.0,5.9374,,0.6134,5.3162
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,123,199.0,6.0052,,0.6104,5.3147
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,42,198.0,5.7807,,0.6202,5.133
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,2025,131.0,5.3675,,0.6058,4.6758
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,0.5,123,200.0,6.1546,,0.6048,5.4433
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,0.5,123,148.0,5.5255,,0.5932,4.8565
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,2025,198.0,5.7837,,0.6032,5.0887
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,42,198.0,5.7619,,0.616,5.1156
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.9,123,200.0,5.4329,,0.6086,4.7619
+LSTM,GradDrop,"('next_time', 'remaining_time')",0.001,None,42,141.0,5.2474,,0.6048,4.6207
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,123,200.0,6.1333,,0.6085,5.4272
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,2025,198.0,5.7304,,0.6006,5.0855
+LSTM,EW,"('next_time', 'remaining_time')",0.0001,None,42,200.0,5.7286,,0.6067,5.1096
+LSTM,UW,"('next_time', 'remaining_time')",0.001,None,2025,67.0,6.1094,,0.6075,5.4592
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,42,199.0,5.7741,,0.6102,5.1428
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,10.0,123,104.0,5.4244,,0.5813,4.7952
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,2.0,42,195.0,5.9661,,0.6353,5.3154
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,123,176.0,5.1984,,0.5919,4.5555
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.7,2025,140.0,5.5101,,0.6219,4.805
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,123,200.0,6.3632,,0.6091,5.6459
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,3.0,42,187.0,5.8277,,0.6148,5.2128
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,2025,112.0,5.9294,,0.6204,5.2641
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,42,198.0,6.2712,,0.6331,5.6107
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,2025,198.0,5.7587,,0.6059,5.107
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,10.0,123,199.0,5.7714,,0.5865,5.1482
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.3,42,146.0,5.3523,,0.6257,4.7182
+LSTM,UW_O,"('next_time', 'remaining_time')",0.001,None,2025,134.0,5.8735,,0.6052,5.1702
+LSTM,UW,"('next_time', 'remaining_time')",0.0001,None,2025,199.0,6.3621,,0.6214,5.6728
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,2025,199.0,5.7167,,0.6069,5.0426
+LSTM,PCGrad,"('next_time', 'remaining_time')",0.0001,None,123,199.0,5.8138,,0.5813,5.1332
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.0001,1.0,42,200.0,6.0239,,0.6417,5.3702
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.5,123,196.0,5.3599,,0.6117,4.6963
+LSTM,GradNorm,"('next_time', 'remaining_time')",0.001,1.0,2025,189.0,5.3988,,0.6203,4.7355
+LSTM,RLW,"('next_time', 'remaining_time')",0.0001,None,42,198.0,5.8416,,0.613,5.2012
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.5,2025,183.0,5.3881,,0.6157,4.7132
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,2025,132.0,5.5737,,0.605,4.8962
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,42,200.0,6.0891,,0.6363,5.4354
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.9,42,200.0,6.0418,,0.631,5.3747
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,42,200.0,5.9651,,0.6349,5.3098
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,7.0,123,199.0,5.8092,,0.5908,5.1739
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,1.0,123,72.0,6.0661,,0.5904,5.3857
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.001,15.0,42,123.0,5.3358,,0.6138,4.6986
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.0001,None,123,200.0,5.766,,0.5915,5.1203
+LSTM,UW_O,"('next_time', 'remaining_time')",0.0001,None,42,199.0,6.2645,,0.612,5.6243
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.7,42,198.0,6.0311,,0.6267,5.3691
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,20.0,123,199.0,5.7864,,0.587,5.1216
+LSTM,GLS,"('next_time', 'remaining_time')",0.001,None,123,104.0,5.9836,,0.5871,5.3273
+LSTM,DWA,"('next_time', 'remaining_time')",0.0001,None,123,200.0,5.782,,0.5897,5.1097
+LSTM,UW_SO,"('next_time', 'remaining_time')",0.0001,1.0,2025,200.0,6.2177,,0.6209,5.5377
+LSTM,IMTL,"('next_time', 'remaining_time')",0.0001,None,123,199.0,6.0872,,0.6033,5.3995
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.3,123,200.0,5.9222,,0.6052,5.2411
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.5,2025,200.0,5.8895,,0.6181,5.2166
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.001,0.1,123,139.0,5.3974,,0.5892,4.7496
+LSTM,CAGrad,"('next_time', 'remaining_time')",0.0001,0.1,2025,200.0,5.7587,,0.612,5.0955
+LSTM,IMTL,"('next_time', 'remaining_time')",0.001,None,42,68.0,5.7786,,0.6202,5.1241
+LSTM,EW,"('next_time',)",0.0001,None,42,37.0,0.6037,,0.5916,
+LSTM,EW,"('next_time',)",0.01,None,42,2.0,0.6964,,0.6963,
+LSTM,EW,"('next_time',)",0.01,None,2025,6.0,0.665,,0.6717,
+LSTM,EW,"('next_time',)",0.0001,None,2025,27.0,0.5781,,0.5921,
+LSTM,EW,"('next_time',)",0.001,None,42,23.0,0.5939,,0.5838,
+LSTM,EW,"('next_time',)",0.001,None,123,21.0,0.5774,,0.5638,
+LSTM,EW,"('next_time',)",0.001,None,2025,26.0,0.5682,,0.5842,
+LSTM,EW,"('next_time',)",0.0001,None,123,49.0,0.5753,,0.5667,
+LSTM,EW,"('next_time',)",0.01,None,123,16.0,0.6884,,0.6791,
+LSTM,EW,"('remaining_time',)",0.01,None,123,13.0,7.035,,,6.94
+LSTM,EW,"('remaining_time',)",0.01,None,42,15.0,7.1447,,,7.1226
+LSTM,EW,"('remaining_time',)",0.01,None,2025,18.0,7.0987,,,7.0286
+LSTM,EW,"('remaining_time',)",0.0001,None,123,200.0,5.0765,,,5.0403
+LSTM,EW,"('remaining_time',)",0.001,None,2025,161.0,4.6259,,,4.5278
+LSTM,EW,"('remaining_time',)",0.0001,None,2025,200.0,5.1142,,,5.0717
+LSTM,EW,"('remaining_time',)",0.001,None,42,104.0,4.7722,,,4.7672
+LSTM,EW,"('remaining_time',)",0.001,None,123,118.0,4.7392,,,4.6721
+LSTM,EW,"('remaining_time',)",0.0001,None,42,198.0,5.1293,,,5.0889
+LSTM,Nash_MTL,"('next_activity', 'remaining_time')",0.0001,None,123,,,,,
+LSTM,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.0001,None,123,,,,,
+LSTM,Nash_MTL,"('next_time', 'remaining_time')",0.001,None,2025,,,,,
+Transformer,EW,"('next_activity',)",0.01,None,2025,3.0,1.8994,0.4082,,
+Transformer,EW,"('next_activity',)",0.01,None,123,1.0,1.8957,0.4265,,
+Transformer,EW,"('next_activity',)",0.001,None,123,93.0,0.6624,0.7375,,
+Transformer,EW,"('next_activity',)",0.01,None,42,17.0,1.8077,0.4255,,
+Transformer,EW,"('next_activity',)",0.001,None,2025,21.0,0.9805,0.6744,,
+Transformer,EW,"('next_activity',)",0.001,None,42,52.0,0.7274,0.7198,,
+Transformer,EW,"('next_activity',)",0.0001,None,2025,78.0,0.9596,0.6758,,
+Transformer,EW,"('next_activity',)",0.0001,None,42,57.0,1.0464,0.6476,,
+Transformer,EW,"('next_activity',)",0.0001,None,123,33.0,1.2049,0.6003,,
+Transformer,EW,"('next_time',)",0.001,None,42,15.0,1.7515,,1.7492,
+Transformer,EW,"('next_time',)",0.001,None,123,1.0,1.7344,,1.7298,
+Transformer,EW,"('next_time',)",0.0001,None,42,10.0,0.5813,,0.5739,
+Transformer,EW,"('next_time',)",0.01,None,42,15.0,1.7515,,1.7492,
+Transformer,EW,"('next_time',)",0.001,None,2025,6.0,1.7402,,1.7394,
+Transformer,EW,"('next_time',)",0.01,None,2025,6.0,1.7402,,1.7394,
+Transformer,EW,"('next_time',)",0.0001,None,123,23.0,0.5616,,0.5401,
+Transformer,EW,"('next_time',)",0.01,None,123,1.0,1.7344,,1.7298,
+Transformer,EW,"('next_time',)",0.0001,None,2025,12.0,0.5607,,0.5704,
+Transformer,EW,"('remaining_time',)",0.0001,None,123,50.0,5.2184,,,5.2035
+Transformer,EW,"('remaining_time',)",0.0001,None,42,84.0,5.0496,,,4.9993
+Transformer,EW,"('remaining_time',)",0.001,None,42,8.0,11.6438,,,11.6025
+Transformer,EW,"('remaining_time',)",0.001,None,123,11.0,3996943.001,,,3996942.9992
+Transformer,EW,"('remaining_time',)",0.01,None,123,11.0,3996943.001,,,3996942.9992
+Transformer,EW,"('remaining_time',)",0.0001,None,2025,67.0,5.1562,,,5.1214
+Transformer,EW,"('remaining_time',)",0.01,None,2025,18.0,11.5947,,,11.5917
+Transformer,EW,"('remaining_time',)",0.001,None,2025,18.0,11.5947,,,11.5917
+Transformer,EW,"('remaining_time',)",0.01,None,42,27.0,3996942.8727,,,3996942.9444
