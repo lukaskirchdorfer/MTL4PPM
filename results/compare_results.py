@@ -58,6 +58,25 @@ def get_inf_result(
         df_mtl,
         on=['case_id', 'prefix_length', 'ground_truth'],
         suffixes=('_stl', '_mtl'))
+    
+    """
+    selected_prefixes = df_merged[
+        (df_merged['ground_truth'] == 2) & 
+        (df_merged['prediction_stl'] != 2) & 
+        (df_merged['prediction_mtl'] == 2)][['case_id', 'prefix_length']]
+    sel_pr = list(selected_prefixes.itertuples(index=False, name=None))
+    print(len(sel_pr))
+    gt_list = [
+        df_merged[
+            (df_merged['case_id'] == case_id) & 
+            (df_merged['prefix_length'] == pl - 1)]['ground_truth'].values[0]
+        for case_id, pl in sel_pr
+        if not df_merged[(df_merged['case_id'] == case_id) & 
+                         (df_merged['prefix_length'] == pl - 1)].empty]
+    print(gt_list)
+    print(len(gt_list))
+    """
+    
     return df_merged
     
     

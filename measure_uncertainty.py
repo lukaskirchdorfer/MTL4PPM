@@ -8,9 +8,9 @@ import src.weighting as weighting_method
 import numpy as np
 
 DEVICE = 'cpu'
-DATASET = 'BPIC20_DomesticDeclarations'
+DATASET = 'BPIC20_InternationalDeclarations'
 TASKS = ['next_activity', 'next_time', 'remaining_time']
-# TASKS = ['next_activity']
+#TASKS = ['next_activity']
 TEST_SPLIT = 0.2
 VAL_SPLIT = 0.2
 SEED = 42
