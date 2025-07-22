@@ -11,7 +11,7 @@ import seaborn as sns
 from sklearn.metrics import accuracy_score
 
 def main():
-    dataset = 'BPIC20_InternationalDeclarations' # Production BPIC20_InternationalDeclarations
+    dataset = 'Production' # Production BPIC20_InternationalDeclarations
     tasks = 'NAP+NTP+RTP'
     focus_task = 'next_activity'
     models = ['CNN', 'LSTM', 'Transformer']
@@ -20,6 +20,8 @@ def main():
         description='NAP Analysis')
     parser.add_argument('--mode', type=str, default='freq',
                         help='mode of visualization')
+    parser.add_argument('--length_mode', type=str, default='agg',
+                        help='mode of visualization for prefix_length')
     args = parser.parse_args()    
     for model in models:
         for mtl in mtls:
@@ -35,7 +37,7 @@ def main():
                 comp_by_class_freq(df_merged, mtl, class_f_pdf)
             elif args.mode == 'length':
                 length_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_prefix_lengths.pdf'
-                com_by_length(df_merged, mtl, length_pdf)
+                com_by_length(df_merged, mtl, length_pdf, args)
             #class_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes.pdf' 
             #comp_by_class(df_merged, mtl, class_pdf)
             
@@ -122,7 +124,7 @@ def comp_by_class(df, mtl, class_pdf):
     plt.title(f'Per-Class NAP Accuracy: STL vs {mtl}')
     plt.ylim(0, 1)
     plt.ylabel('Accuracy')
-    plt.xlabel('Acitivty Class')
+    plt.xlabel('Activity Class')
     plt.legend(title='Model')
     plt.tight_layout()    
     plt.savefig(class_pdf)
@@ -143,7 +145,7 @@ def comp_by_class_freq(df, mtl, class_f_pdf):
     fig, ax1 = plt.subplots(figsize=(10, 6))
     sns.barplot(data=results_df, x='class', y='accuracy', hue='model', ax=ax1)
     ax1.set_ylabel('Accuracy', fontsize=18, fontweight='bold')
-    ax1.set_xlabel('Acitivty Class', fontsize=18, fontweight='bold')
+    ax1.set_xlabel('Activity Class', fontsize=18, fontweight='bold')
     ax1.set_ylim(0, 1)
     #ax1.set_title(f'Per-Class NAP Accuracy: STL vs {mtl}')
     ax1.tick_params(axis='both', labelsize=16)
@@ -175,24 +177,32 @@ def comp_by_class_freq(df, mtl, class_f_pdf):
 
 
 
-def com_by_length(df, mtl, length_pdf):
+def com_by_length(df, mtl, length_pdf, args):
     prefix_lengths = sorted(df['prefix_length'].unique())
     results = []
     for length in prefix_lengths:
-        subset = df[df['prefix_length'] == length]
+        if args.length_mode == 'agg':
+            subset = df[df['prefix_length'] <= length]
+        else:
+            subset = df[df['prefix_length'] == length]
         acc_stl = accuracy_score(subset['ground_truth'], subset['prediction_stl'])
         acc_mtl = accuracy_score(subset['ground_truth'], subset['prediction_mtl'])
         results.append({'prefix_length': length, 'model': 'STL', 'accuracy': acc_stl})
         results.append({'prefix_length': length, 'model': mtl, 'accuracy': acc_mtl})
     results_df = pd.DataFrame(results)
 
-    plt.figure(figsize=(8, 5))
-    sns.lineplot(data=results_df, x='prefix_length', y='accuracy', hue='model')
-    plt.title('NAP Accuracy vs. Prefix Length')
+    plt.figure(figsize=(10, 6))
+    sns.lineplot(data=results_df, x='prefix_length', y='accuracy', hue='model', linewidth=3)
+    #plt.title('NAP Accuracy vs. Prefix Length')
     plt.ylim(0, 1)
-    plt.ylabel('Accuracy')
-    plt.xlabel('Prefix Length')
-    plt.legend(title='Model')
+    if args.length_mode == 'agg':
+        plt.xlabel('Maximum Prefix Length', fontsize=18, fontweight='bold')
+    else:
+        plt.xlabel('Prefix Length', fontsize=18, fontweight='bold')
+    plt.ylabel('Accuracy', fontsize=18, fontweight='bold')       
+    plt.tick_params(axis='both', labelsize=16)
+    plt.legend(title='Model', fontsize=17, title_fontsize=18)
+    plt.grid(axis='y')
     plt.tight_layout()
     plt.savefig(length_pdf)
     plt.close() 
