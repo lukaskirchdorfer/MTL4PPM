@@ -4,6 +4,7 @@ Created on Fri Jul 18 14:02:43 2025
 @author: kamirel
 """
 import os
+import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -15,22 +16,29 @@ def main():
     focus_task = 'next_activity'
     models = ['CNN', 'LSTM', 'Transformer']
     mtls = ['UW', 'PCGrad'] #['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop', 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']  
-    
+    parser = argparse.ArgumentParser(
+        description='NAP Analysis')
+    parser.add_argument('--mode', type=str, default='freq',
+                        help='mode of visualization')
+    args = parser.parse_args()    
     for model in models:
         for mtl in mtls:
             csv_name = dataset + '_best_results.csv'
             csv_path = os.path.join(os.getcwd(), dataset, csv_name)
             res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', dataset)
             srch_str, task_str = comb_string(tasks)    
-            class_f_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes_with_freq.pdf' 
             df_merged = get_inf_result(
-                csv_path, srch_str, task_str, model, mtl, focus_task, res_dir)    
-            comp_by_class_freq(df_merged, mtl, class_f_pdf)
-            #length_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_prefix_lengths.pdf'
+                csv_path, srch_str, task_str, model, mtl, focus_task, res_dir)  
+            #print(df_merged.head())
+            if args.mode == 'freq':
+                class_f_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes_with_freq.pdf' 
+                comp_by_class_freq(df_merged, mtl, class_f_pdf)
+            elif args.mode == 'length':
+                length_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_prefix_lengths.pdf'
+                com_by_length(df_merged, mtl, length_pdf)
             #class_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes.pdf' 
             #comp_by_class(df_merged, mtl, class_pdf)
-            #com_by_length(df_merged, mtl, length_pdf)
-            #print(df_merged.head())
+            
 
     
 def get_inf_result(
