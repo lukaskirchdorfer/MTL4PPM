@@ -10,28 +10,27 @@ import seaborn as sns
 from sklearn.metrics import accuracy_score
 
 def main():
-    dataset = 'Production' # Production BPIC20_InternationalDeclarations
-    model = 'CNN'  # CNN LSTM Transformer
+    dataset = 'BPIC20_InternationalDeclarations' # Production BPIC20_InternationalDeclarations
     tasks = 'NAP+NTP+RTP'
     focus_task = 'next_activity'
-    mtl = 'UW' #['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop', 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']  
+    models = ['CNN', 'LSTM', 'Transformer']
+    mtls = ['UW', 'PCGrad'] #['EW', 'DWA' , 'RLW', 'UW', 'UW_SO', 'UW_O', 'GLS', 'GradDrop', 'CAGrad', 'PCGrad', 'GradNorm', 'IMTL', 'Nash_MTL']  
     
-    csv_name = dataset + '_best_results.csv'
-    csv_path = os.path.join(os.getcwd(), dataset, csv_name)
-    res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', dataset)
-    srch_str, task_str = comb_string(tasks)
-    #class_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes.pdf'
-    class_f_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes_with_freq.pdf'
-    #length_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_prefix_lengths.pdf'
-    
-    
-    df_merged = get_inf_result(
-        csv_path, srch_str, task_str, model, mtl, focus_task, res_dir)
-    
-    #comp_by_class(df_merged, mtl, class_pdf)
-    comp_by_class_freq(df_merged, mtl, class_f_pdf)
-    #com_by_length(df_merged, mtl, length_pdf)
-    #print(df_merged.head())
+    for model in models:
+        for mtl in mtls:
+            csv_name = dataset + '_best_results.csv'
+            csv_path = os.path.join(os.getcwd(), dataset, csv_name)
+            res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', dataset)
+            srch_str, task_str = comb_string(tasks)    
+            class_f_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes_with_freq.pdf' 
+            df_merged = get_inf_result(
+                csv_path, srch_str, task_str, model, mtl, focus_task, res_dir)    
+            comp_by_class_freq(df_merged, mtl, class_f_pdf)
+            #length_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_prefix_lengths.pdf'
+            #class_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_'+mtl+'_activity_classes.pdf' 
+            #comp_by_class(df_merged, mtl, class_pdf)
+            #com_by_length(df_merged, mtl, length_pdf)
+            #print(df_merged.head())
 
     
 def get_inf_result(
@@ -135,26 +134,37 @@ def comp_by_class_freq(df, mtl, class_f_pdf):
     # Plot
     fig, ax1 = plt.subplots(figsize=(10, 6))
     sns.barplot(data=results_df, x='class', y='accuracy', hue='model', ax=ax1)
-    ax1.set_ylabel('Accuracy')
-    ax1.set_xlabel('Acitivty Class')
+    ax1.set_ylabel('Accuracy', fontsize=18, fontweight='bold')
+    ax1.set_xlabel('Acitivty Class', fontsize=18, fontweight='bold')
     ax1.set_ylim(0, 1)
-    ax1.set_title(f'Per-Class NAP Accuracy: STL vs {mtl}')
+    #ax1.set_title(f'Per-Class NAP Accuracy: STL vs {mtl}')
+    ax1.tick_params(axis='both', labelsize=16)
 
+    
+    
     # Secondary axis for class frequency
     ax2 = ax1.twinx()
     class_order = sorted(df['ground_truth'].unique())
     class_freq = df['ground_truth'].value_counts(normalize=True).reindex(class_order)
     ax2.plot(range(len(class_order)), class_freq.values, color='gray',
              marker='o', linestyle='--', label='Class Frequency')
-    ax2.set_xticks(range(len(class_order)))
-    ax2.set_xticklabels(class_order)
-    ax2.set_ylabel('Relative Frequency')
-    ax2.legend(loc='upper right')
+    if len(class_order) > 30:
+        ax2.set_xticks(range(0, len(class_order), 2))
+        ax2.set_xticklabels(class_order[::2])
+    else:
+        ax2.set_xticks(range(len(class_order)))
+        ax2.set_xticklabels(class_order)
+    
+    ax2.set_ylabel('Relative Frequency', fontsize=18, fontweight='bold')
+    ax2.tick_params(axis='both', labelsize=16)
+    ax2.legend(loc='upper right', fontsize=18)
 
-    ax1.legend(title='Model', loc='upper left')
+    ax1.legend(title='Model', loc='upper left', fontsize=17, title_fontsize=18)
     plt.tight_layout()
     plt.savefig(class_f_pdf)
     plt.close()
+    
+
 
 
 def com_by_length(df, mtl, length_pdf):

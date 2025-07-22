@@ -12,7 +12,9 @@ import seaborn as sns
 def main():
     dataset_names = ['P2P', 'Production', 'HelpDesk', 'Sepsis', 
                      'BPIC20_DomesticDeclarations',
-                     'BPIC20_InternationalDeclarations'] 
+                     'BPIC20_InternationalDeclarations',
+                     'BPI_Challenge_2012C', 'BPI_Challenge_2013_incidents',
+                     'BPIC15_1']  
     #task_combinations = ['NAP+NTP+RTP', 'NTP+RTP', 'NAP+NTP', 'NAP+RTP', 'ALL']
     task_combinations = ['ALL']
     #select_combinations = [True, True, True, True, False]
@@ -160,6 +162,11 @@ def add_delta_m(df, combination, select,
                 row['NEXT_TIME_mean'],
                 row['REMAINING_TIME_mean']), axis=1)
     if not cnn_df.empty:
+        # TODO: for BPIC2015: CNN, IMTL, NTP + RTP is empty!
+        cols = ['NEXT_ACTIVITY_mean', 'NEXT_ACTIVITY_std',
+                'NEXT_TIME_mean', 'NEXT_TIME_std',
+                'REMAINING_TIME_mean', 'REMAINING_TIME_std']
+        cnn_df = cnn_df.dropna(subset=cols, how='all')
         cnn_df['delta_m'] = cnn_df.apply(
             lambda row: calc_delta_m(
                 cnn1, cnn2, cnn3, 
