@@ -128,12 +128,15 @@ def plot_mto_boxplot(df, combination, select, mto_order, arch, title=False):
     plt.close()
     
     
-def add_delta_m(df, combination, select,
+def add_delta_m(df_inp, combination, select,
                 lstm=True, cnn=True, transformer=True):
     # get single task results for all models
-    lstm1, lstm2, lstm3 = get_stl_results(df, model='LSTM')
-    cnn1, cnn2, cnn3 = get_stl_results(df, model='CNN')
-    trans1, trans2, trans3 = get_stl_results(df, model='Transformer')
+    lstm1, lstm2, lstm3 = get_stl_results(df_inp, model='LSTM')
+    cnn1, cnn2, cnn3 = get_stl_results(df_inp, model='CNN')
+    trans1, trans2, trans3 = get_stl_results(df_inp, model='Transformer')
+    # exclude single task results
+    excluded_values = ["('next_activity',)", "('next_time',)", "('remaining_time',)"]    
+    df = df_inp[~df_inp['Tasks'].isin(excluded_values)]       
     if select:
         # only focus on an specific task combination
         srch_str = comb_string(combination)
