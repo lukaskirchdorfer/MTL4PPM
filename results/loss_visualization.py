@@ -84,12 +84,11 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
     max_epochs_nap_rtp_mag = max(len(w) for w in nap_rtp_mag_lst)
     max_epochs_ntp_rtp_mag = max(len(w) for w in ntp_rtp_mag_lst)
     with PdfPages(grad_pdf) as pdf:
-        fig, axes = plt.subplots(3, 2, figsize=(15, 18))  # 2x2 grid of subplots
+        fig, axes = plt.subplots(3, 2, figsize=(15, 18))  # 3x2 grid of subplots
         for (label, grads, color) in zip(labels, nap_ntp_cos_lst, colors):
             epochs = list(range(1, len(grads) + 1))
             axes[0, 0].plot(epochs, grads, label=label, color=color)
             axes[0, 0].set_xlabel('Epoch')
-            axes[0, 0].set_ylabel('Gradient Cosine Similarity NAP vs. NTP')
             axes[0, 0].set_ylabel('Gradient Cosine Similarity NAP vs. NTP')
             axes[0, 0].set_xticks(range(10, max_epochs_nap_ntp_cos + 1, 10))
             axes[0, 0].grid(True)
@@ -99,7 +98,6 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
             axes[0, 1].plot(epochs, grads, label=label, color=color)
             axes[0, 1].set_xlabel('Epoch')
             axes[0, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. NTP')
-            axes[0, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. NTP')
             axes[0, 1].set_xticks(range(10, max_epochs_nap_ntp_mag + 1, 10))
             axes[0, 1].grid(True)
             axes[0, 1].legend()
@@ -107,7 +105,6 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
             epochs = list(range(1, len(grads) + 1))
             axes[1, 0].plot(epochs, grads, label=label, color=color)
             axes[1, 0].set_xlabel('Epoch')
-            axes[1, 0].set_ylabel('Gradient Cosine Similarity NAP vs. RTP')
             axes[1, 0].set_ylabel('Gradient Cosine Similarity NAP vs. RTP')
             axes[1, 0].set_xticks(range(10, max_epochs_nap_rtp_cos + 1, 10))
             axes[1, 0].grid(True)
@@ -117,7 +114,6 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
             axes[1, 1].plot(epochs, grads, label=label, color=color)
             axes[1, 1].set_xlabel('Epoch')
             axes[1, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. RTP')
-            axes[1, 1].set_ylabel('Gradient Magnitude Similarity NAP vs. RTP')
             axes[1, 1].set_xticks(range(10, max_epochs_nap_rtp_mag + 1, 10))
             axes[1, 1].grid(True)
             axes[1, 1].legend()
@@ -126,7 +122,6 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
             axes[2, 0].plot(epochs, grads, label=label, color=color)
             axes[2, 0].set_xlabel('Epoch')
             axes[2, 0].set_ylabel('Gradient Cosine Similarity NTP vs. RTP')
-            axes[2, 0].set_ylabel('Gradient Cosine Similarity NTP vs. RTP')
             axes[2, 0].set_xticks(range(10, max_epochs_ntp_rtp_cos + 1, 10))
             axes[2, 0].grid(True)
             axes[2, 0].legend()
@@ -134,7 +129,6 @@ def grad_vis(mtl_lst, grad_cos_lst, grad_mag_lst, grad_pdf):
             epochs = list(range(1, len(grads) + 1))
             axes[2, 1].plot(epochs, grads, label=label, color=color)
             axes[2, 1].set_xlabel('Epoch')
-            axes[2, 1].set_ylabel('Gradient Magnitude Similarity NTP vs. RTP')
             axes[2, 1].set_ylabel('Gradient Magnitude Similarity NTP vs. RTP')
             axes[2, 1].set_xticks(range(10, max_epochs_ntp_rtp_mag + 1, 10))
             axes[2, 1].grid(True)
