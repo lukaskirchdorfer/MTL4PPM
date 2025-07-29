@@ -2,6 +2,10 @@
 """
 Created on Mon Jul 21 11:47:11 2025
 @author: kamirel
+This script is used to create table 2 of the paper: i.e., the wilcoxon test for
+three different prediction tasks (NAP, NTP, RTP) separately for three different
+architectures.  For Transformer, we need to exclude BPI_Challenge_2012C, since
+currently the results for this log are not available.
 """
 import os
 import pandas as pd
@@ -10,8 +14,8 @@ from scipy.stats import wilcoxon
 def main():
     datasets = ['P2P', 'Production', 'HelpDesk', 'Sepsis',  'BPIC15_1',
                 'BPIC20_DomesticDeclarations',
-                'BPIC20_InternationalDeclarations', 'BPI_Challenge_2012C',
-                'BPI_Challenge_2013_incidents'] 
+                'BPIC20_InternationalDeclarations',
+                'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'] 
     # 'BPIC15_1', 'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'
     model = 'LSTM' #'CNN' 'LSTM' 'Transformer'
     task_comb = 'NAP+NTP+RTP' #'NTP+RTP' 'NAP+NTP' 'NAP+RTP' 'NAP+NTP+RTP'

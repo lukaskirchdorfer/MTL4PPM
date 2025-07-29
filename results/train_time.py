@@ -48,15 +48,18 @@ def main():
         res_dir = os.path.join(
             os.path.dirname(os.getcwd()), 'models', args.dataset)
         srch_str, task_str = comb_string(tasks)
-        stl_log_lst , mtl_log_lst = get_log_files(
+        stl_log_lst , mtl_log_lst, stl_epochs, mtl_epochs = get_log_files(
             csv_path, mtls, model, srch_str, task_str, res_dir)
         stl_dur = 0
         mtl_durs = []
-        for log in stl_log_lst:
+        for log, epoch in zip(stl_log_lst, stl_epochs):
             dur = compute_duration(log)
-            stl_dur += dur
-        for log in mtl_log_lst:  
-            mtl_durs.append(compute_duration(log))
+            dur_epoch = dur/epoch
+            stl_dur += dur_epoch
+        for log, epoch in zip(mtl_log_lst, mtl_epochs):
+            dur = compute_duration(log)
+            dur_epoch = dur/epoch
+            mtl_durs.append(dur_epoch)
         mtls.insert(0, 'STL')
         mtl_durs.insert(0, stl_dur)
         dur_df = pd.DataFrame({'MTL': mtls, 'Duration': mtl_durs})
@@ -103,27 +106,33 @@ def compute_duration(log_path):
 def get_log_files(csv_path, mtls, model, srch_str, task_str, res_dir, seed=42):
     df_inp = pd.read_csv(csv_path)
     # get log files for STL
-    stl_log_lst = []
+    stl_log_lst, stl_epochs = [], []
     nap_str = "('next_activity',)"
     stl_nap = df_inp[(df_inp['Model'] == model) & (df_inp['Tasks'] == nap_str)].copy()
     stl_nap = stl_nap.reset_index(drop=True)
     lr_nap = stl_nap.loc[0, 'Learning Rate']
+    nap_epoch = stl_nap.loc[0, 'Best Epoch_mean']
+    stl_epochs.append(nap_epoch)
     nap_name = model+'_next_activity_EW_None_'+str(lr_nap)+'_'+str(seed)+'.log'
     stl_log_lst.append(os.path.join(res_dir,nap_name))
     ntp_str = "('next_time',)"
     stl_ntp = df_inp[(df_inp['Model'] == model) & (df_inp['Tasks'] == ntp_str)].copy()
     stl_ntp = stl_ntp.reset_index(drop=True)
     lr_ntp = stl_ntp.loc[0, 'Learning Rate']
+    ntp_epoch = stl_ntp.loc[0, 'Best Epoch_mean']
+    stl_epochs.append(ntp_epoch)
     ntp_name = model+'_next_time_EW_None_'+str(lr_ntp)+'_'+str(seed)+'.log'
     stl_log_lst.append(os.path.join(res_dir,ntp_name))
     rtp_str = "('remaining_time',)"
     stl_rtp = df_inp[(df_inp['Model'] == model) & (df_inp['Tasks'] == rtp_str)].copy()
     stl_rtp = stl_rtp.reset_index(drop=True)
     lr_rtp = stl_rtp.loc[0, 'Learning Rate']
+    rtp_epoch = stl_rtp.loc[0, 'Best Epoch_mean']
+    stl_epochs.append(rtp_epoch)
     rtp_name = model+'_remaining_time_EW_None_'+str(lr_rtp)+'_'+str(seed)+'.log'
     stl_log_lst.append(os.path.join(res_dir,rtp_name))
     # get log files for MTL
-    mtl_log_lst = []
+    mtl_log_lst, mtl_epochs = [], []
     df_task = df_inp[df_inp['Tasks'] == srch_str]
     df_model = df_task[df_task['Model'] == model]
     for mtl in mtls:
@@ -134,9 +143,11 @@ def get_log_files(csv_path, mtls, model, srch_str, task_str, res_dir, seed=42):
             hpo = 'None'
         else:
             hpo = str(res_df.loc[0, 'MTL HPO'])
+        mtl_epoch = res_df.loc[0, 'Best Epoch_mean']
+        mtl_epochs.append(mtl_epoch)
         mtl_name = model+'_'+task_str+'_'+mtl+'_'+hpo+'_'+str(lr_mtl)+'_'+str(seed)+'.log'
         mtl_log_lst.append(os.path.join(res_dir,mtl_name))
-    return stl_log_lst , mtl_log_lst  
+    return stl_log_lst , mtl_log_lst, stl_epochs, mtl_epochs 
     
 def comb_string(combination):
     if combination == 'NAP+NTP+RTP':
