@@ -3,6 +3,12 @@
 Created on Mon Jul 28 16:47:14 2025
 @author: kamirel
 This script is used to extract training times for different MTO strategies.
+It can be used in two modes:
+    1) If mode: collect is False then it extracts the training times for
+    different MTO strategies for one dataset. 
+    2) If mode: collect is True, then it uses already extracted training times
+    for different datasets to make an overal dataframe for training time in all
+    datasets.
 """
 import os
 import argparse
@@ -17,28 +23,67 @@ def main():
     parser = argparse.ArgumentParser(description='Training Time Extraction')
     parser.add_argument('--dataset', type=str, default='Production',
                         help='name of the dataset')
-    args = parser.parse_args()     
-    csv_name = args.dataset + '_best_results.csv'
-    csv_path = os.path.join(os.getcwd(), args.dataset, csv_name)
-    res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', args.dataset)
-    srch_str, task_str = comb_string(tasks)
-    stl_log_lst , mtl_log_lst = get_log_files(
-        csv_path, mtls, model, srch_str, task_str, res_dir)
-    stl_dur = 0
-    mtl_durs = []
-    for log in stl_log_lst:
-        dur = compute_duration(log)
-        stl_dur += dur
-    for log in mtl_log_lst:  
-        mtl_durs.append(compute_duration(log))
-    mtls.insert(0, 'STL')
-    mtl_durs.insert(0, stl_dur)
-    dur_df = pd.DataFrame({'MTL': mtls, 'Duration': mtl_durs})
-    #print(dur_df.head(14))
-    dur_name = args.dataset+'_train_time.csv'
-    dur_path = os.path.join(os.getcwd(), args.dataset, dur_name)
-    dur_df.to_csv(dur_path, index=False)
+    parser.add_argument("--collect", action="store_true", default=False, 
+                        help="collect info for multiple datasets")
+    args = parser.parse_args() 
+    if args.collect:
+        datasets = ['BPIC20_DomesticDeclarations',
+                    'BPIC20_InternationalDeclarations','BPIC15_1', 
+                    'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C',
+                    'HelpDesk', 'Sepsis', 'P2P', 'Production']
+        labels = ['BPIC20DD', 'BPIC20ID', 'BPIC15-1', 'BPIC13I', 'BPIC12C',
+                  'Helpdesk', 'Sepsis', 'P2P', 'Production']
+        df_lst = []
+        for dataset in datasets:
+            csv_name = dataset + '_train_time.csv'
+            csv_path = os.path.join(os.getcwd(), dataset, csv_name)
+            df_time = pd.read_csv(csv_path)
+            df_lst.append(df_time)
+        agg_df = combine_training_times(df_lst, labels, mtls)
+        agg_path = os.path.join(os.getcwd(), 'overall_train_time.csv')
+        agg_df.to_csv(agg_path, index=False)      
+    else:
+        csv_name = args.dataset + '_best_results.csv'
+        csv_path = os.path.join(os.getcwd(), args.dataset, csv_name)
+        res_dir = os.path.join(
+            os.path.dirname(os.getcwd()), 'models', args.dataset)
+        srch_str, task_str = comb_string(tasks)
+        stl_log_lst , mtl_log_lst = get_log_files(
+            csv_path, mtls, model, srch_str, task_str, res_dir)
+        stl_dur = 0
+        mtl_durs = []
+        for log in stl_log_lst:
+            dur = compute_duration(log)
+            stl_dur += dur
+        for log in mtl_log_lst:  
+            mtl_durs.append(compute_duration(log))
+        mtls.insert(0, 'STL')
+        mtl_durs.insert(0, stl_dur)
+        dur_df = pd.DataFrame({'MTL': mtls, 'Duration': mtl_durs})
+        #print(dur_df.head(14))
+        dur_name = args.dataset+'_train_time.csv'
+        dur_path = os.path.join(os.getcwd(), args.dataset, dur_name)
+        dur_df.to_csv(dur_path, index=False)
     
+
+def combine_training_times(df_lst, labels, mtls):
+    combined_rows = []
+    for df, label in zip(df_lst, labels):
+        # Add a dummy index for pivoting
+        df_new = df.copy()
+        df_new["dummy"] = 0
+        pivot_df = df_new.pivot(index="dummy", columns="MTL", values="Duration")
+        pivot_df["Dataset"] = label
+        combined_rows.append(pivot_df)
+    final_df = pd.concat(combined_rows, ignore_index=True)
+    mtls.insert(0, 'STL')
+    cols = ["Dataset"] + mtls
+    #cols = ["Dataset"] + [col for col in final_df.columns if col != "Dataset"]
+    final_df = final_df[cols]
+    final_df.update(final_df.select_dtypes(include='number').round(0).astype(int))
+    return final_df
+
+
 
 def compute_duration(log_path):
     with open(log_path, 'r') as f:
