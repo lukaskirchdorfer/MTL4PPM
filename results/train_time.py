@@ -83,7 +83,7 @@ def combine_training_times(df_lst, labels, mtls):
     cols = ["Dataset"] + mtls
     #cols = ["Dataset"] + [col for col in final_df.columns if col != "Dataset"]
     final_df = final_df[cols]
-    final_df.update(final_df.select_dtypes(include='number').round(0).astype(int))
+    final_df.update(final_df.select_dtypes(include='number').round(2))
     return final_df
 
 
