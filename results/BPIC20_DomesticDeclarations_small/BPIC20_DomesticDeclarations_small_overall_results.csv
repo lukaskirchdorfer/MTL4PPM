@@ -1,0 +1,88 @@
+Model,MTL,Tasks,Learning Rate,MTL HPO,Seed,Best Epoch,Best Validation Loss,NEXT_ACTIVITY,NEXT_TIME,REMAINING_TIME
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,2025,24,5.2671,0.8648,1.7729,2.8513
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,2025,24,5.2296,0.8641,1.7442,2.8471
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,123,26,4.972,0.8557,1.7406,2.8707
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,2025,31,5.2403,0.8633,1.7509,2.8417
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,40,4.9513,0.8537,1.7289,2.8664
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,42,37,4.8607,0.8548,1.7072,2.8673
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,42,21,4.8772,0.8538,1.7151,2.8817
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,24,5.2248,0.8636,1.7429,2.8318
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,2025,39,5.2412,0.8648,1.749,2.8414
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,42,19,4.932,0.8546,1.7659,2.8828
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,42,55,4.8484,0.8545,1.6867,2.8731
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,30,4.9744,0.8542,1.7325,2.8823
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,123,40,4.9598,0.8537,1.7347,2.8701
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,2025,24,5.2287,0.864,1.7444,2.8363
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,49,4.9556,0.8553,1.7289,2.8712
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,37,4.9681,0.8555,1.7362,2.8718
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,2025,24,5.2364,0.8638,1.7446,2.8473
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,42,37,4.8608,0.8539,1.7013,2.8722
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,2025,24,5.2447,0.8647,1.7544,2.8447
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,34,4.8669,0.8537,1.7025,2.8803
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,123,26,4.9697,0.8561,1.7368,2.8749
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,123,40,4.9842,0.8551,1.7428,2.8867
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,42,62,4.8572,0.8549,1.7042,2.8734
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,2025,24,5.2297,0.864,1.7474,2.8397
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,2025,27,5.2598,0.8643,1.7781,2.8426
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,39,5.2398,0.8638,1.7502,2.8427
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,42,34,4.8749,0.8535,1.7203,2.8715
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,2025,24,5.2357,0.863,1.7497,2.8434
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,37,4.8419,0.8542,1.6904,2.8662
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,2025,24,5.2379,0.8647,1.7494,2.8449
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,31,5.2412,0.8651,1.7494,2.8487
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,56,4.8488,0.8541,1.6953,2.8702
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,42,20,4.881,0.8533,1.7126,2.8743
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,42,37,4.8525,0.8546,1.7005,2.8697
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,2025,31,5.2466,0.865,1.7581,2.8412
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,56,4.843,0.8555,1.7025,2.8582
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,123,37,4.9612,0.8564,1.7238,2.8769
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,5.0,123,26,4.9656,0.8559,1.7272,2.8788
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,42,49,4.8615,0.8548,1.7039,2.8823
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,37,4.8494,0.8555,1.692,2.8711
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,36,4.8679,0.8544,1.7085,2.8787
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,22,4.8936,0.8547,1.7348,2.8713
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,56,4.9707,0.855,1.7312,2.878
+CNN,GradDrop,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,36,4.8601,0.8536,1.7057,2.8719
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,2025,57,5.21,0.865,1.7395,2.8426
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,42,37,4.8689,0.8546,1.7047,2.8795
+CNN,GLS,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,33,5.2476,0.865,1.7592,2.8399
+CNN,DWA,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,40,4.9571,0.8542,1.7253,2.8766
+CNN,UW_O,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,50,4.9761,0.8548,1.7337,2.8756
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,123,26,4.9738,0.8564,1.7396,2.8726
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,123,27,4.9925,0.855,1.7567,2.8838
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.7,42,50,4.8635,0.855,1.7072,2.8679
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,123,40,4.9523,0.8544,1.7272,2.8747
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.3,123,40,4.9679,0.8542,1.7386,2.8733
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,123,40,4.953,0.8539,1.7238,2.8712
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,31,5.232,0.8648,1.7418,2.8465
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,59,4.9549,0.8537,1.7205,2.8701
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,38,4.8614,0.8551,1.7013,2.8673
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,10.0,42,37,4.8526,0.8547,1.6914,2.8725
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,31,5.2455,0.8648,1.755,2.8511
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,123,26,4.9751,0.8562,1.7372,2.8815
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,0.5,42,34,4.8656,0.8536,1.7068,2.8773
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.1,42,58,4.8498,0.8553,1.699,2.8615
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,20.0,123,56,4.9488,0.8557,1.7208,2.8632
+CNN,Nash_MTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,33,5.2327,0.8638,1.7442,2.8424
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,7.0,2025,31,5.2302,0.8643,1.7416,2.8441
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,15.0,42,58,4.8376,0.8545,1.6925,2.8573
+CNN,UW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,31,5.242,0.8649,1.7497,2.8503
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,39,5.2274,0.8647,1.7454,2.8358
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,1.0,123,30,4.9887,0.856,1.7473,2.8819
+CNN,CAGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,0.9,123,32,5.0155,0.8561,1.7636,2.882
+CNN,PCGrad,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,39,4.9549,0.8553,1.7259,2.8731
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,1.5,123,39,4.9468,0.8542,1.723,2.869
+CNN,GradNorm,"('next_activity', 'next_time', 'remaining_time')",0.001,2.0,2025,24,5.232,0.8645,1.7452,2.842
+CNN,EW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,42,48,4.8412,0.8547,1.6903,2.8636
+CNN,RLW,"('next_activity', 'next_time', 'remaining_time')",0.001,None,2025,29,5.2517,0.8648,1.7515,2.8469
+CNN,UW_SO,"('next_activity', 'next_time', 'remaining_time')",0.001,3.0,2025,24,5.2355,0.8635,1.7497,2.8354
+CNN,IMTL,"('next_activity', 'next_time', 'remaining_time')",0.001,None,123,30,4.9802,0.8559,1.7479,2.8774
+CNN,EW,"('next_activity',)",0.001,None,42,28,0.9774,0.6592,,
+CNN,EW,"('next_activity',)",0.001,None,2025,31,0.9757,0.6606,,
+CNN,EW,"('next_activity',)",0.001,None,123,24,0.9238,0.6589,,
+CNN,EW,"('next_time',)",0.001,None,123,26,1.7155,,1.7251,
+CNN,EW,"('next_time',)",0.001,None,2025,31,1.7699,,1.7395,
+CNN,EW,"('next_time',)",0.001,None,42,54,1.6831,,1.6744,
+CNN,EW,"('remaining_time',)",0.001,None,123,49,2.843,,,2.86
+CNN,EW,"('remaining_time',)",0.001,None,2025,24,3.0345,,,2.8316
+CNN,EW,"('remaining_time',)",0.001,None,42,19,2.738,,,2.873
