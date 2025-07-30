@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jul 28 08:39:01 2025
-@author: kamirel
 This script is used to create a plot for a concrete activity class from 
 activity classes.
 """

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 21 16:47:01 2025
-@author: kamirel
 """
 import os
 import pandas as pd

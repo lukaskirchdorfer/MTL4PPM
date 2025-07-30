@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 21 11:47:11 2025
-@author: kamirel
 This script is used to create table 2 of the paper: i.e., the wilcoxon test for
 three different prediction tasks (NAP, NTP, RTP) separately for three different
 architectures.  For Transformer, we need to exclude BPI_Challenge_2012C, since

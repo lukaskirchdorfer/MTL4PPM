@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 28 16:47:14 2025
-@author: kamirel
 This script is used to extract training times for different MTO strategies.
 It can be used in two modes:
     1) If mode: collect is False then it extracts the training times for

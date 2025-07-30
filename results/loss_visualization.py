@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jul 17 13:17:34 2025
-@author: kamirel
 """
 import os
 import json

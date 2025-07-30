@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 16 10:21:39 2025
-@author: kamirel
 This scipts is used to create figures 1,5 of the paper, that is:
     1) box plot that compares the performance of three different architectures
     2) box plot that compares the performance of 13 different MTO strategies.

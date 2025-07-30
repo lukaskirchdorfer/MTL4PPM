@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jun 26 18:45:25 2025
-
-@author: kamirel
 """
 import os
 import argparse
