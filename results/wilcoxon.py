@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 21 11:47:11 2025
-@author: kamirel
 This script is used to create table 2 of the paper: i.e., the wilcoxon test for
 three different prediction tasks (NAP, NTP, RTP) separately for three different
 architectures.  For Transformer, we need to exclude BPI_Challenge_2012C, since
@@ -17,7 +16,7 @@ def main():
                 'BPIC20_InternationalDeclarations',
                 'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'] 
     # 'BPIC15_1', 'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'
-    model = 'LSTM' #'CNN' 'LSTM' 'Transformer'
+    model = 'Transformer' #'CNN' 'LSTM' 'Transformer'
     task_comb = 'NAP+NTP+RTP' #'NTP+RTP' 'NAP+NTP' 'NAP+RTP' 'NAP+NTP+RTP'
     task_comb = 'ALL'
     stl_nap_lst, stl_ntp_lst, stl_rtp_lst = [], [], []

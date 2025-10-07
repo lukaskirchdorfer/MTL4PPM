@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 28 16:47:14 2025
-@author: kamirel
 This script is used to extract training times for different MTO strategies.
 It can be used in two modes:
     1) If mode: collect is False then it extracts the training times for
@@ -83,8 +82,10 @@ def combine_training_times(df_lst, labels, mtls):
     cols = ["Dataset"] + mtls
     #cols = ["Dataset"] + [col for col in final_df.columns if col != "Dataset"]
     final_df = final_df[cols]
-    final_df.update(final_df.select_dtypes(include='number').round(0).astype(int))
-    return final_df
+    final_df.update(final_df.select_dtypes(include='number').round(2))
+    df_transposed = final_df.set_index("Dataset").T.reset_index()
+    df_transposed.rename(columns={"index": "Method"}, inplace=True)
+    return df_transposed
 
 
 
