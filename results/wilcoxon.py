@@ -16,7 +16,7 @@ def main():
                 'BPIC20_InternationalDeclarations',
                 'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'] 
     # 'BPIC15_1', 'BPI_Challenge_2013_incidents', 'BPI_Challenge_2012C'
-    model = 'LSTM' #'CNN' 'LSTM' 'Transformer'
+    model = 'Transformer' #'CNN' 'LSTM' 'Transformer'
     task_comb = 'NAP+NTP+RTP' #'NTP+RTP' 'NAP+NTP' 'NAP+RTP' 'NAP+NTP+RTP'
     task_comb = 'ALL'
     stl_nap_lst, stl_ntp_lst, stl_rtp_lst = [], [], []

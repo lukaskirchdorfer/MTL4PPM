@@ -83,7 +83,9 @@ def combine_training_times(df_lst, labels, mtls):
     #cols = ["Dataset"] + [col for col in final_df.columns if col != "Dataset"]
     final_df = final_df[cols]
     final_df.update(final_df.select_dtypes(include='number').round(2))
-    return final_df
+    df_transposed = final_df.set_index("Dataset").T.reset_index()
+    df_transposed.rename(columns={"index": "Method"}, inplace=True)
+    return df_transposed
 
 
 
