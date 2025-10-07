@@ -12,6 +12,37 @@ import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 #import numpy as np
 
+def main_new():
+    datasets = ['BPIC20_DomesticDeclarations', 'P2P',] # 'HelpDesk']
+    dataset_names = ['BPIC20DD', 'P2P']
+    model = 'LSTM'
+    tasks = 'NAP+NTP+RTP'
+    focus_task = 'next_activity'
+    mto_order = ['EW'] 
+
+    vis_params = []
+    for dataset in datasets:
+        csv_name = dataset + '_best_results.csv'
+        csv_path = os.path.join(os.getcwd(), dataset, csv_name)
+        srch_str, task_str = comb_string(tasks)
+        res_dir = os.path.join(os.path.dirname(os.getcwd()), 'models', dataset)
+        rel_loss_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_relative_loss.pdf'
+        grad_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_gradient.pdf'
+        loss_pdf = dataset+'_'+tasks+'_'+model+'_'+focus_task+'_loss.pdf' 
+
+        # Visualize validation losses
+        mtl_lst, loss_lst, train_loss_lst = get_losses(
+            csv_path, res_dir, srch_str, task_str, model, focus_task)
+        mto_order_plus = mto_order + ['STL']
+        combined = list(zip(mtl_lst, loss_lst, train_loss_lst))
+        combined_sorted = sorted([item for item in combined if item[0] in mto_order_plus],
+            key=lambda x: mto_order_plus.index(x[0]))
+        mtl_lst, loss_lst, train_loss_lst = map(list, zip(*combined_sorted))  
+        vis_params.append((mtl_lst, loss_lst, train_loss_lst, focus_task, loss_pdf))
+
+    loss_vis_all(dataset_names, vis_params)
+
+
 def main():
     dataset = 'BPIC20_DomesticDeclarations' #'Production'
     model = 'LSTM'
@@ -184,6 +215,61 @@ def weight_vis(mtl_lst, weight_lst, focus_task, rel_loss_pdf):
     plt.tight_layout()    
     plt.savefig(rel_loss_pdf)
     plt.close()
+
+def loss_vis_all(datasets, vis_params):
+    """
+    Plot train and validation losses for multiple datasets in one plot.
+    - Different colors for datasets
+    - Different line styles for val/train
+    - Different markers for datasets
+    - STL/MTL methods are labeled
+    """
+    import itertools
+    
+    # Assign a unique color and marker to each dataset
+    color_palette = sns.color_palette("Set2", n_colors=len(datasets))
+    markers = ['x', 'o', 'D', '^', 'v', 'P', '*', 'X', 'h', '+']
+    
+    sns.set_theme(context="talk")
+    plt.figure(figsize=(10, 6))
+    
+    for idx, (dataset, (mtl_lst, loss_lst, train_loss_lst, focus_task, _)) in enumerate(zip(datasets, vis_params)):
+        color = color_palette[idx % len(color_palette)]
+        # marker = markers[idx % len(markers)]
+        for mtl, val_loss, train_loss in zip(mtl_lst, loss_lst, train_loss_lst):
+            # Label for legend
+            if mtl == 'UW_SO':
+                mtl_label = 'UW-SO'
+            elif mtl == 'UW_O':
+                mtl_label = 'UW-O'
+            elif mtl == 'Nash_MTL':
+                mtl_label = 'NashMTL'
+            else:
+                mtl_label = mtl
+            # STL/MTL distinction
+            method_type = 'STL' if mtl_label == 'STL' else 'MTL'
+            # Only one legend entry per dataset/method
+            # legend_label = f"{dataset} {mtl_label}" if method_type == 'STL' else f"{dataset} MTL"
+            epochs = list(range(1, min(len(train_loss), len(val_loss)) + 1))
+            if method_type == 'STL':
+                # Plot train loss as solid line
+                label = f"{dataset} STL"
+                plt.plot(epochs, train_loss[:len(epochs)], label=label, color=color, linestyle='-', linewidth=5)
+            else:
+                label = f"{dataset} MTL"
+                plt.plot(epochs, train_loss[:len(epochs)], label=label, color=color, linestyle='--', linewidth=5)
+            # Plot validation loss as shaded area
+            plt.fill_between(epochs, train_loss[:len(epochs)], val_loss[:len(epochs)], color=color, alpha=0.5)
+    plt.xlabel("Epoch", fontsize=25)
+    plt.xticks(fontsize=20)
+    plt.ylabel("Loss", fontsize=25)
+    plt.yticks(fontsize=20)
+    # plt.title("Train and Validation Losses for Multiple Datasets")
+    plt.legend(fontsize=25, ncol=2)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig("all_datasets_loss.pdf")
+    plt.close()
     
     
 def loss_vis(mtl_lst, loss_lst, train_loss_lst, focus_task, loss_pdf): 
@@ -338,4 +424,4 @@ def comb_string(combination):
     return str1, str2
 
 if __name__ == '__main__':
-    main() 
+    main_new() 
