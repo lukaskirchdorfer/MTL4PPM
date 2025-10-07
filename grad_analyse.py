@@ -77,7 +77,7 @@ def plot_to_pdf(cosine_vals_list, grad_vals_list, titles,
     plt.close()
 
 def main():
-    datasets = ['Production', 'BPIC20_InternationalDeclarations', 'BPIC15_1']
+    datasets = ['P2P', 'HelpDesk', 'Sepsis', 'BPIC20_DomesticDeclarations', 'BPI_Challenge_2012C', 'BPI_Challenge_2013_incidents']
     task_choice = "('next_activity', 'next_time', 'remaining_time')"
     task_equivalence = 'next_activity_next_time_remaining_time'
     model_choice = "CNN"

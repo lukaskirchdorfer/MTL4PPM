@@ -38,7 +38,7 @@ def get_mtls(dataset):
     return mtl_approaches
         
 def main():
-    datasets = ['Production', 'BPIC20_InternationalDeclarations', 'BPIC15_1']
+    datasets = ['P2P', 'HelpDesk', 'Sepsis', 'BPIC20_DomesticDeclarations', 'BPI_Challenge_2012C', 'BPI_Challenge_2013_incidents']
     task_choice = "('next_activity', 'next_time', 'remaining_time')"
     task_equivalence = 'next_activity_next_time_remaining_time'
     single_task = "('next_activity',)"
