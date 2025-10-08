@@ -63,7 +63,7 @@ def compare_model_f1_bar(mtl_df, stl_df, mtl, save_path):
 
 
 def main():
-    dataset = 'BPI_Challenge_2013_incidents' # 'Production' 'BPIC20_InternationalDeclarations'
+    dataset = 'BPIC20_InternationalDeclarations' # 'Production' 'BPIC20_InternationalDeclarations'
     seed = 42
     task_choice = "('next_activity', 'next_time', 'remaining_time')"
     task_equivalence = 'next_activity_next_time_remaining_time'
