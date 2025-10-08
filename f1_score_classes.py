@@ -7,6 +7,7 @@ import os
 import pandas as pd
 from sklearn.metrics import f1_score
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def get_mtl(dataset):
     if dataset in {'P2P', 'Production', 'BPIC20_DomesticDeclarations'}:
@@ -23,7 +24,9 @@ def get_mtl(dataset):
 
 
 def compare_model_f1_bar(mtl_df, stl_df, mtl, save_path):
-    mtl_label = 'MTL('+mtl+')'
+    sns.set_theme(context="talk")
+    # mtl_label = 'MTL('+mtl+')'
+    mtl_label = 'MTL'
     # Get unique classes (based on ground truth)
     classes = sorted(mtl_df['ground_truth'].unique())
     # Compute per-class F1 for both models
@@ -60,7 +63,7 @@ def compare_model_f1_bar(mtl_df, stl_df, mtl, save_path):
 
 
 def main():
-    dataset = 'BPIC20_InternationalDeclarations' # 'Production' 'BPIC20_InternationalDeclarations'
+    dataset = 'BPI_Challenge_2013_incidents' # 'Production' 'BPIC20_InternationalDeclarations'
     seed = 42
     task_choice = "('next_activity', 'next_time', 'remaining_time')"
     task_equivalence = 'next_activity_next_time_remaining_time'
