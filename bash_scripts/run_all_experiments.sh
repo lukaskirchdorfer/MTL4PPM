@@ -1,10 +1,25 @@
 #!/bin/bash
-#SBATCH --job-name=mtl4ppm_all_experiments
-#SBATCH --cpus-per-task=30
+#SBATCH --job-name=mtl4ppm_all
+#SBATCH --cpus-per-task=12
 #SBATCH --mem=90G
 #SBATCH --gres=gpu:1
 #SBATCH --partition=gpu-vram-48gb
 #SBATCH --chdir=/ceph/lkirchdo/MTL4PPM
+
+# Ensure conda is available
+source ~/.bashrc || { echo "Failed to source ~/.bashrc"; exit 1; }
+
+# Activate conda environment
+conda activate MTL4PPM || { echo "Failed to activate MTL4PPM environment"; exit 1; }
+
+# Navigate to project directory
+echo "Changing directory to the MTL4PPM repository..."
+cd /ceph/lkirchdo/MTL4PPM || { echo "Failed to change directory"; exit 1; }
+echo "Current directory: $(pwd)"
+
+# -------------------------------
+echo "Starting Python script execution..."
+echo "-------------------------------------"
 
 # Define lists of values for each argument
 DATASETS=("HelpDesk.csv" "P2P.csv" "Production.csv" "Sepsis.csv" "BPIC_Challenge_2012C.csv" "BPIC15_1.csv" "BPIC20_DomesticDeclarations.csv" "BPIC20_InternationalDeclarations.csv" "BPI_Challenge_2013_incidents.csv")
