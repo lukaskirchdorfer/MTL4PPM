@@ -11,7 +11,7 @@ from scipy.stats import ttest_ind
 
 
 def main():
-    dataset = 'BPIC20_InternationalDeclarations' # 'Production'
+    dataset = 'BPI_Challenge_2012C' # 'Production'
     tasks = 'NAP+NTP+RTP'
     model = 'CNN'
     mtl = 'UW'
