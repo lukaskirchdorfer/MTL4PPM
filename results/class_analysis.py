@@ -14,7 +14,7 @@ def main():
     dataset = 'BPI_Challenge_2012C' # 'Production' 'BPIC20_InternationalDeclarations' 'BPI_Challenge_2012C'
     tasks = 'NAP+NTP+RTP'
     model = 'CNN'
-    mtl = 'GLS'
+    mtl = 'CAGrad'
     act_classes = [1] # activity class of interest
     class_dict = {1: 'O_SENT_BACK-COMPLETE'} # for BPIC12C
     #class_dict = {4: 'Declaration APPROVED by SUPERVISOR'} for BPIC2020ID 
