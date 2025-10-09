@@ -14,11 +14,12 @@ def main():
     dataset = 'BPI_Challenge_2012C' # 'Production'
     tasks = 'NAP+NTP+RTP'
     model = 'CNN'
-    mtl = 'UW'
-    act_classes = [4] # activity class of interest    
-    class_dict = {4: 'Declaration APPROVED by SUPERVISOR'}
-    #class_dict = {26: 'Permit REJECTED by SUPERVISOR'}
-    #class_dict = {2: 'Final Inspection Q.C.'}  this one is for Production event log
+    mtl = 'CAGrad'
+    act_classes = [1] # activity class of interest
+    class_dict = {1: 'O_SENT_BACK-COMPLETE'} # for BPIC12C
+    #class_dict = {4: 'Declaration APPROVED by SUPERVISOR'} for BPIC2020ID 
+    #class_dict = {26: 'Permit REJECTED by SUPERVISOR'} for BPIC2020ID 
+    #class_dict = {2: 'Final Inspection Q.C.'}  for Production 
     
     csv_name = dataset + '_best_results.csv'
     csv_path = os.path.join(os.getcwd(), dataset, csv_name)
