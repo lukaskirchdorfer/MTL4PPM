@@ -1,4 +1,8 @@
-# Deep Learning for Predictive Process Monitoring
+# Multi-Task Deep Learning for Predictive Process Monitoring
+
+This is the supplementary GitHub repository of the paper: "On the Potential of Multi-Task Learning in Predictive Process Monitoring" by Lukas Kirchdorfer, Keyvan Amiri Elyasi and Heiner Stuckenschmidt.
+
+We provide supplementary material to the main paper in Appendix.pdf.
 
 This repository contains PyTorch implementations of deep learning models for predictive process monitoring tasks, including:
 - Next Activity Prediction
@@ -36,11 +40,11 @@ The main script accepts various arguments to configure the training process:
 
 ```bash
 python main.py \
-    --data_path data/P2P.csv \
+    --data_path data/P2P.csv \ # Upload your event log to the data folder
     --tasks next_activity next_time \  # Options: next_activity, next_time, remaining_time, multi
-    --model LSTM \
-    --epochs 10 \
-    --weighting UW \
+    --model LSTM \  # Options: LSTM, CNN, Transformer
+    --epochs 200 \
+    --weighting UW \ # Options: see /source/weighting/
 ```
 
 ## Input Data Format
