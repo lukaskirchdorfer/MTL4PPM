@@ -54,4 +54,7 @@ The input data should be a CSV file with the following columns:
 - case_id: Identifier for the process instance
 - activity: Name of the activity
 - timestamp: Timestamp of the activity execution
-- resource: Resource who performed the activity 
+- resource: Resource who performed the activity
+
+## Supplementary Material
+This [document](https://github.com/lukaskirchdorfer/MTL4PPM/blob/main/MTL4PPM_Supplementary_Material.pdf) details the implementation settings, experimental design, and additional empirical results that support and extend the findings reported in the main paper. 
