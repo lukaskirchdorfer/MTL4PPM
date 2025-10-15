@@ -12,14 +12,14 @@ This repository contains PyTorch implementations of deep learning models for pre
 ## Project Structure
 ```
 .
-├── data/                   # Directory for storing input data
+├── data/                               # Directory for storing input data
 ├── src/
-│   ├── models/            # Neural network model implementations
-│   ├── data/              # Data processing and dataset classes
-│   └── utils/             # Utility functions and helper classes including the trainer class
-│   └── weighting/         # MTL loss and gradient weighting classes
-├── MTL4PPM_Supplementary_Material.pdf # Supplementary material for detailed of experimental setup and results 
-└── main.py               # Main training script
+│   ├── models/                         # Neural network model implementations
+│   ├── data/                           # Data processing and dataset classes
+│   └── utils/                          # Utility functions and helper classes including the trainer class
+│   └── weighting/                      # MTL loss and gradient weighting classes
+├── MTL4PPM_Supplementary_Material.pdf  # Supplementary material for detailed of experimental setup and results 
+└── main.py                             # Main training script
 ```
 
 ## Setup
