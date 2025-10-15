@@ -2,7 +2,7 @@
 
 This is the supplementary GitHub repository of the paper: "On the Potential of Multi-Task Learning in Predictive Process Monitoring" by Lukas Kirchdorfer, Keyvan Amiri Elyasi and Heiner Stuckenschmidt.
 
-We provide supplementary material to the main paper in Appendix.pdf.
+We provide supplementary material to the main paper in MTL4PPM_Supplementary_Material.pdf.
 
 This repository contains PyTorch implementations of deep learning models for predictive process monitoring tasks, including:
 - Next Activity Prediction
